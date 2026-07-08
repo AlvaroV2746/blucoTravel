@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useRef } from 'react';
+import './App.css'; // <--- IMPRESCINDIBLE PARA CONECTAR EL CSS
 import logoFull from './assets/logos/logoFull.png';
+import horsebackImg from './assets/images/horsebackRiding.jpg';
+import cacaoTourImg from './assets/images/cacaoTour.jpg';
+import riverImg from './assets/images/river.jpeg';
+import { data } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
+import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN DEL COMPONENTE CARRUSEL
+
 
 // --- PLACEHOLDER DATA ---
 const ACTIVITIES = [
@@ -15,14 +23,22 @@ const LOCAL_PRODUCTS = [
   { id: 2, name: "Organic Coffee Beans", price: "$15.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Coffee", desc: "1lb of premium local coffee." },
   { id: 3, name: "Artisan Ceramic Mug", price: "$12.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Mug", desc: "Hand-painted ceramic mug." },
   { id: 4, name: "Woven Bracelet", price: "$5.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Bracelet", desc: "Colorful traditional bracelet." },
-  { id: 5, name: "Local Honey", price: "$10.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Honey", desc: "Pure organic honey." }
+  { id: 5, name: "Local Honey", price: "$10.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Honey", desc: "Pure organic honey." },
+  { id: 6, name: "Handmade Poncho", price: "$45.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Poncho", desc: "Traditional woven poncho." },
+  { id: 7, name: "Organic Coffee Beans", price: "$15.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Coffee", desc: "1lb of premium local coffee." },
+  { id: 8, name: "Artisan Ceramic Mug", price: "$12.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Mug", desc: "Hand-painted ceramic mug." },
+  { id: 9, name: "Woven Bracelet", price: "$5.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Bracelet", desc: "Colorful traditional bracelet." }
+  
 ];
 
 const HERO_SLIDES = [
-  { id: 1, title: "DISCOVER THE CLOUD FOREST", img: "https://images.unsplash.com/photo-1518182170546-076616fdfaaf?auto=format&fit=crop&w=1920&q=80" },
-  { id: 2, title: "EXPERIENCE THE RIVERS", img: "https://images.unsplash.com/photo-1544365558-35aa4afcf11f?auto=format&fit=crop&w=1920&q=80" },
-  { id: 3, title: "SUPPORT LOCAL COMMUNITY", img: "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1920&q=80" }
+  { id: 1, title: "Ecological Horseback Riding", img: horsebackImg },
+  { id: 2, title: "Cacao Tour", img: cacaoTourImg },
+  { id: 3, title: "Enjoy the rivers", img: riverImg }
 ];
+
+
+
 
 // --- MAIN APPLICATION COMPONENT ---
 export default function BlucoApp() {
@@ -45,33 +61,86 @@ export default function BlucoApp() {
     window.open(`https://wa.me/573184559655?text=${text}`, '_blank');
   };
 
+  //carrousel logic
+  const listRef = useRef();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    const listNode = listRef.current;
+    const imgNode = listNode.querySelectorAll('li > img')[currentIndex];
+
+    if (imgNode) {
+      imgNode.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest', // <--- ESTO ES LA CLAVE: evita que salte toda la página
+        inline: 'center'  // Centra la imagen en el contenedor
+      });
+
+    }
+  }, [currentIndex])
+
+  const scrollToImage = (direction) => {
+    if (direction === 'prev') {
+      setCurrentIndex(curr => {
+        const isFirstSlide = currentIndex === 0;
+        return isFirstSlide ? 0 : curr - 1;
+      })
+    } else {
+      const isLastSlide = currentIndex === data.length - 1;
+      if (!isLastSlide) {
+        setCurrentIndex(curr => curr + 1);
+      }
+    }
+  }
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  }
+
+  function HomeView({ listRef, dataCarrousel, scrollToImage, currentIndex, goToSlide }) {
+    return (
+      <div className="slider-container">
+        <div className='leftArrow' onClick={() => scrollToImage('prev')}>&#10092;</div>
+        <div className='rightArrow' onClick={() => scrollToImage('next')}>&#10093;</div>
+        <div className="container-images">
+          <ul ref={listRef}>
+            {data.map((item) => (
+              <li key={item.id}>
+                <img src={item.img} width="100%" height="400" alt={`Slide ${item.id}`} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="dots-container">
+          {data.map((_, idx) => (
+            <div key={idx}
+              className={`dot-container-item ${idx === currentIndex ? "active" : ""}`}
+              onClick={() => goToSlide(idx)}>
+              &#9865;
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // END carrousel logic
+
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 relative">
+    <div className="app-container">
 
       {/* 1. HEADER */}
-      <header className="flex items-center justify-between px-8 py-4 bg-white shadow-md sticky top-0 z-50">
+      <header className="header">
         <div
-          className="flex items-center cursor-pointer"
+          className="logo-container"
           onClick={() => { setCurrentView('home'); setSelectedActivity(null); }}
         >
-          {/* Logo Placeholder - Reemplazar con <img src={image_0.png} /> */}
-          <div className="text-3xl font-black tracking-tighter text-blue-900 flex items-center">
-            <div className="flex items-center">
-              <img
-                src={logoFull}
-                alt="Logo BLUCO"
-                className="h-16 mr-2"
-              />
-
-            </div>
-          </div>
+          <img src={logoFull} alt="Logo BLUCO" className="logo-img" />
         </div>
-        <nav className="flex gap-6 font-semibold text-blue-900">
+        <nav className="nav-menu">
           {['ACTIVITIES', 'ABOUT US', 'CONTACT US', 'LOCAL PRODUCTS'].map((item) => (
             <button
               key={item}
               onClick={() => { setCurrentView(item.toLowerCase().replace(' ', '')); setSelectedActivity(null); }}
-              className="hover:text-cyan-500 hover:underline decoration-cyan-500 decoration-2 underline-offset-4 transition-all uppercase"
+              className="nav-btn"
             >
               {item}
             </button>
@@ -80,28 +149,55 @@ export default function BlucoApp() {
       </header>
 
       {/* RENDERIZADO CONDICIONAL DE VISTAS */}
-      <main className="min-h-[80vh]">
-        {currentView === 'home' && !selectedActivity && <HeroView setCurrentView={setCurrentView} />}
-        {currentView === 'activities' && !selectedActivity && <ActivitiesView onSelect={setSelectedActivity} onAdd={addToCart} />}
-        {selectedActivity && <ActivityDetailView activity={selectedActivity} onBack={() => setSelectedActivity(null)} />}
-        {currentView === 'aboutus' && !selectedActivity && <AboutUsView />}
-        {currentView === 'contactus' && !selectedActivity && <ContactUsView />}
-        {currentView === 'localproducts' && !selectedActivity && <LocalProductsView />}
-      </main>
+<main className="main-content">
+  <div className="main-container">
+    {/* Aquí decides qué mostrar basándote en 'currentView' */}
+    {currentView === 'home' && (
+       <div className="container">
+          <div className="slider-container">
+            <div className='leftArrow' onClick={() => scrollToImage('prev')}>&#10092;</div>
+            <div className='rightArrow' onClick={() => scrollToImage('next')}>&#10093;</div>
+            <div className="container-images">
+              <ul ref={listRef}>
+                {data.map((item) => (
+                  <li key={item.id}>
+                    <img src={item.img} width="100%" height="500" alt={`Slide ${item.id}`} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="dots-container">
+              {
+                data.map((_, idx) => (
+                  <div key={idx}
+                    className={`dot-container-item ${idx === currentIndex ? "active" : ""}`}
+                    onClick={() => goToSlide(idx)}>
+                    &#9865;
+                  </div>))
+              }
+            </div>
+          </div>
+        </div>
+
+    )}
+    
+    {currentView === 'activities' && <ActivitiesView onSelect={setSelectedActivity} onAdd={addToCart} />}
+    {currentView === 'aboutus' && <AboutUsView />}
+    {currentView === 'contactus' && <ContactUsView />}
+    {currentView === 'localproducts' && <LocalProductsView />}
+  </div>
+</main>
+
 
       {/* 3. FOOTER */}
-      <footer className="bg-blue-950 text-white p-8 mt-12">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="-ml-40">
-            <img
-              src={logoFull}
-              alt="Logo BLUCO"
-              className="h-16 mr-2"
-            />
+      <footer className="footer">
+        <div className="footer-content">
+          <div>
+            <img src={logoFull} alt="Logo BLUCO" className="logo-img" style={{ filter: 'brightness(0) invert(1)' }} />
           </div>
-          <div className="flex gap-4 items-center">
-            <a href="https://wa.me/573184559655" target="_blank" rel="noreferrer" className="text-cyan-400 hover:text-white transition-colors">
-              <span className="text-3xl">📱</span> {/* Reemplazar con SVG de WhatsApp */}
+          <div>
+            <a href="https://wa.me/573184559655" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', fontSize: '2rem' }}>
+              📱
             </a>
           </div>
         </div>
@@ -110,11 +206,11 @@ export default function BlucoApp() {
       {/* FLOATING CART ICON */}
       <button
         onClick={() => setIsCartOpen(true)}
-        className="fixed bottom-8 right-8 bg-cyan-500 hover:bg-cyan-400 text-white p-4 rounded-full shadow-2xl z-40 flex items-center justify-center transition-transform hover:scale-110"
+        className="cart-floating-btn"
       >
-        <span className="text-2xl">🛒</span>
+        <span style={{ fontSize: '1.5rem' }}>🛒</span>
         {cart.length > 0 && (
-          <span className="absolute -top-2 -right-2 bg-blue-900 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+          <span className="cart-badge">
             {cart.length}
           </span>
         )}
@@ -122,29 +218,29 @@ export default function BlucoApp() {
 
       {/* CART SIDEBAR / MY ITINERARY */}
       {isCartOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex justify-end">
-          <div className="bg-white w-96 h-full shadow-2xl flex flex-col animate-slide-in">
-            <div className="p-6 bg-blue-900 text-white flex justify-between items-center">
-              <h2 className="text-xl font-bold uppercase">My Itinerary</h2>
-              <button onClick={() => setIsCartOpen(false)} className="text-2xl hover:text-cyan-400">&times;</button>
+        <div className="cart-overlay">
+          <div className="cart-sidebar">
+            <div className="cart-header">
+              <h2>My Itinerary</h2>
+              <button onClick={() => setIsCartOpen(false)} className="btn-close">&times;</button>
             </div>
-            <div className="flex-1 p-6 overflow-y-auto">
+            <div className="cart-items">
               {cart.length === 0 ? (
-                <p className="text-gray-500 text-center mt-10">No activities selected yet.</p>
+                <p style={{ textAlign: 'center', color: '#6b7280', marginTop: '2.5rem' }}>No activities selected yet.</p>
               ) : (
                 cart.map((item, index) => (
-                  <div key={index} className="flex items-center gap-4 mb-4 border-b pb-4">
-                    <img src={item.img} alt={item.name} className="w-16 h-16 object-cover rounded" />
-                    <span className="font-semibold text-blue-950">{item.name}</span>
+                  <div key={index} className="cart-item">
+                    <img src={item.img} alt={item.name} className="cart-item-img" />
+                    <span className="cart-item-name">{item.name}</span>
                   </div>
                 ))
               )}
             </div>
-            <div className="p-6 bg-gray-50 border-t">
+            <div className="cart-footer">
               <button
                 onClick={handleQuote}
                 disabled={cart.length === 0}
-                className="w-full bg-cyan-500 hover:bg-cyan-400 disabled:bg-gray-300 text-white font-bold py-3 px-4 rounded transition-colors"
+                className="btn-quote"
               >
                 MAKE MY QUOTE
               </button>
@@ -170,17 +266,17 @@ function HeroView() {
   }, []);
 
   return (
-    <div className="relative h-[80vh] w-full overflow-hidden bg-blue-900 flex items-center justify-center">
+    <div className="hero-container">
       <img
         src={HERO_SLIDES[slideIndex].img}
         alt="Hero Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-60 transition-opacity duration-1000"
+        className="hero-img"
       />
-      <div className="relative z-10 text-center text-white px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">
+      <div className="hero-content">
+        <h1 className="hero-title">
           {HERO_SLIDES[slideIndex].title}
         </h1>
-        <button className="bg-cyan-500 hover:bg-cyan-400 text-blue-950 font-bold py-3 px-8 rounded-full text-lg transition-all shadow-lg hover:shadow-cyan-500/50">
+        <button className="btn-primary">
           EXPLORE NOW
         </button>
       </div>
@@ -188,28 +284,22 @@ function HeroView() {
   );
 }
 
-// 4a. ACTIVITIES VIEW (5 Columns)
+// 4a. ACTIVITIES VIEW
 function ActivitiesView({ onSelect, onAdd }) {
   return (
-    <div className="max-w-7xl mx-auto py-12 px-8">
-      <h2 className="text-3xl font-black text-blue-900 mb-8 uppercase border-b-4 border-cyan-400 inline-block pb-2">Our Activities</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div className="section-container">
+      <h2 className="section-title">Our Activities</h2>
+      <div className="grid-5-cols">
         {ACTIVITIES.map((activity) => (
-          <div key={activity.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-sky-100 hover:shadow-xl transition-shadow flex flex-col">
-            <img src={activity.img} alt={activity.name} className="w-full h-40 object-cover cursor-pointer" onClick={() => onSelect(activity)} />
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <h3 className="font-bold text-blue-950 mb-4">{activity.name}</h3>
-              <div className="flex justify-between items-center mt-auto">
-                <button
-                  onClick={() => onSelect(activity)}
-                  className="flex items-center text-sm font-semibold text-cyan-600 hover:text-cyan-500"
-                >
-                  <span className="mr-1">👁️</span> VIEW MORE
+          <div key={activity.id} className="card">
+            <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+            <div className="card-body">
+              <h3 className="card-title">{activity.name}</h3>
+              <div className="card-actions">
+                <button onClick={() => onSelect(activity)} className="btn-view">
+                  👁️ VIEW MORE
                 </button>
-                <button
-                  onClick={() => onAdd(activity)}
-                  className="bg-blue-900 hover:bg-blue-800 text-white text-xs px-3 py-2 rounded transition-colors"
-                >
+                <button onClick={() => onAdd(activity)} className="btn-add">
                   ADD
                 </button>
               </div>
@@ -221,30 +311,23 @@ function ActivitiesView({ onSelect, onAdd }) {
   );
 }
 
-// 4b. ACTIVITY EXPANDED VIEW (Modal/Ruta)
+// 4b. ACTIVITY EXPANDED VIEW
 function ActivityDetailView({ activity, onBack }) {
   return (
-    <div className="max-w-5xl mx-auto py-12 px-8 animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-sky-100">
-        {/* Placeholder para Carrusel de detalles */}
-        <div className="h-96 bg-sky-200 w-full relative group">
-          <img src={activity.img} alt={activity.name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <span className="text-white font-bold tracking-widest bg-black/50 px-4 py-2 rounded">[ EDITABLE IMAGE CAROUSEL PLACEHOLDER ]</span>
-          </div>
+    <div className="detail-container">
+      <div className="detail-card">
+        <div className="detail-img-wrapper">
+          <img src={activity.img} alt={activity.name} className="detail-img" />
         </div>
-        <div className="p-10">
-          <h2 className="text-4xl font-black text-blue-900 mb-4 uppercase">{activity.name}</h2>
-          <div className="inline-block bg-sky-100 text-blue-800 px-4 py-2 rounded-full font-semibold mb-6">
+        <div className="detail-body">
+          <h2 className="detail-title">{activity.name}</h2>
+          <div className="detail-stats">
             {activity.stats}
           </div>
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+          <p className="detail-desc">
             {activity.desc} [Detailed placeholder text for description. Here you can write extensive paragraphs about the itinerary, what to bring, and expectations.]
           </p>
-          <button
-            onClick={onBack}
-            className="w-full md:w-auto bg-cyan-500 hover:bg-cyan-400 text-white font-bold py-4 px-12 rounded shadow-lg transition-colors text-lg"
-          >
+          <button onClick={onBack} className="btn-back">
             GO BACK
           </button>
         </div>
@@ -256,9 +339,9 @@ function ActivityDetailView({ activity, onBack }) {
 // 4c. ABOUT US VIEW
 function AboutUsView() {
   return (
-    <div className="max-w-4xl mx-auto py-20 px-8 text-center">
-      <h2 className="text-4xl font-black text-blue-900 mb-8 uppercase">Our Story</h2>
-      <p className="text-xl text-gray-600 leading-relaxed">
+    <div className="text-view-container">
+      <h2 className="text-view-title">Our Story</h2>
+      <p className="text-view-desc">
         [Placeholder description for the company]. We are BLUCO, dedicated to community integration and eco-friendly tourism. Our mission is to connect travelers with authentic local experiences while preserving the natural beauty of our surroundings.
       </p>
     </div>
@@ -268,32 +351,31 @@ function AboutUsView() {
 // 4d. CONTACT US VIEW
 function ContactUsView() {
   return (
-    <div className="max-w-4xl mx-auto py-20 px-8 text-center">
-      <h2 className="text-4xl font-black text-blue-900 mb-12 uppercase">Contact Us</h2>
-      <div className="flex justify-center gap-10">
-        {/* Usando emojis como placeholders gráficos */}
-        <a href="https://wa.me/573184559655" className="text-6xl hover:scale-110 transition-transform drop-shadow-md">📱</a>
-        <a href="#" className="text-6xl hover:scale-110 transition-transform drop-shadow-md">📸</a>
-        <a href="#" className="text-6xl hover:scale-110 transition-transform drop-shadow-md">🎵</a>
-        <a href="#" className="text-6xl hover:scale-110 transition-transform drop-shadow-md">📧</a>
+    <div className="text-view-container">
+      <h2 className="text-view-title">Contact Us</h2>
+      <div className="contact-icons">
+        <a href="https://wa.me/573184559655" className="contact-icon">📱</a>
+        <a href="#" className="contact-icon">📸</a>
+        <a href="#" className="contact-icon">🎵</a>
+        <a href="#" className="contact-icon">📧</a>
       </div>
     </div>
   );
 }
 
-// 4e. LOCAL PRODUCTS VIEW (5 Columns)
+// 4e. LOCAL PRODUCTS VIEW
 function LocalProductsView() {
   return (
-    <div className="max-w-7xl mx-auto py-12 px-8">
-      <h2 className="text-3xl font-black text-blue-900 mb-8 uppercase border-b-4 border-cyan-400 inline-block pb-2">Our Community Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div className="section-container">
+      <h2 className="section-title">Our Community Products</h2>
+      <div className="grid-5-cols">
         {LOCAL_PRODUCTS.map((product) => (
-          <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-sky-100 flex flex-col text-center hover:shadow-xl transition-shadow">
-            <img src={product.img} alt={product.name} className="w-full h-48 object-cover" />
-            <div className="p-4 flex flex-col flex-1">
-              <h3 className="font-bold text-blue-900 mb-2">{product.name}</h3>
-              <p className="text-sm text-gray-500 mb-4 flex-1">{product.desc}</p>
-              <div className="text-xl font-black text-cyan-600">{product.price}</div>
+          <div key={product.id} className="card">
+            <img src={product.img} alt={product.name} className="card-img" />
+            <div className="card-body">
+              <h3 className="card-title">{product.name}</h3>
+              <p className="product-desc">{product.desc}</p>
+              <div className="product-price">{product.price}</div>
             </div>
           </div>
         ))}
