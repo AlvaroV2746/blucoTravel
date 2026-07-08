@@ -95,6 +95,21 @@ export default function BlucoApp() {
     setCurrentIndex(slideIndex);
   }
 
+  // Creamos el temporizador que cambia el índice cada 5000ms (5 segundos)
+useEffect(() => {
+  // Solo iniciamos el intervalo SI estamos en home
+  if (currentView !== 'home') return;
+
+  const timer = setInterval(() => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === data.length - 1 ? 0 : prevIndex + 1
+    );
+  }, 5000);
+
+  // Limpiamos al cambiar de vista o al desmontar
+  return () => clearInterval(timer);
+}, [currentView, data.length]);
+
   function HomeView({ listRef, dataCarrousel, scrollToImage, currentIndex, goToSlide }) {
     return (
       <div className="slider-container">
