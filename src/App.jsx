@@ -194,7 +194,22 @@ useEffect(() => {
 
     )}
     
-    {currentView === 'activities' && <ActivitiesView onSelect={setSelectedActivity} onAdd={addToCart} />}
+{currentView === 'activities' && (
+      selectedActivity ? (
+        // Si hay una actividad seleccionada, muestra el detalle
+        <ActivityDetailView 
+          activity={selectedActivity} 
+          onBack={() => setSelectedActivity(null)} 
+        />
+      ) : (
+        // Si no, muestra la lista de actividades
+        <ActivitiesView 
+          onSelect={setSelectedActivity} 
+          onAdd={addToCart} 
+        />
+      )
+    )}
+    
     {currentView === 'aboutus' && <AboutUsView />}
     {currentView === 'contactus' && <ContactUsView />}
     {currentView === 'localproducts' && <LocalProductsView />}
