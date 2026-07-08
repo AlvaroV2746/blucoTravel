@@ -5,17 +5,19 @@ import logoFull from './assets/logos/logoFull.png';
 import horsebackImg from './assets/images/horsebackRiding.jpg';
 import cacaoTourImg from './assets/images/cacaoTour.jpg';
 import riverImg from './assets/images/river.jpeg';
+import birdImg from './assets/images/bird.jpeg';
+import hikingImg from './assets/images/hiking.jpg';
 import { data } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
 import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN DEL COMPONENTE CARRUSEL
 
 
 // --- PLACEHOLDER DATA ---
 const ACTIVITIES = [
-  { id: 1, name: "Ecological Horseback Riding", img: "https://via.placeholder.com/300x200/0ea5e9/ffffff?text=Horseback", desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
-  { id: 2, name: "River Kayaking", img: "https://via.placeholder.com/300x200/0ea5e9/ffffff?text=Kayaking", desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
-  { id: 3, name: "Cloud Forest Trek", img: "https://via.placeholder.com/300x200/0ea5e9/ffffff?text=Trekking", desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
-  { id: 4, name: "Coffee Farm Tour", img: "https://via.placeholder.com/300x200/0ea5e9/ffffff?text=Coffee+Tour", desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" },
-  { id: 5, name: "Bird Watching", img: "https://via.placeholder.com/300x200/0ea5e9/ffffff?text=Bird+Watching", desc: "Spot exotic birds in their natural habitat.", stats: "Duration: 3h | Difficulty: Easy" }
+  { id: 1, name: "Ecological Horseback Riding", img: horsebackImg, desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
+  { id: 2, name: "River Kayaking", img: riverImg, desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
+  { id: 3, name: "Cloud Forest Trek", img: hikingImg, desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
+  { id: 4, name: "Coffee Farm Tour", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" },
+  { id: 5, name: "Bird Watching", img: birdImg, desc: "Spot exotic birds in their natural habitat.", stats: "Duration: 3h | Difficulty: Easy" }
 ];
 
 const LOCAL_PRODUCTS = [
@@ -31,11 +33,7 @@ const LOCAL_PRODUCTS = [
   
 ];
 
-const HERO_SLIDES = [
-  { id: 1, title: "Ecological Horseback Riding", img: horsebackImg },
-  { id: 2, title: "Cacao Tour", img: cacaoTourImg },
-  { id: 3, title: "Enjoy the rivers", img: riverImg }
-];
+
 
 
 
