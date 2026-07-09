@@ -8,6 +8,7 @@ import riverImg from './assets/images/river.jpeg';
 import birdImg from './assets/images/bird.jpeg';
 import hikingImg from './assets/images/hiking.jpg';
 import { data } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
+import { LOCAL_PRODUCTS } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
 import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN DEL COMPONENTE CARRUSEL
 
 
@@ -19,22 +20,6 @@ const ACTIVITIES = [
   { id: 4, name: "Coffee Farm Tour", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" },
   { id: 5, name: "Bird Watching", img: birdImg, desc: "Spot exotic birds in their natural habitat.", stats: "Duration: 3h | Difficulty: Easy" }
 ];
-
-const LOCAL_PRODUCTS = [
-  { id: 1, name: "Handmade Poncho", price: "$45.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Poncho", desc: "Traditional woven poncho." },
-  { id: 2, name: "Organic Coffee Beans", price: "$15.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Coffee", desc: "1lb of premium local coffee." },
-  { id: 3, name: "Artisan Ceramic Mug", price: "$12.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Mug", desc: "Hand-painted ceramic mug." },
-  { id: 4, name: "Woven Bracelet", price: "$5.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Bracelet", desc: "Colorful traditional bracelet." },
-  { id: 5, name: "Local Honey", price: "$10.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Honey", desc: "Pure organic honey." },
-  { id: 6, name: "Handmade Poncho", price: "$45.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Poncho", desc: "Traditional woven poncho." },
-  { id: 7, name: "Organic Coffee Beans", price: "$15.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Coffee", desc: "1lb of premium local coffee." },
-  { id: 8, name: "Artisan Ceramic Mug", price: "$12.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Mug", desc: "Hand-painted ceramic mug." },
-  { id: 9, name: "Woven Bracelet", price: "$5.00", img: "https://via.placeholder.com/200/1e3a8a/ffffff?text=Bracelet", desc: "Colorful traditional bracelet." }
-  
-];
-
-
-
 
 
 
@@ -282,35 +267,7 @@ useEffect(() => {
 
 // --- SUBCOMPONENTES DE VISTAS ---
 
-// 2. HERO VIEW
-function HeroView() {
-  const [slideIndex, setSlideIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="hero-container">
-      <img
-        src={HERO_SLIDES[slideIndex].img}
-        alt="Hero Background"
-        className="hero-img"
-      />
-      <div className="hero-content">
-        <h1 className="hero-title">
-          {HERO_SLIDES[slideIndex].title}
-        </h1>
-        <button className="btn-primary">
-          EXPLORE NOW
-        </button>
-      </div>
-    </div>
-  );
-}
 
 // 4a. ACTIVITIES VIEW
 function ActivitiesView({ onSelect, onAdd }) {
