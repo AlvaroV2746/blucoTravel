@@ -6,18 +6,43 @@ import cacaoTourImg from './assets/images/cacaoTour.jpg';
 import riverImg from './assets/images/river.jpeg';
 import birdImg from './assets/images/bird.jpeg';
 import hikingImg from './assets/images/hiking.jpg';
+import roomImg from './assets/images/room.webp';
+import packImg from './assets/images/pack.png';
 import { data, LOCAL_PRODUCTS } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
 import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN DEL COMPONENTE CARRUSEL
 
 
 // --- PLACEHOLDER DATA ---
-const services = [
-  { id: 1, name: "Ecological Horseback Riding", img: horsebackImg, desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
-  { id: 2, name: "River Kayaking", img: riverImg, desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
-  { id: 3, name: "Cloud Forest Trek", img: hikingImg, desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
-  { id: 4, name: "Coffee Farm Tour", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" },
-  { id: 5, name: "Bird Watching", img: birdImg, desc: "Spot exotic birds in their natural habitat.", stats: "Duration: 3h | Difficulty: Easy" }
+const guatapeAcommodations = [
+  { id: 1, name: "Accomodation Basic GUATAPE", img: roomImg, desc: "A basic accommodation.", stats: "basic accomodation with asdasda dasdaf gheth asdfs" },
+  { id: 2, name: "Accomodation Special GUATAPE", img: roomImg, desc: "A special accommodation.", stats: "special accomodation with asdasda dasdaf gheth asdfs" },
+  { id: 3, name: "Accomodation Deluxe GUATAPE", img: roomImg, desc: "A deluxe accommodation.", stats: "deluxe accomodation with asdasda dasdaf gheth asdfs" }
 ];
+const guatapeServices = [
+  { id: 1, name: "Ecological Horseback Riding GUATAPE", img: horsebackImg, desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
+  { id: 2, name: "River Kayaking GUATAPE", img: riverImg, desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
+  { id: 3, name: "Cloud Forest Trek GUATAPE", img: hikingImg, desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
+  { id: 4, name: "Coffee Farm Tour GUATAPE", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" }
+];
+
+const sanRafaAcommodations = [
+  { id: 1, name: "Accomodation Basic SAN RAFEL", img: roomImg, desc: "A basic accommodation.", stats: "basic accomodation with asdasda dasdaf gheth asdfs" },
+  { id: 2, name: "Accomodation Special SAN RAFEL", img: roomImg, desc: "A special accommodation.", stats: "special accomodation with asdasda dasdaf gheth asdfs" },
+  { id: 3, name: "Accomodation Deluxe SAN RAFEL", img: roomImg, desc: "A deluxe accommodation.", stats: "deluxe accomodation with asdasda dasdaf gheth asdfs" }
+];
+const sanRafaServices = [
+  { id: 1, name: "Ecological Horseback Riding SAN RAFEL", img: horsebackImg, desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
+  { id: 2, name: "River Kayaking SAN RAFEL", img: riverImg, desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
+  { id: 3, name: "Cloud Forest Trek SAN RAFEL", img: hikingImg, desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
+  { id: 4, name: "Coffee Farm Tour SAN RAFEL", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" },
+  { id: 5, name: "Bird Watching SAN RAFEL", img: birdImg, desc: "Spot exotic birds in their natural habitat.", stats: "Duration: 3h | Difficulty: Easy" }
+];
+const packages = [
+  { id: 1, name: "Bird Watching PACKAGE", img: packImg, desc: "2 days 1 night experience watching birds", stats: "Know 3 different towns and their local bird species" },
+  { id: 2, name: "Antioquias's Oriental PACKAGE", img: packImg, desc: "know 3 towns from antioquia and enjoy the most beautiful landscapes", stats: "transportation included, all food included, " },
+  { id: 3, name: "River's PACKAGE", img: packImg, desc: "Discover the amazingand all the most beautiful rivers in Antioquia.", stats: "3 days, accommodation included, food included, transportation included" }
+];
+
 
 // --- MAIN APPLICATION COMPONENT ---
 export default function BlucoApp() {
@@ -250,43 +275,106 @@ export default function BlucoApp() {
 function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
   return (
     <div className="placesContainer">
-      {/* Botón Guatapé */}
+      {/* ----------------------------- Botón Guatape ----------------------------- */}
       <div onClick={() => toggleSection('guatape')} className="guatape places">Guatapé</div>
 
       {openSections['guatape'] && (
-        <div className="guatapeContainer">
+        <div className="guatapeContainer servicesBackground">
           <div onClick={() => toggleSection('guatape-accom')} className="subPlaces">Accommodations</div>
           {openSections['guatape-accom'] &&
-            <div className="card">
-              <div>Accommodation Guatapé 1</div>
-              <div>Accommodation Guatapé 2</div>
-            </div>
-          }
-
-          <div onClick={() => toggleSection('guatape-act')} className="subPlaces">Activities</div>
-          {openSections['guatape-act'] && <div className="card">Activity Guatapé 1</div>}
-        </div>
-      )}
-
-      {/* Botón San Rafael */}
-      <div onClick={() => toggleSection('sanrafael')} className="sanRafa places">San Rafael</div>
-
-      {openSections['sanrafael'] && (
-        <div className="sanRafaContainer">
-          <div onClick={() => toggleSection('sanrafael-accom')} className="subPlaces">Accommodations</div>
-          {openSections['sanrafael-accom'] && <div className="card">Accommodation San Rafael 1</div>}
-
-          <div onClick={() => toggleSection('sanrafael-act')} className="subPlaces">Activities</div>
-          {openSections['sanrafael-act'] && <div className="section-container">
+            <div className="section-container">
               <div className="grid-5-cols">
-                {services.map((activity) => (
+                {guatapeAcommodations.map((activity) => (
                   <div key={activity.id} className="card">
                     <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
                     <div className="card-body">
                       <h3 className="card-title">{activity.name}</h3>
                       <div className="card-actions">
                         <button onClick={() => onSelect(activity)} className="btn-view">
-                          👁️ VIEW MORE
+                          &#128065; VIEW MORE
+                        </button>
+                        <button onClick={() => onAdd(activity)} className="btn-add">
+                          ADD
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          }
+
+          <div onClick={() => toggleSection('guatape-act')} className="subPlaces">Activities</div>
+          {openSections['guatape-act'] &&
+            <div className="guatapeContainer servicesBackground">
+              {openSections['guatape-act'] &&
+                <div className="section-container">
+                  <div className="grid-5-cols ">
+                    {guatapeServices.map((activity) => (
+                      <div key={activity.id} className="card">
+                        <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                        <div className="card-body">
+                          <h3 className="card-title">{activity.name}</h3>
+                          <div className="card-actions">
+                            <button onClick={() => onSelect(activity)} className="btn-view">
+                              &#128065; VIEW MORE
+                            </button>
+                            <button onClick={() => onAdd(activity)} className="btn-add">
+                              ADD
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      )}
+      {/* ----------------------------- fin guatape ----------------------------- */}
+      {/* ----------------------------- Botón San Rafael ----------------------------- */}
+      <div onClick={() => toggleSection('sanrafael')} className="sanRafa places">San Rafael</div>
+
+      {openSections['sanrafael'] && (
+        <div className="sanRafaContainer servicesBackground">
+          <div onClick={() => toggleSection('sanrafael-accom')} className="subPlaces">Accommodations</div>
+          {openSections['sanrafael-accom'] &&
+            <div className="section-container">
+              <div className="grid-5-cols centered">
+                {sanRafaAcommodations.map((activity) => (
+                  <div key={activity.id} className="card">
+                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <div className="card-body">
+                      <h3 className="card-title">{activity.name}</h3>
+                      <div className="card-actions">
+                        <button onClick={() => onSelect(activity)} className="btn-view">
+                          &#128065; VIEW MORE
+                        </button>
+                        <button onClick={() => onAdd(activity)} className="btn-add">
+                          ADD
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          }
+
+          <div onClick={() => toggleSection('sanrafael-act')} className="subPlaces">Activities</div>
+          {openSections['sanrafael-act'] &&
+            <div className="section-container">
+              <div className="grid-5-cols">
+                {sanRafaServices.map((activity) => (
+                  <div key={activity.id} className="card">
+                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <div className="card-body">
+                      <h3 className="card-title">{activity.name}</h3>
+                      <div className="card-actions">
+                        <button onClick={() => onSelect(activity)} className="btn-view">
+                          &#128065; VIEW MORE
                         </button>
                         <button onClick={() => onAdd(activity)} className="btn-add">
                           ADD
@@ -300,11 +388,39 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
           }
         </div>
       )}
+
+      {/* ----------------------------- fin San Rafael ----------------------------- */}
+      {/* ----------------------------- Inicio Paquetes ----------------------------- */}
+      <div onClick={() => toggleSection('packages')} className="packages places">Packages</div>
+
+      {
+        openSections['packages'] && (
+          <div className="section-container servicesBackground">
+            <div className="grid-5-cols ">
+              {packages.map((activity) => (
+                <div key={activity.id} className="card">
+                  <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                  <div className="card-body">
+                    <h3 className="card-title">{activity.name}</h3>
+                    <div className="card-actions">
+                      <button onClick={() => onSelect(activity)} className="btn-view">
+                        &#128065; VIEW MORE
+                      </button>
+                        {/* <a href="https://wa.me/573184559655" className="contact-icon"><button className="btn-add">  </button></a> */}
+                        <button className="btn-add"> <a href="https://wa.me/573184559655">MAKE MY QUOTE</a></button>
+                     
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+      {/* ----------------------------- fin Paquetes ----------------------------- */}
+
     </div>
   );
-  // return (
-
-  // );
 }
 
 // 4b. ACTIVITY EXPANDED VIEW
