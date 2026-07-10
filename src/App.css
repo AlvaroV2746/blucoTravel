@@ -164,6 +164,50 @@
 }
 
 /* --- 5. CARDS DE ACTIVIDADES Y PRODUCTOS --- */
+
+div .placesContainer {
+  justify-content: left;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+div .places {
+  background-color: var(--cyan-500);
+  color: #ffffff;
+  font-weight: bold; 
+  font-family:cursive;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 30px;
+  border: 3px solid rgba(155, 155, 155, 0.1);
+}
+div .guatape {
+  background-color: #367DFF;
+
+}
+div .sanRafa {
+  background-color: #2DEB73;
+}
+
+div .places:hover {
+  transform:scaleY(1.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+div .subPlaces {
+  background-color: #5d96ff;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold; 
+  font-family:cursive;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  border: 3px solid rgba(155, 155, 155, 0.1);
+}
+
 .card {
   background-color: #ffffff;
   border-radius: 0.5rem;
