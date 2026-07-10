@@ -37,6 +37,11 @@ export default function BlucoApp() {
     }
     setIsCartOpen(true);
   };
+  const removeFromCart = (index) => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
+  }
 
   const handleQuote = () => {
     const activityNames = cart.map(item => item.name).join(', ');
@@ -245,6 +250,9 @@ useEffect(() => {
                   <div key={index} className="cart-item">
                     <img src={item.img} alt={item.name} className="cart-item-img" />
                     <span className="cart-item-name">{item.name}</span>
+                    <button onClick={() => removeFromCart(index)} className="btn-remove">
+                      X
+                    </button>
                   </div>
                 ))
               )}
