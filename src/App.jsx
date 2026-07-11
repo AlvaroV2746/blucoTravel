@@ -163,7 +163,7 @@ export default function BlucoApp() {
                   <ul ref={listRef}>
                     {data.map((item) => (
                       <li key={item.id}>
-                        <img src={item.img} width="100%" height="500" alt={`Slide ${item.id}`} />
+                        <img src={item.img} width="100%" height="100%" alt={`Slide ${item.id}`} />
                       </li>
                     ))}
                   </ul>
@@ -391,28 +391,30 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
 
       {/* ----------------------------- fin San Rafael ----------------------------- */}
       {/* ----------------------------- Inicio Paquetes ----------------------------- */}
-      <div onClick={() => toggleSection('packages')} className="packages places">Packages</div>
+      <div onClick={() => toggleSection('packages')} className="packages places ">Packages</div>
 
       {
         openSections['packages'] && (
-          <div className="section-container servicesBackground">
-            <div className="grid-5-cols ">
-              {packages.map((activity) => (
-                <div key={activity.id} className="card">
-                  <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
-                  <div className="card-body">
-                    <h3 className="card-title">{activity.name}</h3>
-                    <div className="card-actions">
-                      <button onClick={() => onSelect(activity)} className="btn-view">
-                        &#128065; VIEW MORE
-                      </button>
+          <div className="packagesContainer servicesBackground">
+            <div className="section-container ">
+              <div className="grid-5-cols ">
+                {packages.map((activity) => (
+                  <div key={activity.id} className="card">
+                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <div className="card-body">
+                      <h3 className="card-title">{activity.name}</h3>
+                      <div className="card-actions">
+                        <button onClick={() => onSelect(activity)} className="btn-view">
+                          &#128065; VIEW MORE
+                        </button>
                         {/* <a href="https://wa.me/573184559655" className="contact-icon"><button className="btn-add">  </button></a> */}
                         <button className="btn-add"> <a href="https://wa.me/573184559655">MAKE MY QUOTE</a></button>
-                     
+
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         )

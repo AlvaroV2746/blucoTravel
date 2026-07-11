@@ -1,3 +1,267 @@
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+
+body {
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  color: #1e293b;
+
+  background-color: #ffffff;
+
+}
+
+ul,
+
+li {
+
+  list-style: none;
+
+  white-space: nowrap;
+
+}
+
+
+
+li {
+
+  display: inline;
+
+}
+
+
+
+img {
+
+  margin-top: -16px;
+
+}
+
+
+
+/* Main container */
+
+
+
+.container {
+
+  width: 1000px;
+
+  height: 500px;
+
+  margin: 0 auto;
+
+  margin-top: 50px;
+
+}
+
+
+
+/* Slider container */
+
+.slider-container {
+
+  position: relative;
+  height: 100%
+}
+
+
+
+/* dots carrusel */
+
+.dots-container {
+
+  display: flex;
+
+  justify-content: center;
+
+}
+
+
+
+.dot-container-item {
+
+  margin: 8px 3px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  text-align: center;
+
+}
+
+
+
+/* Arrows */
+
+.leftArrow {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translate(0, -50%);
+
+  left: 32px;
+
+  font-size: 50px;
+
+  font-weight: 700;
+
+  color: #fff;
+
+  z-index: 1;
+
+  cursor: pointer;
+
+}
+
+
+
+.rightArrow {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translate(0, -50%);
+
+  right: 32px;
+
+  font-size: 50px;
+
+  font-weight: 700;
+
+  color: #fff;
+
+  z-index: 1;
+
+  cursor: pointer;
+
+}
+
+
+
+.container-images {
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+
+
+div.active {
+
+  background: #ccc;
+
+  width: 15px;
+
+  height: 15px;
+
+  border-radius: 50%;
+
+}
+
+/* Tablets y Pantallas Medianas (hasta 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 92%;
+    /* Deja un margen bonito a los lados */
+    height: auto;
+    /* Quitamos la altura fija */
+    aspect-ratio: 16 / 9;
+    /* Forzamos formato panorámico perfecto */
+    margin: 20px auto;
+    padding: 0;
+  }
+
+  /* Obligamos a la imagen a llenar el 100% sin huecos azules abajo */
+  .container-images {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .container-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Recorta suavemente para no dejar espacios vacíos */
+    object-position: center;
+    /* Centra la foto en el caballo/paisaje */
+    margin: 0;
+  }
+
+  .leftArrow,
+  .rightArrow {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .leftArrow {
+    left: 10px;
+  }
+
+  .rightArrow {
+    right: 10px;
+  }
+}
+
+.container-images ul {
+  height: 100%;
+}
+
+/* Móviles y Pantallas Pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    aspect-ratio: 4 / 3;
+    /* Un formato un poquito más alto ideal para teléfonos */
+    margin: 15px auto;
+  }
+
+  .container-images {
+    border-radius: 10px;
+  }
+
+  .container-images ul {
+    height: 100%;
+  }
+
+  /* Flechas un poco más chicas y semitransparentes */
+  .leftArrow,
+  .rightArrow {
+    font-size: 50px;
+    width: 60px;
+    height: 80px;
+  }
+
+  .leftArrow {
+    left: 10px;
+  }
+
+  .rightArrow {
+    right: 10px;
+    text-align: right;
+  }
+}
+
 /* --- ESTILOS DE ESTRUCTURA Y VARIABLES --- */
 :root {
   --blue-900: #1e3a8a;
@@ -206,6 +470,7 @@ div .guatape {
 div .sanRafa {
   background-color: #2DEB73;
 }
+
 div .packages {
   background-color: #ff0000;
 }
@@ -292,8 +557,9 @@ div .subPlaces {
   font-weight: bold;
   cursor: pointer;
 }
+
 button a {
-color: #ffffff;
+  color: #ffffff;
 }
 
 .btn-add:hover {
@@ -564,4 +830,145 @@ color: #ffffff;
   font-size: 1.25rem;
   font-weight: 900;
   color: var(--cyan-600);
+}
+
+/* ==========================================================================
+   9. SECCIÓN RESPONSIVA (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- TABLETS Y PANTALLAS MEDIANAS (Hasta 768px) --- */
+@media (max-width: 768px) {
+
+  /* Header: Centramos los elementos al apilarse */
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .logo-img {
+    margin-right: 0;
+    /* Eliminamos los 100px que empujaban el menú */
+    height: 3.5rem;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Hero Section: Reducimos tipografía para que no sature */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  /* Secciones */
+  .section-container {
+    padding: 2rem 1rem;
+  }
+
+  /* Botones de Lugares (Places) */
+  div .places {
+    font-size: 22px;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* Detalle de Actividad */
+  .detail-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .detail-img-wrapper {
+    height: 18rem;
+    /* Reducimos la altura fija de la imagen */
+  }
+
+  .detail-body {
+    padding: 1.5rem;
+  }
+
+  .detail-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* --- MÓVILES Y PANTALLAS PEQUEÑAS (Hasta 480px) --- */
+@media (max-width: 480px) {
+
+  /* Navegación más compacta para dedos amigables */
+  .nav-btn {
+    font-size: 0.8rem;
+    padding-bottom: 2px;
+  }
+
+  /* Hero Section */
+  .hero-container {
+    height: 60vh;
+    /* Reducimos la altura total en celulares */
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .btn-primary {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Grids: Forzamos 1 sola columna para que las cards respiren */
+  .grid-5-cols {
+    grid-template-columns: 1fr;
+    padding: 10px 0;
+  }
+
+  /* Ajuste de botones apilados para Guatapé / San Rafael */
+  div .placesContainer {}
+
+  div .places,
+  div .subPlaces {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  /* Carrito Lateral: En móviles se vuelve pantalla completa */
+  .cart-sidebar {
+    width: 100%;
+  }
+
+  .cart-floating-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* Vistas de Texto (About Us / Contact) */
+  .text-view-container {
+    padding: 3rem 1rem;
+  }
+
+  .text-view-title {
+    font-size: 1.75rem;
+  }
+
+  .text-view-desc {
+    font-size: 1rem;
+  }
+
+  .contact-icons {
+    gap: 1.5rem;
+  }
+
+  .contact-icon {
+    font-size: 2.8rem;
+  }
 }
