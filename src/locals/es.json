@@ -1,0 +1,109 @@
+{
+  "navbar": {
+    "services": "Servicios",
+    "about": "Sobre nosotros",
+    "contact": "Contáctanos",
+    "products": "Productos locales"
+  },
+  "hero": {
+    "title": "Explora lugares increíbles",
+    "button": "Explorar"
+  },
+  "about": {
+    "title": "Nuestra historia",
+    "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales..."
+  },
+  "contact": {
+    "title": "Contáctanos"
+  },
+  "products": {
+    "title": "Nuestros productos comunitarios"
+  },
+  "common": {
+    "viewMore": "VER MÁS",
+    "add": "AGREGAR",
+    "goBack": "VOLVER",
+    "makeQuote": "COTIZAR AHORA",
+    "accommodation": "Alojamiento",
+    "activities": "Actividades",
+    "packages": "Paquetes"
+  },
+  "cart": {
+    "title": "Mi itinerario",
+    "empty": "Aún no hay actividades seleccionadas.",
+    "checkout": "Finalizar compra"
+  },
+  "guatapeAccommodations": {
+    "basicTitle": "Alojamiento Básico GUATAPÉ",
+    "basicDesc": "Ofrecemos una variedad de alojamientos para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia lujosa, tenemos opciones para todos.",
+    "basicstats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
+    "specialTitle": "Alojamiento Especial GUATAPÉ",
+    "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "specialstats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "deluxeTitle": "Alojamiento Deluxe GUATAPÉ",
+    "deluxeDesc": "Nuestros alojamientos deluxe ofrecen lo máximo en confort y lujo, con comodidades premium y servicios personalizados.",
+    "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
+  },
+  "guatapeActivities": {
+    "RidingTitle": "Cabalgata Ecológica GUATAPÉ",
+    "RidingDesc": "Ofrecemos una variedad de actividades para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia completa, tenemos opciones para todos.",
+    "RidingStats": "Nuestras opciones básicas brindan una experiencia cómoda y asequible para viajeros que buscan una actividad sencilla pero agradable.",
+    "riverTitle": "Kayak en el Río GUATAPÉ",
+    "riverDesc": "Experimenta la emoción de los ríos locales.",
+    "riverStats": "Duración: 2h | Dificultad: Media",
+    "forestTrekTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
+    "forestTrekDesc": "Descubre la increíble biodiversidad del bosque.",
+    "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
+    "coffeFarmTitle": "Tour Finca Cafetera GUATAPÉ",
+    "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
+    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil"
+  },
+  "sanRafaAccommodations": {
+    "basicTitle": "Alojamiento Básico San Rafael",
+    "basicDesc": "Ofrecemos una variedad de alojamientos para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia lujosa, tenemos opciones para todos.",
+    "basicStats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
+    "specialTitle": "Alojamiento Especial San Rafael",
+    "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "specialStats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "deluxeTitle": "Alojamiento Deluxe San Rafael",
+    "deluxeDesc": "Nuestros alojamientos deluxe ofrecen lo máximo en confort y lujo, con comodidades premium y servicios personalizados.",
+    "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
+  },
+  "sanRafaActivities": {
+    "RidingTitle": "Cabalgata Ecológica GUATAPÉ",
+    "RidingDesc": "Ofrecemos una variedad de actividades para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia completa, tenemos opciones para todos.",
+    "RidingStats": "Nuestras opciones básicas brindan una experiencia cómoda y asequible para viajeros que buscan una actividad sencilla pero agradable.",
+    "riverTitle": "Kayak en el Río GUATAPÉ",
+    "riverDesc": "Experimenta la emoción de los ríos locales.",
+    "riverStats": "Duración: 2h | Dificultad: Media",
+    "forestTrekTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
+    "forestTrekDesc": "Descubre la increíble biodiversidad del bosque.",
+    "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
+    "coffeFarmTitle": "Tour Finca Cafetera GUATAPÉ",
+    "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
+    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil"
+  },
+  "packages": {
+    "birdWatchingTitle": "Observación de Aves Ecológica GUATAPÉ",
+    "birdWatchingDesc": "Observa diversas especies de aves en su hábitat natural.",
+    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil",
+    "orientalTitle": "Kayak en el Río Oriental GUATAPÉ",
+    "orientalDesc": "Experimenta la emoción de los ríos locales.",
+    "orientalStats": "Duración: 2h | Dificultad: Media",
+    "riverTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
+    "riverDesc": "Descubre la increíble biodiversidad del bosque.",
+    "riverStats": "Duración: 5h | Dificultad: Difícil"
+  },
+  "localProducts": {
+    "ponchoTitle": "Poncho Hecho a Mano",
+    "ponchoDesc": "Poncho tradicional tejido artesanalmente.",
+    "coffeeTitle": "Granos de Café Orgánico",
+    "coffeeDesc": "1 libra de café local premium.",
+    "mugTitle": "Taza de Cerámica Artesanal",
+    "mugDesc": "Taza de cerámica pintada a mano.",
+    "bangleTitle": "Pulsera Tejida",
+    "bangleDesc": "Pulsera tradicional colorida.",
+    "honeyTitle": "Miel Local",
+    "honeyDesc": "Miel orgánica pura."
+  }
+}

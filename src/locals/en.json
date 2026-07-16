@@ -1,0 +1,109 @@
+{
+  "navbar": {
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "products": "Local Products"
+  },
+  "hero": {
+    "title": "Explore Amazing Places",
+    "button": "Explore"
+  },
+  "about": {
+    "title": "Our Story",
+    "description": "At BLUCO, we believe in sustainable tourism that connects travelers with the magic of Colombia while supporting local communities..."
+  },
+  "contact": {
+    "title": "Contact Us"
+  },
+  "products": {
+    "title": "Our Community Products"
+  },
+  "common": {
+    "viewMore": "VIEW MORE",
+    "add": "ADD",
+    "goBack": "GO BACK",
+    "makeQuote": "MAKE MY QUOTE",
+    "accommodation": "Accommodation",
+    "activities": "Activities",
+    "packages": "Packages"
+  },
+  "cart": {
+    "title": "My Itinerary",
+    "empty": "No activities selected yet.",
+    "checkout": "Checkout"
+  },
+  "guatapeAccommodations": {
+    "basicTitle": "Accomodation Basic GUATAPE",
+    "basicDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
+    "basicStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
+    "specialTitle": "Accomodation Special GUATAPE",
+    "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
+    "specialStats": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
+    "deluxeTitle": "Accomodation Deluxe GUATAPE",
+    "deluxeDesc": "Our deluxe accommodations offer the ultimate in comfort and luxury, with premium amenities and personalized services.",
+    "deluxeStats": "Our deluxe accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay."
+
+  },  "guatapeActivities": {
+    "RidingTitle": "Ecological Horseback Riding GUATAPE",
+    "RidingDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
+    "RidingStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
+    "riverTitle": "River Kayaking GUATAPE",
+    "riverDesc": "Experience the thrill of the local rivers.",
+    "riverStats": "Duration: 2h | Difficulty: Medium",
+    "forestTrekTitle": "Cloud Forest Trek GUATAPE",
+    "forestTrekDesc": "Discover the amazing biodiversity of the forest.",
+    "forestTrekStats": "Duration: 5h | Difficulty: Hard",
+    "coffeFarmTitle": "Coffee Farm Tour GUATAPE",
+    "coffeFarmDesc": "Learn the secrets of local coffee production.",
+    "coffeFarmStats": "Duration: 4h | Difficulty: Easy"
+  },
+    "sanRafaAccommodations": {
+    "basicTitle": "Accomodation Basic San Rafael",
+    "basicDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
+    "basicStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
+    "specialTitle": "Accomodation Special San Rafael",
+    "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
+    "specialStats": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
+    "deluxeTitle": "Accomodation Deluxe San Rafael",
+    "deluxeDesc": "Our deluxe accommodations offer the ultimate in comfort and luxury, with premium amenities and personalized services.",
+    "deluxeStats": "Our deluxe accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay."
+
+  },  "sanRafaActivities": {
+    "RidingTitle": "Ecological Horseback Riding GUATAPE",
+    "RidingDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
+    "RidingStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
+    "riverTitle": "River Kayaking GUATAPE",
+    "riverDesc": "Experience the thrill of the local rivers.",
+    "riverStats": "Duration: 2h | Difficulty: Medium",
+    "forestTrekTitle": "Cloud Forest Trek GUATAPE",
+    "forestTrekDesc": "Discover the amazing biodiversity of the forest.",
+    "forestTrekStats": "Duration: 5h | Difficulty: Hard",
+    "coffeFarmTitle": "Coffee Farm Tour GUATAPE",
+    "coffeFarmDesc": "Learn the secrets of local coffee production.",
+    "coffeFarmStats": "Duration: 4h | Difficulty: Easy"
+  },  "packages": {
+    "birdWatchingTitle": "Ecological Bird Watching GUATAPE",
+    "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
+    "birdWatchingStats": "Duration: 3h | Difficulty: Easy",
+    "orientalTitle": "Oriental River Kayaking GUATAPE",
+    "orientalDesc": "Experience the thrill of the local rivers.",
+    "orientalStats": "Duration: 2h | Difficulty: Medium",
+    "riverTitle": "Cloud Forest Trek GUATAPE",
+    "riverDesc": "Discover the amazing biodiversity of the forest.",
+    "riverStats": "Duration: 5h | Difficulty: Hard"
+},  "localProducts": {
+    "ponchoTitle": "Handmade Poncho",
+    "ponchoDesc": "Traditional woven poncho.",
+    "coffeeTitle": "Organic Coffee Beans",
+    "coffeeDesc": "1lb of premium local coffee.",
+    "mugTitle": "Artisan Ceramic Mug",
+    "mugDesc": "Hand-painted ceramic mug.",
+    "bangleTitle": "Woven Bracelet",
+    "bangleDesc": "Colorful traditional bracelet.",
+    "honeyTitle": "Local Honey",
+    "honeyDesc": "Pure organic honey."
+}
+
+
+}
