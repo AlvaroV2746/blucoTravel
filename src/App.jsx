@@ -61,7 +61,7 @@ export default function BlucoApp() {
       ...prev,
       [section]: !prev[section] // Invierte el valor (si es true pasa a false y viceversa)
     }));
-  }; // <-- Llave extra eliminada de aquí
+  }; 
 
   // Funciones de Lógica
   const addToCart = (activity) => {
@@ -78,7 +78,7 @@ export default function BlucoApp() {
   };
 
   const handleQuote = () => {
-    const activityNames = cart.map(item => item.name).join(', ');
+    const activityNames = cart.map(item => t(item.name)).join(', ');
     const text = encodeURIComponent(`Hello, I would like to quote these activities: ${activityNames}`);
     window.open(`https://wa.me/573184559655?text=${text}`, '_blank');
   };
