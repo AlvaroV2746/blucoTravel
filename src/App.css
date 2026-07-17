@@ -635,6 +635,9 @@ button a {
 }
 
 /* --- 7. VISTAS ABOUT US Y CONTACT --- */
+
+
+
 .text-view-container {
   max-width: 56rem;
   margin: 0 auto;
@@ -660,6 +663,26 @@ button a {
   display: flex;
   justify-content: center;
   gap: 2.5rem;
+}
+
+.whatsapp{
+  color: #25D366;
+}
+.whatsapp:hover {
+  color: #1DA851;
+}
+.instagram{
+  color: #db30e1;
+}
+.instagram:hover {
+  color: #c13584;
+}
+.envelope{
+  color: #D44638;
+}
+.envelope:hover{
+    color: #882b22;
+
 }
 
 .contact-icon {

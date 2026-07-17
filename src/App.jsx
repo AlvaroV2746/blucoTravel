@@ -13,6 +13,18 @@ import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN 
 import './i18n.js';
 import { useTranslation } from 'react-i18next';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
+
+
+{/* 
+<FontAwesomeIcon icon={faPlane} />
+*/}
+
+
 
 // --- PLACEHOLDER DATA ---
 const guatapeAcommodations = [
@@ -227,9 +239,9 @@ export default function BlucoApp() {
           <div>
             <img src={logoFull} alt="Logo BLUCO" className="logo-img" style={{ filter: 'brightness(0) invert(1)' }} />
           </div>
-          <div>
-            <a href="https://wa.me/573184559655" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', fontSize: '2rem' }}>
-              📱
+          <div >
+            <a href="https://wa.me/573184559655" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', fontSize: '4rem' } } >
+              <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>
         </div>
@@ -240,7 +252,7 @@ export default function BlucoApp() {
         onClick={() => setIsCartOpen(true)}
         className="cart-floating-btn"
       >
-        <span style={{ fontSize: '1.5rem' }}>🛒</span>
+        <span style={{ fontSize: '1.5rem' }}><FontAwesomeIcon icon={faPlane} rotation={-45} /></span>
         {cart.length > 0 && (
           <span className="cart-badge">
             {cart.length}
@@ -492,10 +504,9 @@ function ContactUsView() {
     <div className="text-view-container">
       <h2 className="text-view-title">{t('contact.title')}</h2>
       <div className="contact-icons">
-        <a href="https://wa.me/573184559655" className="contact-icon">📱</a>
-        <a href="#" className="contact-icon">📸</a>
-        <a href="#" className="contact-icon">🎵</a>
-        <a href="#" className="contact-icon">📧</a>
+        <a href="https://wa.me/573184559655" className="contact-icon whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></a>
+        <a href="#" className="contact-icon instagram"><FontAwesomeIcon icon={faInstagram} /></a>
+        <a href="#" className="contact-icon envelope"><FontAwesomeIcon icon={faEnvelope} /></a>
       </div>
     </div>
   );
