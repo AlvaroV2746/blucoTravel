@@ -10,42 +10,44 @@ import roomImg from './assets/images/room.webp';
 import packImg from './assets/images/pack.png';
 import { data, LOCAL_PRODUCTS } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
 import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN DEL COMPONENTE CARRUSEL
+import './i18n.js';
+import { useTranslation } from 'react-i18next';
 
 
 // --- PLACEHOLDER DATA ---
 const guatapeAcommodations = [
-  { id: 1, name: "Accomodation Basic GUATAPE", img: roomImg, desc: "A basic accommodation.", stats: "basic accomodation with asdasda dasdaf gheth asdfs" },
-  { id: 2, name: "Accomodation Special GUATAPE", img: roomImg, desc: "A special accommodation.", stats: "special accomodation with asdasda dasdaf gheth asdfs" },
-  { id: 3, name: "Accomodation Deluxe GUATAPE", img: roomImg, desc: "A deluxe accommodation.", stats: "deluxe accomodation with asdasda dasdaf gheth asdfs" }
+  { id: 1, name: "guatapeAccommodations.basicTitle", img: roomImg, desc: "guatapeAccommodations.basicDesc", stats: "guatapeAccommodations.basicStats" },
+  { id: 2, name: "guatapeAccommodations.specialTitle", img: roomImg, desc: "guatapeAccommodations.specialDesc" , stats: "guatapeAccommodations.specialStats" },
+  { id: 3, name: "guatapeAccommodations.deluxeTitle", img: roomImg, desc: "guatapeAccommodations.deluxeDesc", stats: "guatapeAccommodations.deluxeStats" }
 ];
 const guatapeServices = [
-  { id: 1, name: "Ecological Horseback Riding GUATAPE", img: horsebackImg, desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
-  { id: 2, name: "River Kayaking GUATAPE", img: riverImg, desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
-  { id: 3, name: "Cloud Forest Trek GUATAPE", img: hikingImg, desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
-  { id: 4, name: "Coffee Farm Tour GUATAPE", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" }
+  { id: 1, name: "guatapeActivities.RidingTitle", img: horsebackImg, desc: "guatapeActivities.RidingDesc", stats: "guatapeActivities.RidingStats" },
+  { id: 2, name: "guatapeActivities.riverTitle", img: riverImg, desc: "guatapeActivities.riverDesc", stats: "guatapeActivities.riverStats" },
+  { id: 3, name: "guatapeActivities.forestTrekTitle", img: hikingImg, desc: "guatapeActivities.forestTrekDesc", stats: "guatapeActivities.forestTrekStats" },
+  { id: 4, name: "guatapeActivities.coffeFarmTitle", img: cacaoTourImg, desc: "guatapeActivities.coffeFarmDesc", stats: "guatapeActivities.coffeFarmStats" }
 ];
 
 const sanRafaAcommodations = [
-  { id: 1, name: "Accomodation Basic SAN RAFEL", img: roomImg, desc: "A basic accommodation.", stats: "basic accomodation with asdasda dasdaf gheth asdfs" },
-  { id: 2, name: "Accomodation Special SAN RAFEL", img: roomImg, desc: "A special accommodation.", stats: "special accomodation with asdasda dasdaf gheth asdfs" },
-  { id: 3, name: "Accomodation Deluxe SAN RAFEL", img: roomImg, desc: "A deluxe accommodation.", stats: "deluxe accomodation with asdasda dasdaf gheth asdfs" }
+  { id: 1, name: "sanRafaAccommodations.basicTitle", img: roomImg, desc: "sanRafaAccommodations.basicDesc", stats: "sanRafaAccommodations.basicStats" },
+  { id: 2, name: "sanRafaAccommodations.specialTitle", img: roomImg, desc: "sanRafaAccommodations.specialDesc", stats: "sanRafaAccommodations.specialStats" },
+  { id: 3, name: "sanRafaAccommodations.deluxeTitle", img: roomImg, desc: "sanRafaAccommodations.deluxeDesc", stats: "sanRafaAccommodations.deluxeStats" }
 ];
 const sanRafaServices = [
-  { id: 1, name: "Ecological Horseback Riding SAN RAFEL", img: horsebackImg, desc: "A beautiful ride through the ecological trails.", stats: "Duration: 3h | Difficulty: Easy" },
-  { id: 2, name: "River Kayaking SAN RAFEL", img: riverImg, desc: "Experience the thrill of the local rivers.", stats: "Duration: 2h | Difficulty: Medium" },
-  { id: 3, name: "Cloud Forest Trek SAN RAFEL", img: hikingImg, desc: "Discover the amazing biodiversity of the forest.", stats: "Duration: 5h | Difficulty: Hard" },
-  { id: 4, name: "Coffee Farm Tour SAN RAFEL", img: cacaoTourImg, desc: "Learn the secrets of local coffee production.", stats: "Duration: 4h | Difficulty: Easy" },
-  { id: 5, name: "Bird Watching SAN RAFEL", img: birdImg, desc: "Spot exotic birds in their natural habitat.", stats: "Duration: 3h | Difficulty: Easy" }
+  { id: 1, name: "sanRafaActivities.RidingTitle", img: horsebackImg, desc: "sanRafaActivities.RidingDesc", stats: "sanRafaActivities.RidingStats" },
+  { id: 3, name: "sanRafaActivities.forestTrekTitle", img: hikingImg, desc: "sanRafaActivities.forestTrekDesc", stats: "sanRafaActivities.forestTrekStats" },
+  { id: 4, name: "sanRafaActivities.coffeFarmTitle", img: cacaoTourImg, desc: "sanRafaActivities.coffeFarmDesc", stats: "sanRafaActivities.coffeFarmStats" },
+  { id: 5, name: "sanRafaActivities.birdWatchingTitle", img: birdImg, desc: "sanRafaActivities.birdWatchingDesc", stats: "sanRafaActivities.birdWatchingStats" }
 ];
 const packages = [
-  { id: 1, name: "Bird Watching PACKAGE", img: packImg, desc: "2 days 1 night experience watching birds", stats: "Know 3 different towns and their local bird species" },
-  { id: 2, name: "Antioquias's Oriental PACKAGE", img: packImg, desc: "know 3 towns from antioquia and enjoy the most beautiful landscapes", stats: "transportation included, all food included, " },
-  { id: 3, name: "River's PACKAGE", img: packImg, desc: "Discover the amazingand all the most beautiful rivers in Antioquia.", stats: "3 days, accommodation included, food included, transportation included" }
+  { id: 1, name: "packages.birdWatchingTitle", img: packImg, desc: "packages.birdWatchingDesc", stats: "packages.birdWatchingStats" },
+  { id: 2, name: "packages.orientalTitle", img: packImg, desc: "packages.orientalDesc", stats: "packages.orientalStats" },
+  { id: 3, name: "packages.riverTitle", img: packImg, desc: "packages.riverDesc", stats: "packages.riverStats" }
 ];
 
 
 // --- MAIN APPLICATION COMPONENT ---
 export default function BlucoApp() {
+  const { t, i18n } = useTranslation();
   const [currentView, setCurrentView] = useState('home');
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -127,6 +129,11 @@ export default function BlucoApp() {
     return () => clearInterval(timer);
   }, [currentView]);
 
+  //function to handle language change
+
+  const changeLang = (lng) => {
+    i18n.changeLanguage(lng); // Cambia entre 'es' y 'en' al instante
+  };
 
   return (
     <div className="app-container">
@@ -138,17 +145,28 @@ export default function BlucoApp() {
         >
           <img src={logoFull} alt="Logo BLUCO" className="logo-img" />
         </div>
-        <nav className="nav-menu">
-          {['Services', 'ABOUT US', 'CONTACT US', 'LOCAL PRODUCTS'].map((item) => (
-            <button
-              key={item}
-              onClick={() => { setCurrentView(item.toLowerCase().replace(' ', '')); setSelectedActivity(null); }}
-              className="nav-btn"
-            >
-              {item}
-            </button>
-          ))}
-        </nav>
+<nav className="nav-menu">
+  {[
+    { id: 'services', label: t('navbar.services') },
+    { id: 'aboutus', label: t('navbar.about') },
+    { id: 'contactus', label: t('navbar.contact') },
+    { id: 'localproducts', label: t('navbar.products') }
+  ].map((item) => (
+    <button
+      key={item.id}
+      onClick={() => { setCurrentView(item.id); setSelectedActivity(null); }}
+      className="nav-btn"
+    >
+      {item.label}
+    </button>
+  ))}
+</nav>
+
+        {/* Selector de idiomas para el turista */}
+      <div className="lang-selector">
+        <button onClick={() => changeLang('es')}>ES</button>
+        <button onClick={() => changeLang('en')}>EN</button>
+      </div>
       </header>
 
       {/* RENDERIZADO CONDICIONAL DE VISTAS */}
@@ -235,17 +253,17 @@ export default function BlucoApp() {
         <div className="cart-overlay">
           <div className="cart-sidebar">
             <div className="cart-header">
-              <h2>My Itinerary</h2>
+              <h2>{t('cart.title')}</h2>
               <button onClick={() => setIsCartOpen(false)} className="btn-close">&times;</button>
             </div>
             <div className="cart-items">
               {cart.length === 0 ? (
-                <p style={{ textAlign: 'center', color: '#6b7280', marginTop: '2.5rem' }}>No activities selected yet.</p>
+                <p style={{ textAlign: 'center', color: '#6b7280', marginTop: '2.5rem' }}>{t('cart.empty')}</p>
               ) : (
                 cart.map((item, index) => (
                   <div key={index} className="cart-item">
-                    <img src={item.img} alt={item.name} className="cart-item-img" />
-                    <span className="cart-item-name">{item.name}</span>
+                    <img src={item.img} alt={t(item.name)} className="cart-item-img" />
+                    <span className="cart-item-name">{t(item.name)}</span>
                     <button onClick={() => removeFromCart(index)} className="btn-remove">
                       X
                     </button>
@@ -259,7 +277,7 @@ export default function BlucoApp() {
                 disabled={cart.length === 0}
                 className="btn-quote"
               >
-                MAKE MY QUOTE
+                {t("common.makeQuote")}
               </button>
             </div>
           </div>
@@ -273,6 +291,7 @@ export default function BlucoApp() {
 
 // 4a. ACTIVITIES VIEW
 function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
+  const { t } = useTranslation();
   return (
     <div className="placesContainer">
       {/* ----------------------------- Botón Guatape ----------------------------- */}
@@ -280,21 +299,21 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
 
       {openSections['guatape'] && (
         <div className="guatapeContainer servicesBackground">
-          <div onClick={() => toggleSection('guatape-accom')} className="subPlaces">Accommodations</div>
+          <div onClick={() => toggleSection('guatape-accom')} className="subPlaces">{t('common.accommodation')}</div>
           {openSections['guatape-accom'] &&
             <div className="section-container">
               <div className="grid-5-cols">
                 {guatapeAcommodations.map((activity) => (
                   <div key={activity.id} className="card">
-                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <img src={activity.img} alt={t(activity.name)} className="card-img" onClick={() => onSelect(activity)} />
                     <div className="card-body">
-                      <h3 className="card-title">{activity.name}</h3>
+                      <h3 className="card-title">{t(activity.name)}</h3>
                       <div className="card-actions">
                         <button onClick={() => onSelect(activity)} className="btn-view">
-                          &#128065; VIEW MORE
+                          &#128065; {t('common.viewMore')}
                         </button>
                         <button onClick={() => onAdd(activity)} className="btn-add">
-                          ADD
+                          {t('common.add')}
                         </button>
                       </div>
                     </div>
@@ -304,7 +323,7 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
             </div>
           }
 
-          <div onClick={() => toggleSection('guatape-act')} className="subPlaces">Activities</div>
+          <div onClick={() => toggleSection('guatape-act')} className="subPlaces">{t('common.activities')}</div>
           {openSections['guatape-act'] &&
             <div className="guatapeContainer servicesBackground">
               {openSections['guatape-act'] &&
@@ -312,15 +331,15 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
                   <div className="grid-5-cols ">
                     {guatapeServices.map((activity) => (
                       <div key={activity.id} className="card">
-                        <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                        <img src={activity.img} alt={t(activity.name)} className="card-img" onClick={() => onSelect(activity)} />
                         <div className="card-body">
-                          <h3 className="card-title">{activity.name}</h3>
+                          <h3 className="card-title">{t(activity.name)}</h3>
                           <div className="card-actions">
                             <button onClick={() => onSelect(activity)} className="btn-view">
-                              &#128065; VIEW MORE
+                              &#128065; {t('common.viewMore')}
                             </button>
                             <button onClick={() => onAdd(activity)} className="btn-add">
-                              ADD
+                              {t('common.add')}
                             </button>
                           </div>
                         </div>
@@ -339,21 +358,21 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
 
       {openSections['sanrafael'] && (
         <div className="sanRafaContainer servicesBackground">
-          <div onClick={() => toggleSection('sanrafael-accom')} className="subPlaces">Accommodations</div>
+          <div onClick={() => toggleSection('sanrafael-accom')} className="subPlaces">{t('common.accommodation')}</div>
           {openSections['sanrafael-accom'] &&
             <div className="section-container">
               <div className="grid-5-cols centered">
                 {sanRafaAcommodations.map((activity) => (
                   <div key={activity.id} className="card">
-                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <img src={activity.img} alt={t(activity.name)} className="card-img" onClick={() => onSelect(activity)} />
                     <div className="card-body">
-                      <h3 className="card-title">{activity.name}</h3>
+                      <h3 className="card-title">{t(activity.name)}</h3>
                       <div className="card-actions">
                         <button onClick={() => onSelect(activity)} className="btn-view">
-                          &#128065; VIEW MORE
+                          &#128065; {t('common.viewMore')}
                         </button>
                         <button onClick={() => onAdd(activity)} className="btn-add">
-                          ADD
+                          {t('common.add')}
                         </button>
                       </div>
                     </div>
@@ -363,21 +382,21 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
             </div>
           }
 
-          <div onClick={() => toggleSection('sanrafael-act')} className="subPlaces">Activities</div>
+          <div onClick={() => toggleSection('sanrafael-act')} className="subPlaces">{t('common.activities')}</div>
           {openSections['sanrafael-act'] &&
             <div className="section-container">
               <div className="grid-5-cols">
                 {sanRafaServices.map((activity) => (
                   <div key={activity.id} className="card">
-                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <img src={activity.img} alt={t(activity.name)} className="card-img" onClick={() => onSelect(activity)} />
                     <div className="card-body">
-                      <h3 className="card-title">{activity.name}</h3>
+                      <h3 className="card-title">{t(activity.name)}</h3>
                       <div className="card-actions">
                         <button onClick={() => onSelect(activity)} className="btn-view">
-                          &#128065; VIEW MORE
+                          &#128065; {t('common.viewMore')}
                         </button>
                         <button onClick={() => onAdd(activity)} className="btn-add">
-                          ADD
+                          {t('common.add')}
                         </button>
                       </div>
                     </div>
@@ -391,7 +410,7 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
 
       {/* ----------------------------- fin San Rafael ----------------------------- */}
       {/* ----------------------------- Inicio Paquetes ----------------------------- */}
-      <div onClick={() => toggleSection('packages')} className="packages places ">Packages</div>
+      <div onClick={() => toggleSection('packages')} className="packages places ">{t('common.packages')}</div>
 
       {
         openSections['packages'] && (
@@ -400,15 +419,15 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
               <div className="grid-5-cols ">
                 {packages.map((activity) => (
                   <div key={activity.id} className="card">
-                    <img src={activity.img} alt={activity.name} className="card-img" onClick={() => onSelect(activity)} />
+                    <img src={activity.img} alt={t(activity.name)} className="card-img" onClick={() => onSelect(activity)} />
                     <div className="card-body">
-                      <h3 className="card-title">{activity.name}</h3>
+                      <h3 className="card-title">{t(activity.name)}</h3>
                       <div className="card-actions">
                         <button onClick={() => onSelect(activity)} className="btn-view">
-                          &#128065; VIEW MORE
+                          &#128065; {t('common.viewMore')}
                         </button>
                         {/* <a href="https://wa.me/573184559655" className="contact-icon"><button className="btn-add">  </button></a> */}
-                        <button className="btn-add"> <a href="https://wa.me/573184559655">MAKE MY QUOTE</a></button>
+                        <button className="btn-add"> <a href="https://wa.me/573184559655">{t('common.makeQuote')}</a></button>
 
                       </div>
                     </div>
@@ -427,22 +446,23 @@ function ActivitiesView({ onSelect, onAdd, openSections, toggleSection }) {
 
 // 4b. ACTIVITY EXPANDED VIEW
 function ActivityDetailView({ activity, onBack }) {
+    const { t } = useTranslation();
   return (
     <div className="detail-container">
       <div className="detail-card">
         <div className="detail-img-wrapper">
-          <img src={activity.img} alt={activity.name} className="detail-img" />
+          <img src={activity.img} alt={t(activity.name)} className="detail-img" />
         </div>
         <div className="detail-body">
-          <h2 className="detail-title">{activity.name}</h2>
+          <h2 className="detail-title">{t(activity.name)}</h2>
           <div className="detail-stats">
-            {activity.stats}
+            {t(activity.stats)}
           </div>
           <p className="detail-desc">
-            {activity.desc} [Detailed placeholder text for description. Here you can write extensive paragraphs about the itinerary, what to bring, and expectations.]
+            {t(activity.desc)} [Detailed placeholder text for description. Here you can write extensive paragraphs about the itinerary, what to bring, and expectations.]
           </p>
           <button onClick={onBack} className="btn-back">
-            GO BACK
+            {t('common.goBack')}
           </button>
         </div>
       </div>
@@ -452,11 +472,13 @@ function ActivityDetailView({ activity, onBack }) {
 
 // 4c. ABOUT US VIEW
 function AboutUsView() {
+  const { t } = useTranslation();
+
   return (
     <div className="text-view-container">
-      <h2 className="text-view-title">Our Story</h2>
+      <h2 className="text-view-title">{t('about.title')}</h2> 
       <p className="text-view-desc">
-        [Placeholder description for the company]. We are BLUCO, dedicated to community integration and eco-friendly tourism. Our mission is to connect travelers with authentic local experiences while preserving the natural beauty of our surroundings.
+        {t('about.description')}
       </p>
     </div>
   );
@@ -464,9 +486,11 @@ function AboutUsView() {
 
 // 4d. CONTACT US VIEW
 function ContactUsView() {
+  const { t } = useTranslation(); // <-- 1. Llamamos al hook aquí también
+
   return (
     <div className="text-view-container">
-      <h2 className="text-view-title">Contact Us</h2>
+      <h2 className="text-view-title">{t('contact.title')}</h2>
       <div className="contact-icons">
         <a href="https://wa.me/573184559655" className="contact-icon">📱</a>
         <a href="#" className="contact-icon">📸</a>
@@ -479,17 +503,19 @@ function ContactUsView() {
 
 // 4e. LOCAL PRODUCTS VIEW
 function LocalProductsView() {
+  const { t } = useTranslation(); // <-- 1. Y aquí también
+
   return (
     <div className="section-container">
-      <h2 className="section-title">Our Community Products</h2>
+      <h2 className="section-title">{t('products.title')}</h2>
       <div className="grid-5-cols">
         {LOCAL_PRODUCTS.map((product) => (
           <div key={product.id} className="card">
-            <img src={product.img} alt={product.name} className="card-img" />
+            <img src={product.img} alt={t(product.name)} className="card-img" />
             <div className="card-body">
-              <h3 className="card-title">{product.name}</h3>
-              <p className="product-desc">{product.desc}</p>
-              <div className="product-price">{product.price}</div>
+              <h3 className="card-title">{t(product.name)}</h3>
+              <p className="product-desc">{t(product.desc)}</p>
+              <div className="product-price">{t(product.price)}</div>
             </div>
           </div>
         ))}
