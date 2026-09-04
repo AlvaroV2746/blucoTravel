@@ -333,62 +333,6 @@ div.active {
   border-bottom: 2px solid var(--cyan-500);
 }
 
-/* --- 2. HERO VIEW --- */
-.hero-container {
-  position: relative;
-  height: 80vh;
-  width: 100%;
-  overflow: hidden;
-  background-color: var(--blue-900);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
-  transition: opacity 1s ease;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  color: #ffffff;
-  padding: 0 1rem;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  letter-spacing: -1px;
-}
-
-.btn-primary {
-  background-color: var(--cyan-500);
-  color: var(--blue-950);
-  font-weight: bold;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-}
-
-.btn-primary:hover {
-  background-color: var(--cyan-400);
-  transform: scale(1.05);
-}
-
 /* --- 3. FOOTER --- */
 .footer {
   background-color: var(--blue-950);
@@ -881,11 +825,6 @@ button a {
     justify-content: center;
   }
 
-  /* Hero Section: Reducimos tipografía para que no sature */
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   /* Secciones */
   .section-container {
     padding: 2rem 1rem;
@@ -923,21 +862,6 @@ button a {
   .nav-btn {
     font-size: 0.8rem;
     padding-bottom: 2px;
-  }
-
-  /* Hero Section */
-  .hero-container {
-    height: 60vh;
-    /* Reducimos la altura total en celulares */
-  }
-
-  .hero-title {
-    font-size: 1.85rem;
-  }
-
-  .btn-primary {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
   }
 
   /* Grids: Forzamos 1 sola columna para que las cards respiren */

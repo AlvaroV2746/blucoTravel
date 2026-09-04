@@ -1,0 +1,18 @@
+{
+  "ignore": [
+    "node_modules/**",
+    "dist/**",
+    ".git/**",
+    "public/**",
+    "src/assets/**"
+  ],
+  "allowedPaths": [
+    "index.html",
+    "src/App.jsx",
+    "src/App.css"
+  ],
+  "rules": {
+    "strictContext": true,
+    "maxFilesPerPrompt": 3
+  }
+}

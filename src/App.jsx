@@ -9,7 +9,6 @@ import hikingImg from './assets/images/hiking.jpg';
 import roomImg from './assets/images/room.webp';
 import packImg from './assets/images/pack.png';
 import { data, LOCAL_PRODUCTS } from './assets/components/data.js'; // <--- IMPORTACIÓN DE DATOS
-import carrousel from './assets/components/carrousel.jsx'; // <--- IMPORTACIÓN DEL COMPONENTE CARRUSEL
 import './i18n.js';
 import { useTranslation } from 'react-i18next';
 
@@ -18,12 +17,6 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
-
-
-{/* 
-<FontAwesomeIcon icon={faPlane} />
-*/}
-
 
 
 // --- PLACEHOLDER DATA ---
