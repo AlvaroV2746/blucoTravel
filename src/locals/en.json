@@ -14,7 +14,13 @@
     "description": "At BLUCO, we believe in sustainable tourism that connects travelers with the magic of Colombia while supporting local communities..."
   },
   "contact": {
-    "title": "Contact Us"
+    "title": "Contact Us",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "email": "Email",
+    "whatsappDesc": "Send us a message for more information",
+    "instagramDesc": "Follow our updates on Instagram",
+    "emailDesc": "Write to info@blucotravel.com"
   },
   "products": {
     "title": "Our Community Products"
@@ -81,7 +87,10 @@
     "forestTrekStats": "Duration: 5h | Difficulty: Hard",
     "coffeFarmTitle": "Coffee Farm Tour GUATAPE",
     "coffeFarmDesc": "Learn the secrets of local coffee production.",
-    "coffeFarmStats": "Duration: 4h | Difficulty: Easy"
+    "coffeFarmStats": "Duration: 4h | Difficulty: Easy",
+    "birdWatchingTitle": "Ecological Bird Watching San Rafael",
+    "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
+    "birdWatchingStats": "Duration: 3h | Difficulty: Easy"
   },  "packages": {
     "birdWatchingTitle": "Ecological Bird Watching GUATAPE",
     "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
@@ -102,7 +111,12 @@
     "bangleTitle": "Woven Bracelet",
     "bangleDesc": "Colorful traditional bracelet.",
     "honeyTitle": "Local Honey",
-    "honeyDesc": "Pure organic honey."
+    "honeyDesc": "Pure organic honey.",
+    "ponchoPrice": "Basic price",
+    "coffeePrice": "1lb of premium coffee",
+    "mugPrice": "Artisan ceramic mug",
+    "banglePrice": "Woven bracelet",
+    "honeyPrice": "Pure organic honey"
 }
 
 

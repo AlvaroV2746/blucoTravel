@@ -14,7 +14,13 @@
     "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales..."
   },
   "contact": {
-    "title": "Contáctanos"
+    "title": "Contáctanos",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "email": "Correo electrónico",
+    "whatsappDesc": "Envíanos un mensaje para más información",
+    "instagramDesc": "Sigue nuestras novedades en Instagram",
+    "emailDesc": "Escribe a información@blucotravel.com"
   },
   "products": {
     "title": "Nuestros productos comunitarios"
@@ -36,7 +42,7 @@
   "guatapeAccommodations": {
     "basicTitle": "Alojamiento Básico GUATAPÉ",
     "basicDesc": "Ofrecemos una variedad de alojamientos para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia lujosa, tenemos opciones para todos.",
-    "basicstats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
+    "basicStats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
     "specialTitle": "Alojamiento Especial GUATAPÉ",
     "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
     "specialstats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
@@ -81,7 +87,10 @@
     "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
     "coffeFarmTitle": "Tour Finca Cafetera GUATAPÉ",
     "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
-    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil"
+    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil",
+    "birdWatchingTitle": "Observación de Aves Ecológica San Rafael",
+    "birdWatchingDesc": "Observa diversas especies de aves en su hábitat natural.",
+    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil"
   },
   "packages": {
     "birdWatchingTitle": "Observación de Aves Ecológica GUATAPÉ",
@@ -104,6 +113,11 @@
     "bangleTitle": "Pulsera Tejida",
     "bangleDesc": "Pulsera tradicional colorida.",
     "honeyTitle": "Miel Local",
-    "honeyDesc": "Miel orgánica pura."
+    "honeyDesc": "Miel orgánica pura.",
+    "ponchoPrice": "Precio básico",
+    "coffeePrice": "1 libra de café premium",
+    "mugPrice": "Taza artesanal",
+    "banglePrice": "Pulsera tejida",
+    "honeyPrice": "Miel pura"
   }
 }
