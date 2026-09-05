@@ -7,11 +7,20 @@
   },
   "hero": {
     "title": "Explora lugares increíbles",
+    "subtitle": "Descubre los destinos más bellos de Colombia",
     "button": "Explorar"
   },
   "about": {
     "title": "Nuestra historia",
-    "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales..."
+    "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales...",
+    "mission": "Turismo sostenible",
+    "vision": "Conectar viajeros con la magia de Colombia",
+    "value1Title": "Sostenibilidad",
+    "value1Desc": "Prácticas turísticas responsables que respetan el medio ambiente y las comunidades locales.",
+    "value2Title": "Comunidad",
+    "value2Desc": "Apoyamos a artesanos y guías locales, generando empleo y preservando tradiciones.",
+    "value3Title": "Aventura",
+    "value3Desc": "Vive experiencias auténticas: cabalgatas, senderismo, rafting y más en paisajes únicos."
   },
   "contact": {
     "title": "Contáctanos",
@@ -20,7 +29,8 @@
     "email": "Correo electrónico",
     "whatsappDesc": "Envíanos un mensaje para más información",
     "instagramDesc": "Sigue nuestras novedades en Instagram",
-    "emailDesc": "Escribe a información@blucotravel.com"
+    "emailDesc": "Escribe a información@blucotravel.com",
+    "lead": "Estamos aquí para ayudarte a planificar tu viaje ideal a Colombia"
   },
   "products": {
     "title": "Nuestros productos comunitarios"
@@ -118,6 +128,7 @@
     "coffeePrice": "1 libra de café premium",
     "mugPrice": "Taza artesanal",
     "banglePrice": "Pulsera tejida",
-    "honeyPrice": "Miel pura"
+    "honeyPrice": "Miel pura",
+    "lead": "Productos artesanales y souvenirs únicos de cada destino"
   }
 }

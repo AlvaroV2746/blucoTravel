@@ -60,7 +60,7 @@ const BlucoApp = () => {
       {/* RENDERIZADO CONDICIONAL DE VISTAS */}
       <main>
         <div className="max-w-7xl mx-auto">
-          {currentView === 'home' && <HomePage onCartToggle={() => setIsCartOpen(true)} />}
+          {currentView === 'home' && <HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => setCurrentView('services')} />}
           {currentView === 'services' && (
             selectedActivity ? (
               <ActivityDetailView

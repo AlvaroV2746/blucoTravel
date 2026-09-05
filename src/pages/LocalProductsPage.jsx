@@ -8,7 +8,10 @@ const LocalProductsPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('products.title')}</h2>
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 underline underline-offset-4 border-b-2 border-cyan-500">
+        {t('products.title')}
+      </h2>
+      <p className="text-lg text-gray-500 mb-6">{t('products.lead')}</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {LOCAL_PRODUCTS.map((product) => (
           <ProductCard

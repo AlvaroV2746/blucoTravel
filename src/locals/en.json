@@ -7,11 +7,20 @@
   },
   "hero": {
     "title": "Explore Amazing Places",
+    "subtitle": "Discover the most beautiful destinations in Colombia",
     "button": "Explore"
   },
   "about": {
     "title": "Our Story",
-    "description": "At BLUCO, we believe in sustainable tourism that connects travelers with the magic of Colombia while supporting local communities..."
+    "description": "At BLUCO, we believe in sustainable tourism that connects travelers with the magic of Colombia while supporting local communities...",
+    "mission": "Sustainable tourism",
+    "vision": "Connecting travelers with the magic of Colombia",
+    "value1Title": "Sustainability",
+    "value1Desc": "Responsible tour practices that respect the environment and local communities.",
+    "value2Title": "Community",
+    "value2Desc": "We support local artisans and guides, generating employment and preserving traditions.",
+    "value3Title": "Adventure",
+    "value3Desc": "Live authentic experiences: horseback riding, hiking, rafting and more in unique landscapes."
   },
   "contact": {
     "title": "Contact Us",
@@ -20,7 +29,8 @@
     "email": "Email",
     "whatsappDesc": "Send us a message for more information",
     "instagramDesc": "Follow our updates on Instagram",
-    "emailDesc": "Write to info@blucotravel.com"
+    "emailDesc": "Write to info@blucotravel.com",
+    "lead": "We're here to help you plan your ideal trip to Colombia"
   },
   "products": {
     "title": "Our Community Products"
@@ -116,8 +126,9 @@
     "coffeePrice": "1lb of premium coffee",
     "mugPrice": "Artisan ceramic mug",
     "banglePrice": "Woven bracelet",
-    "honeyPrice": "Pure organic honey"
-}
+"honeyPrice": "Pure organic honey",
+    "lead": "Handcrafted products and unique souvenirs from each destination"
+  }
 
 
 }

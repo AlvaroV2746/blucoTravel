@@ -14,7 +14,7 @@ export default function Header({ setCurrentView, setSelectedActivity }) {
             <button
               key={item}
               onClick={() => { setCurrentView(item.toLowerCase().replace(' ', '')); setSelectedActivity(null); }}
-              className="px-4 py-2 text-sm font-medium text-gray-700 rounded hover:text-primary-600 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-gray-700 rounded hover:text-cyan-600 transition-colors"
             >
               {item}
             </button>
