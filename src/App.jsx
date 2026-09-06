@@ -53,7 +53,7 @@ const BlucoApp = () => {
   
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-8xl mx-auto">
       {/* 1. HEADER */}
       <Navbar onViewChange={setCurrentView} />
 
