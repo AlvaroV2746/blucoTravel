@@ -9,5 +9,23 @@
   "rules": {
     "strictContext": true,
     "maxFilesPerPrompt": 3
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/Users/Asus/OneDrive/Documentos/Mis programas/blucotravel/bluco-web"
+      ]
+    },
+    
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    }
   }
 }

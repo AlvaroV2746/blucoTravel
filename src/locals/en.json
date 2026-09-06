@@ -50,17 +50,17 @@
     "checkout": "Checkout"
   },
   "guatapeAccommodations": {
-    "basicTitle": "Accomodation Basic GUATAPE",
+    "basicTitle": "Basic GUATAPE Accommodation",
     "basicDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
     "basicStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
-    "specialTitle": "Accomodation Special GUATAPE",
+    "specialTitle": "Special GUATAPE Accommodation",
     "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "specialStats": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
-    "deluxeTitle": "Accomodation Deluxe GUATAPE",
+    "deluxeTitle": "Deluxe GUATAPE Accommodation",
     "deluxeDesc": "Our deluxe accommodations offer the ultimate in comfort and luxury, with premium amenities and personalized services.",
     "deluxeStats": "Our deluxe accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay."
-
-  },  "guatapeActivities": {
+  },
+  "guatapeActivities": {
     "RidingTitle": "Ecological Horseback Riding GUATAPE",
     "RidingDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
     "RidingStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
@@ -74,18 +74,18 @@
     "coffeFarmDesc": "Learn the secrets of local coffee production.",
     "coffeFarmStats": "Duration: 4h | Difficulty: Easy"
   },
-    "sanRafaAccommodations": {
-    "basicTitle": "Accomodation Basic San Rafael",
+  "sanRafaAccommodations": {
+    "basicTitle": "Basic San Rafael Accommodation",
     "basicDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
     "basicStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
-    "specialTitle": "Accomodation Special San Rafael",
+    "specialTitle": "Special San Rafael Accommodation",
     "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "specialStats": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
-    "deluxeTitle": "Accomodation Deluxe San Rafael",
-    "deluxeDesc": "Our deluxe accommodations offer the ultimate in comfort and luxury, with premium amenities and personalized services.",
+    "deluxeTitle": "Deluxe San Rafael Accommodation",
+    "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "deluxeStats": "Our deluxe accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay."
-
-  },  "sanRafaActivities": {
+  },
+  "sanRafaActivities": {
     "RidingTitle": "Ecological Horseback Riding GUATAPE",
     "RidingDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
     "RidingStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
@@ -101,7 +101,8 @@
     "birdWatchingTitle": "Ecological Bird Watching San Rafael",
     "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
     "birdWatchingStats": "Duration: 3h | Difficulty: Easy"
-  },  "packages": {
+  },
+  "packages": {
     "birdWatchingTitle": "Ecological Bird Watching GUATAPE",
     "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
     "birdWatchingStats": "Duration: 3h | Difficulty: Easy",
@@ -111,7 +112,8 @@
     "riverTitle": "Cloud Forest Trek GUATAPE",
     "riverDesc": "Discover the amazing biodiversity of the forest.",
     "riverStats": "Duration: 5h | Difficulty: Hard"
-},  "localProducts": {
+  },
+  "localProducts": {
     "ponchoTitle": "Handmade Poncho",
     "ponchoDesc": "Traditional woven poncho.",
     "coffeeTitle": "Organic Coffee Beans",
@@ -126,9 +128,8 @@
     "coffeePrice": "1lb of premium coffee",
     "mugPrice": "Artisan ceramic mug",
     "banglePrice": "Woven bracelet",
-"honeyPrice": "Pure organic honey",
+    "honeyPrice": "Pure organic honey",
     "lead": "Handcrafted products and unique souvenirs from each destination"
-  }
-
-
+  },
+  "copyright": "© 2024 BLUCO Travel. All rights reserved."
 }

@@ -21,17 +21,17 @@ const AboutPage = () => {
           <p className="text-gray-600 mb-4">{t('about.vision')}</p>
 
           <div className="grid grid-cols-3 gap-3">
-            <div>
+            <div className="group hover:scale-105 hover:text-green-600 transition-transform duration-300">
               <FontAwesomeIcon icon={faLeaf} className="text-green-500 text-2xl mb-2 block" />
               <span className="text-sm text-gray-600">{t('about.value1Title')}</span>
               <p className="text-xs text-gray-500">{t('about.value1Desc')}</p>
             </div>
-            <div>
+            <div className="group hover:scale-105 hover:text-blue-600 transition-transform duration-300">
               <FontAwesomeIcon icon={faUsers} className="text-blue-500 text-2xl mb-2 block" />
               <span className="text-sm text-gray-600">{t('about.value2Title')}</span>
               <p className="text-xs text-gray-500">{t('about.value2Desc')}</p>
             </div>
-            <div>
+            <div className="group hover:scale-105 hover:text-red-600 transition-transform duration-300">
               <FontAwesomeIcon icon={faMountain} className="text-red-500 text-2xl mb-2 block" />
               <span className="text-sm text-gray-600">{t('about.value3Title')}</span>
               <p className="text-xs text-gray-500">{t('about.value3Desc')}</p>
@@ -43,7 +43,7 @@ const AboutPage = () => {
           <img
             src={cacaoTour}
             alt="Experiencias BLUCO"
-            className="w-full h-64 object-cover rounded-md"
+            className="w-full h-64 object-cover rounded-md transition-transform duration-500 hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/20 rounded-md"></div>
         </div>

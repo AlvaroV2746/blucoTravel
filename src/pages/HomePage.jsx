@@ -71,7 +71,7 @@ const HomePage = ({ onCartToggle, onNavigate }) => {
           <ul ref={listRef} className="flex transition-transform duration-500 h-full" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
             {data.map((item) => (
               <li key={item.id} className="w-full flex-shrink-0 h-full">
-                <img src={item.img} alt={`Slide ${item.id}`} className="object-cover w-full h-full" />
+                <img src={item.img} alt={`Slide ${item.id}`} className="object-cover w-full h-full transition-opacity duration-500" />
               </li>
             ))}
           </ul>
@@ -83,8 +83,8 @@ const HomePage = ({ onCartToggle, onNavigate }) => {
         <div className="dot-container flex justify-center gap-2">
           {data.map((_item, idx) => {
             const dotClass = currentIndex === idx
-              ? 'bg-cyan-500 w-3 h-3 rounded-full shadow-md'
-              : 'bg-cyan-200 w-3 h-3 rounded-full shadow-md';
+              ? 'bg-cyan-500 w-3 h-3 rounded-full shadow-md hover:scale-125 transition-transform duration-200'
+              : 'bg-cyan-200 w-3 h-3 rounded-full shadow-md hover:scale-110 transition-transform duration-200';
             return <div key={idx} className={dotClass} />;
           })}
         </div>

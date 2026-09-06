@@ -55,7 +55,7 @@
     "basicStats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
     "specialTitle": "Alojamiento Especial GUATAPÉ",
     "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
-    "specialstats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "specialStats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
     "deluxeTitle": "Alojamiento Deluxe GUATAPÉ",
     "deluxeDesc": "Nuestros alojamientos deluxe ofrecen lo máximo en confort y lujo, con comodidades premium y servicios personalizados.",
     "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
@@ -104,14 +104,14 @@
   },
   "packages": {
     "birdWatchingTitle": "Observación de Aves Ecológica GUATAPÉ",
-    "birdWatchingDesc": "Observa diversas especies de aves en su hábitat natural.",
-    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil",
-    "orientalTitle": "Kayak en el Río Oriental GUATAPÉ",
-    "orientalDesc": "Experimenta la emoción de los ríos locales.",
-    "orientalStats": "Duración: 2h | Dificultad: Media",
-    "riverTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
-    "riverDesc": "Descubre la increíble biodiversidad del bosque.",
-    "riverStats": "Duración: 5h | Dificultad: Difícil"
+    "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
+    "birdWatchingStats": "Duration: 3h | Difficulty: Easy",
+    "orientalTitle": "Oriental River Kayaking GUATAPE",
+    "orientalDesc": "Experience the thrill of the local rivers.",
+    "orientalStats": "Duration: 2h | Difficulty: Medium",
+    "riverTitle": "Cloud Forest Trek GUATAPE",
+    "riverDesc": "Discover the amazing biodiversity of the forest.",
+    "riverStats": "Duration: 5h | Difficulty: Hard"
   },
   "localProducts": {
     "ponchoTitle": "Poncho Hecho a Mano",
@@ -130,5 +130,6 @@
     "banglePrice": "Pulsera tejida",
     "honeyPrice": "Miel pura",
     "lead": "Productos artesanales y souvenirs únicos de cada destino"
-  }
+  },
+  "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados."
 }

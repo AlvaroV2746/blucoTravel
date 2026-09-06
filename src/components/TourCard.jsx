@@ -5,11 +5,11 @@ const TourCard = ({ nameKey, img, onSelect, onAdd, priceKey, desc, stats }) => {
   const { t } = useTranslation();
 
   if (!nameKey) {
-    return <div className="rounded-xl bg-white shadow-md overflow-hidden flex flex-col h-full"> <span>Error: nameKey is required</span> </div>;
+    return <div className="rounded-xl bg-white shadow overflow-hidden flex flex-col h-full"> <span>Error: nameKey is required</span> </div>;
   }
 
   return (
-    <div className="rounded-xl bg-white shadow-md overflow-hidden flex flex-col h-full">
+    <div className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
       <img src={img} alt={t(nameKey)} className="w-full h-48 object-cover cursor-pointer" onClick={() => onSelect({ name: nameKey, img, desc, stats })} />
       <div className="p-4 flex-1">
         <h3 className="font-bold text-gray-900 line-clamp-2">{t(nameKey)}</h3>

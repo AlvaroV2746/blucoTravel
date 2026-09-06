@@ -13,7 +13,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
       {/* Guatapé */}
       <div 
         onClick={() => toggleSection('guatape')} 
-        className="relative rounded-2xl overflow-hidden mb-6 cursor-pointer h-40"
+        className="relative rounded-2xl overflow-hidden mb-6 cursor-pointer h-40 hover:bg-blue-100 transition-colors duration-300"
       >
         <img src={guatapeAcommodations[0].img} alt="Guatapé" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-blue-900/50"></div>
@@ -64,7 +64,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
       {/* San Rafael */}
       <div 
         onClick={() => toggleSection('sanrafael')} 
-        className="relative rounded-2xl overflow-hidden mb-6 cursor-pointer h-40"
+        className="relative rounded-2xl overflow-hidden mb-6 cursor-pointer h-40 hover:bg-emerald-100 transition-colors duration-300"
       >
         <img src={sanRafaAcommodations[0].img} alt="San Rafael" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-emerald-500/50"></div>
@@ -115,7 +115,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
       {/* Paquetes */}
       <div 
         onClick={() => toggleSection('packages')} 
-        className="relative rounded-2xl overflow-hidden mb-6 cursor-pointer h-40"
+        className="relative rounded-2xl overflow-hidden mb-6 cursor-pointer h-40 hover:bg-red-100 transition-colors duration-300"
       >
         <img src={packages[0].img} alt="Paquetes" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-red-500/50"></div>

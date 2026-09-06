@@ -16,7 +16,7 @@ const ContactPage = () => {
       <p className="text-lg text-gray-500 mb-8">{t('contact.lead')}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* WhatsApp */}
-        <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-colors">
+        <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
           <div className="bg-green-500 rounded-t-2xl p-4">
             <FontAwesomeIcon icon={faWhatsapp} className="text-3xl text-white" />
           </div>
@@ -27,7 +27,7 @@ const ContactPage = () => {
               href="https://wa.me/573184559655"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-gray-600 mt-3 rounded py-2 text-center text-sm font-medium transition-colors "
+              className="w-full text-gray-600 mt-3 rounded py-2 text-center text-sm font-medium transition-colors hover:text-cyan-400"
             >
               Chatea en WhatsApp
             </a>
@@ -35,7 +35,7 @@ const ContactPage = () => {
         </div>
 
         {/* Instagram */}
-        <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-colors">
+        <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
           <div className="bg-gradient-to-tr from-yellow-400 via-pink-400 to-purple-400 rounded-t-2xl p-4">
             <FontAwesomeIcon icon={faInstagram} className="text-3xl text-white" />
           </div>
@@ -46,7 +46,7 @@ const ContactPage = () => {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full mt-3 rounded bg-white/20 text-gray-800 py-2 text-center text-sm font-medium transition-colors hover:bg-white/30"
+              className="w-full mt-3 rounded bg-white/20 text-gray-800 py-2 text-center text-sm font-medium transition-colors hover:bg-white/30 hover:text-cyan-400"
             >
               Síguenos en Instagram
             </a>
@@ -54,7 +54,7 @@ const ContactPage = () => {
         </div>
 
         {/* Email */}
-        <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-colors">
+        <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
           <div className="bg-red-500 rounded-t-2xl p-4">
             <FontAwesomeIcon icon={faEnvelope} className="text-3xl text-white" />
           </div>
@@ -65,7 +65,7 @@ const ContactPage = () => {
               href="mailto:info@blucotravel.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full mt-3 rounded bg-white/20 text-gray-800 py-2 text-center text-sm font-medium transition-colors hover:bg-white/30"
+              className="w-full mt-3 rounded bg-white/20 text-gray-800 py-2 text-center text-sm font-medium transition-colors hover:text-cyan-400 hover:bg-white/30"
             >
               Enviar correo
             </a>
