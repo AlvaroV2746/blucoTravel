@@ -7,14 +7,30 @@
   },
   "hero": {
     "title": "Explora lugares increíbles",
+    "subtitle": "Descubre los destinos más bellos de Colombia",
     "button": "Explorar"
   },
   "about": {
     "title": "Nuestra historia",
-    "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales..."
+    "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales...",
+    "mission": "Turismo sostenible",
+    "vision": "Conectar viajeros con la magia de Colombia",
+    "value1Title": "Sostenibilidad",
+    "value1Desc": "Prácticas turísticas responsables que respetan el medio ambiente y las comunidades locales.",
+    "value2Title": "Comunidad",
+    "value2Desc": "Apoyamos a artesanos y guías locales, generando empleo y preservando tradiciones.",
+    "value3Title": "Aventura",
+    "value3Desc": "Vive experiencias auténticas: cabalgatas, senderismo, rafting y más en paisajes únicos."
   },
   "contact": {
-    "title": "Contáctanos"
+    "title": "Contáctanos",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "email": "Correo electrónico",
+    "whatsappDesc": "Envíanos un mensaje para más información",
+    "instagramDesc": "Sigue nuestras novedades en Instagram",
+    "emailDesc": "Escribe a información@blucotravel.com",
+    "lead": "Estamos aquí para ayudarte a planificar tu viaje ideal a Colombia"
   },
   "products": {
     "title": "Nuestros productos comunitarios"
@@ -26,6 +42,7 @@
     "makeQuote": "COTIZAR AHORA",
     "accommodation": "Alojamiento",
     "activities": "Actividades",
+    "top": "Lo mas vendido",
     "packages": "Paquetes"
   },
   "cart": {
@@ -36,10 +53,10 @@
   "guatapeAccommodations": {
     "basicTitle": "Alojamiento Básico GUATAPÉ",
     "basicDesc": "Ofrecemos una variedad de alojamientos para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia lujosa, tenemos opciones para todos.",
-    "basicstats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
+    "basicStats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
     "specialTitle": "Alojamiento Especial GUATAPÉ",
     "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
-    "specialstats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "specialStats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
     "deluxeTitle": "Alojamiento Deluxe GUATAPÉ",
     "deluxeDesc": "Nuestros alojamientos deluxe ofrecen lo máximo en confort y lujo, con comodidades premium y servicios personalizados.",
     "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
@@ -81,18 +98,21 @@
     "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
     "coffeFarmTitle": "Tour Finca Cafetera GUATAPÉ",
     "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
-    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil"
+    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil",
+    "birdWatchingTitle": "Observación de Aves Ecológica San Rafael",
+    "birdWatchingDesc": "Observa diversas especies de aves en su hábitat natural.",
+    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil"
   },
   "packages": {
     "birdWatchingTitle": "Observación de Aves Ecológica GUATAPÉ",
-    "birdWatchingDesc": "Observa diversas especies de aves en su hábitat natural.",
-    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil",
-    "orientalTitle": "Kayak en el Río Oriental GUATAPÉ",
-    "orientalDesc": "Experimenta la emoción de los ríos locales.",
-    "orientalStats": "Duración: 2h | Dificultad: Media",
-    "riverTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
-    "riverDesc": "Descubre la increíble biodiversidad del bosque.",
-    "riverStats": "Duración: 5h | Dificultad: Difícil"
+    "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
+    "birdWatchingStats": "Duration: 3h | Difficulty: Easy",
+    "orientalTitle": "Oriental River Kayaking GUATAPE",
+    "orientalDesc": "Experience the thrill of the local rivers.",
+    "orientalStats": "Duration: 2h | Difficulty: Medium",
+    "riverTitle": "Cloud Forest Trek GUATAPE",
+    "riverDesc": "Discover the amazing biodiversity of the forest.",
+    "riverStats": "Duration: 5h | Difficulty: Hard"
   },
   "localProducts": {
     "ponchoTitle": "Poncho Hecho a Mano",
@@ -104,6 +124,13 @@
     "bangleTitle": "Pulsera Tejida",
     "bangleDesc": "Pulsera tradicional colorida.",
     "honeyTitle": "Miel Local",
-    "honeyDesc": "Miel orgánica pura."
-  }
+    "honeyDesc": "Miel orgánica pura.",
+    "ponchoPrice": "Precio básico",
+    "coffeePrice": "1 libra de café premium",
+    "mugPrice": "Taza artesanal",
+    "banglePrice": "Pulsera tejida",
+    "honeyPrice": "Miel pura",
+    "lead": "Productos artesanales y souvenirs únicos de cada destino"
+  },
+  "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados."
 }
