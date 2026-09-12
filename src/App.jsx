@@ -61,21 +61,25 @@ const BlucoApp = () => {
       <main className="pt-30">
         <div className="max-w-7xl mx-auto my-20">
           {currentView === 'home' && <HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => setCurrentView('services')} />}
-          {currentView === 'services' && (
-            selectedActivity ? (
-              <ActivityDetailView
-                activity={selectedActivity}
-                onBack={() => setSelectedActivity(null)}
-              />
-            ) : (
-              <ServicesPage
-                onSelect={setSelectedActivity}
-                onAdd={addToCart}
-                openSections={openSections}
-                toggleSection={toggleSection}
-              />
-            )
-          )}
+{currentView === 'services' && (
+  <>
+    {/* 1. La página base siempre se renderiza */}
+    <ServicesPage
+      onSelect={setSelectedActivity}
+      onAdd={addToCart}
+      openSections={openSections}
+      toggleSection={toggleSection}
+    />
+    
+    {/* 2. El modal se renderiza POR ENCIMA si hay una actividad seleccionada */}
+    {selectedActivity && (
+      <ActivityDetailView
+        activity={selectedActivity}
+        onBack={() => setSelectedActivity(null)}
+      />
+    )}
+  </>
+)}
 
           {currentView === 'aboutus' && <AboutPage />}
           {currentView === 'contactus' && <ContactPage />}
