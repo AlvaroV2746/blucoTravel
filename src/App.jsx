@@ -53,13 +53,13 @@ const BlucoApp = () => {
   
 
   return (
-    <div className="max-w-8xl mx-auto">
+    <div className=" max-w-8xl mx-auto">
       {/* 1. HEADER */}
       <Navbar onViewChange={setCurrentView} />
 
       {/* RENDERIZADO CONDICIONAL DE VISTAS */}
-      <main>
-        <div className="max-w-7xl mx-auto">
+      <main className="pt-30">
+        <div className="max-w-7xl mx-auto my-20">
           {currentView === 'home' && <HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => setCurrentView('services')} />}
           {currentView === 'services' && (
             selectedActivity ? (

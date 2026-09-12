@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logoFull from '../assets/logos/logoFull.png';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,13 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 const Navbar = ({ onViewChange, onCartToggle }) => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const mobileLinks = [
     { id: 'services', label: t('navbar.services') },
@@ -16,14 +23,20 @@ const Navbar = ({ onViewChange, onCartToggle }) => {
   ];
 
   return (
-    <header className="bg-white border-b border-gray-200 transition-colors">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header className={`fixed top-0 left-0 right-0 z-50 h-30 transition-all duration-1000 ease-in-out ${
+      isScrolled
+        ? 'bg-blue-950/10 border-b border-blue-900/20 shadow-lg'
+        : 'bg-blue-950/95 border-b border-blue-900/50'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
         {/* Logo a la izquierda */}
         <div className="flex items-center gap-2">
           <img
             src={logoFull}
             alt="Logo BLUCO"
-            className="h-20 w-auto object-contain text-blue-900 font-bold uppercase tracking-wider"
+            className={`h-20 w-auto object-contain transition-all duration-1000 ${
+              isScrolled ? 'brightness-0 invert' : ''
+            }`}
             onClick={() => onViewChange('home')}
           />
         </div>
@@ -34,7 +47,9 @@ const Navbar = ({ onViewChange, onCartToggle }) => {
             <button
               key={item.id}
               onClick={() => onViewChange(item.id)}
-              className="px-4 py-2 text-sm font-medium text-gray-700 relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-cyan-600 after:transition-all after:duration-300 group-hover:after:w-full text-blue-900 hover:text-cyan-600 transition-colors"
+              className={`px-4 py-2 text-sm font-medium relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-cyan-600 after:transition-all after:duration-300 hover:after:w-full transition-colors duration-300 ${
+                isScrolled ? 'text-gray-900 hover:text-cyan-600' : 'text-white hover:text-cyan-300'
+              }`}
             >
               {item.label}
             </button>
@@ -44,16 +59,17 @@ const Navbar = ({ onViewChange, onCartToggle }) => {
         {/* Botón hamburguesa para mobile */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 rounded hover:bg-gray-100 transition"
+          className="md:hidden p-2 rounded transition-colors duration-300"
           aria-label="Menú principal"
         >
-          <span className="block h-1 w-full bg-gray-800 rounded-md mb-1" />
-          <span className="block h-1 w-full bg-gray-800 rounded-md" />
+          <span className={`block h-1 w-full rounded-md mb-1 transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'}`} />
+          <span className={`block h-1 w-full rounded-md transition-colors duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'}`} />
         </button>
 
         {/* Menú mobile drawer */}
         {isMenuOpen && (
-          <div className="md:hidden mt-6 absolute right-0 inset-y-0 w-64 bg-white p-6 shadow-lg z-50 transform transition-transform duration-300 ease-out translate-x-full group-[isMenuOpen=true]:translate-x-0">
+          <div className="md:hidden absolute right-0 top-full w-64 p-6 shadow-lg z-50 transition-colors duration-300 transform transition-transform duration-300 ease-out"
+               style={{ backgroundColor: isScrolled ? 'rgba(255,255,255,0.95)' : 'rgba(30,58,138,0.95)' }}>
             <ul className="space-y-6">
               {mobileLinks.map((item) => (
                 <li key={item.id}>
@@ -62,7 +78,9 @@ const Navbar = ({ onViewChange, onCartToggle }) => {
                       setIsMenuOpen(false);
                       onViewChange(item.id);
                     }}
-                    className="w-full text-left px-0 py-2 text-sm font-medium text-gray-700 hover:text-cyan-600 transition-colors opacity-0 group-hover:opacity-100"
+                    className={`w-full text-left px-0 py-2 text-sm font-medium hover:text-cyan-600 transition-colors ${
+                      isScrolled ? 'text-gray-900' : 'text-white'
+                    }`}
                   >
                     {item.label}
                   </button>
@@ -76,13 +94,21 @@ const Navbar = ({ onViewChange, onCartToggle }) => {
         <div className="flex items-center gap-3">
           {/* Idioma ES */}
           <button onClick={() => i18n.changeLanguage('es')} 
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 rounded border border-cyan-300 group-hover:border-cyan-500 transition-colors duration-300"
+            className={`px-3 py-1.5 text-sm font-medium rounded border transition-colors duration-300 ${
+              isScrolled 
+                ? 'text-gray-900 border-gray-400 hover:border-cyan-500 hover:text-cyan-600'
+                : 'text-white border-cyan-300 hover:border-cyan-500 hover:text-cyan-300'
+            }`}
           >
             ES
           </button>
           {/* Idioma EN */}
           <button onClick={() => i18n.changeLanguage('en')} 
-            className="px-3 py-1.5 text-sm font-medium text-gray-600 rounded border border-cyan-300 group-hover:border-cyan-500 transition-colors duration-300"
+            className={`px-3 py-1.5 text-sm font-medium rounded border transition-colors duration-300 ${
+              isScrolled 
+                ? 'text-gray-900 border-gray-400 hover:border-cyan-500 hover:text-cyan-600'
+                : 'text-white border-cyan-300 hover:border-cyan-500 hover:text-cyan-300'
+            }`}
           >
             EN
           </button>

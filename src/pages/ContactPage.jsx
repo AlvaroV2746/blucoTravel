@@ -9,11 +9,11 @@ const ContactPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="max-w-2xl mx-auto py-8">
-      <h2 className="text-3xl font-bold text-blue-900 mb-4 underline underline-offset-4 border-b-2 border-cyan-500">
+    <div className="max-w-2xl mx-auto">
+      <h2 className="text-3xl font-bold text-blue-900 mb-4 border-b-2 border-cyan-500">
         {t('contact.title')}
       </h2>
-      <p className="text-lg text-gray-500 mb-8">{t('contact.lead')}</p>
+      <p className="text-lg text-gray-500 mb-12">{t('contact.lead')}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* WhatsApp */}
         <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">

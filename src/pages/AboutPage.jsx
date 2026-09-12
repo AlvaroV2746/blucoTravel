@@ -9,7 +9,7 @@ const AboutPage = () => {
 
   return (
     <div className="max-w-2xl mx-auto py-8">
-      <h2 className="text-3xl font-bold text-blue-900 mb-4 underline underline-offset-4 border-b-2 border-cyan-500">
+      <h2 className="text-3xl font-bold text-blue-900 mb-4 border-b-2 border-cyan-500">
         {t('about.title')}
       </h2>
 
@@ -22,17 +22,17 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-3 gap-3">
             <div className="group hover:scale-105 hover:text-green-600 transition-transform duration-300">
-              <FontAwesomeIcon icon={faLeaf} className="text-green-500 text-2xl mb-2 block" />
+              <FontAwesomeIcon icon={faLeaf} className="text-green-500 text-4xl mb-2 block" />
               <span className="text-sm text-gray-600">{t('about.value1Title')}</span>
               <p className="text-xs text-gray-500">{t('about.value1Desc')}</p>
             </div>
             <div className="group hover:scale-105 hover:text-blue-600 transition-transform duration-300">
-              <FontAwesomeIcon icon={faUsers} className="text-blue-500 text-2xl mb-2 block" />
+              <FontAwesomeIcon icon={faUsers} className="text-blue-500 text-4xl mb-2 block" />
               <span className="text-sm text-gray-600">{t('about.value2Title')}</span>
               <p className="text-xs text-gray-500">{t('about.value2Desc')}</p>
             </div>
             <div className="group hover:scale-105 hover:text-red-600 transition-transform duration-300">
-              <FontAwesomeIcon icon={faMountain} className="text-red-500 text-2xl mb-2 block" />
+              <FontAwesomeIcon icon={faMountain} className="text-red-500 text-4xl mb-2 block" />
               <span className="text-sm text-gray-600">{t('about.value3Title')}</span>
               <p className="text-xs text-gray-500">{t('about.value3Desc')}</p>
             </div>
