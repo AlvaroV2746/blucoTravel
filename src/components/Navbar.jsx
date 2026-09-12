@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logoFull from '../assets/logos/logoFull.png';
 import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({ onViewChange }) => {
   const { t, i18n } = useTranslation();
@@ -98,85 +96,95 @@ const Navbar = ({ onViewChange }) => {
               </button>
             </div>
 
-            {/* Botón hamburguesa para mobile */}
+            {/* Botón hamburguesa con clase 'group' para el efecto hover coordinado */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded text-white transition-colors duration-300 cursor-pointer flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+              className="md:hidden p-2 rounded-lg text-white transition-all duration-300 cursor-pointer flex justify-center items-center w-10 h-10 hover:bg-cyan-500/10 group"
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? (
-                <FontAwesomeIcon icon={faXmark} className="text-2xl text-white" />
-              ) : (
-                <>
-                  <span className="block h-0.5 w-6 bg-white rounded-md transition-all duration-300" />
-                  <span className="block h-0.5 w-6 bg-white rounded-md transition-all duration-300" />
-                  <span className="block h-0.5 w-6 bg-white rounded-md transition-all duration-300" />
-                </>
-              )}
+              <div className="relative w-6 h-5 flex flex-col justify-between">
+                <span 
+                  className={`block h-0.5 w-full bg-white rounded-md transition-all duration-300 origin-center group-hover:bg-cyan-300 ${
+                    isMenuOpen ? 'rotate-45 translate-y-[9px]' : ''
+                  }`} 
+                />
+                <span 
+                  className={`block h-0.5 w-full bg-white rounded-md transition-all duration-300 group-hover:bg-cyan-300 ${
+                    isMenuOpen ? 'opacity-0 scale-x-0' : ''
+                  }`} 
+                />
+                <span 
+                  className={`block h-0.5 w-full bg-white rounded-md transition-all duration-300 origin-center group-hover:bg-cyan-300 ${
+                    isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''
+                  }`} 
+                />
+              </div>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Menú mobile drawer - Renderizado FUERA del header para evitar recortes de altura */}
-      {isMenuOpen && (
-        <div 
-          className="md:hidden fixed top-30 left-0 right-0 z-40 bg-blue-950/98 backdrop-blur-xl border-b border-blue-900/50 shadow-2xl transition-all duration-300 ease-out p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menú de navegación móvil"
-        >
-          <ul className="space-y-4 text-center">
-            {mobileLinks.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => {
-                    closeMenu();
-                    onViewChange(item.id);
-                  }}
-                  className="w-full px-4 py-3 text-lg font-medium text-white rounded-lg hover:bg-cyan-500/20 transition-colors cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+      {/* Menú mobile drawer */}
+      <div 
+        className={`md:hidden fixed top-30 left-0 right-0 z-40 bg-blue-950/98 backdrop-blur-xl border-b border-blue-900/50 shadow-2xl p-6 transition-all duration-300 ease-out transform ${
+          isMenuOpen 
+            ? 'opacity-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menú de navegación móvil"
+      >
+        <ul className="space-y-4 text-center">
+          {mobileLinks.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => {
+                  closeMenu();
+                  onViewChange(item.id);
+                }}
+                className="w-full px-4 py-3 text-lg font-medium text-white rounded-lg hover:bg-cyan-500/20 transition-colors cursor-pointer"
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
 
-          {/* Selector de idioma móvil dentro del menú desplegable */}
-          <div className="mt-6 pt-6 border-t border-blue-900/50 flex justify-center gap-4">
-            <button 
-              onClick={() => { i18n.changeLanguage('es'); closeMenu(); }} 
-              className={`px-4 py-2 text-sm font-medium rounded border transition-colors cursor-pointer ${
-                i18n.language === 'es'
-                  ? 'bg-cyan-500 text-white border-cyan-500'
-                  : 'text-white border-cyan-300/50'
-              }`}
-            >
-              Español (ES)
-            </button>
-            <button 
-              onClick={() => { i18n.changeLanguage('en'); closeMenu(); }} 
-              className={`px-4 py-2 text-sm font-medium rounded border transition-colors cursor-pointer ${
-                i18n.language === 'en'
-                  ? 'bg-cyan-500 text-white border-cyan-500'
-                  : 'text-white border-cyan-300/50'
-              }`}
-            >
-              English (EN)
-            </button>
-          </div>
+        {/* Selector de idioma móvil dentro del menú desplegable */}
+        <div className="mt-6 pt-6 border-t border-blue-900/50 flex justify-center gap-4">
+          <button 
+            onClick={() => { i18n.changeLanguage('es'); closeMenu(); }} 
+            className={`px-4 py-2 text-sm font-medium rounded border transition-colors cursor-pointer ${
+              i18n.language === 'es'
+                ? 'bg-cyan-500 text-white border-cyan-500'
+                : 'text-white border-cyan-300/50'
+            }`}
+          >
+            Español (ES)
+          </button>
+          <button 
+            onClick={() => { i18n.changeLanguage('en'); closeMenu(); }} 
+            className={`px-4 py-2 text-sm font-medium rounded border transition-colors cursor-pointer ${
+              i18n.language === 'en'
+                ? 'bg-cyan-500 text-white border-cyan-500'
+                : 'text-white border-cyan-300/50'
+            }`}
+          >
+            English (EN)
+          </button>
         </div>
-      )}
+      </div>
 
-      {/* Backdrop overlay para oscurecer y bloquear la pantalla al abrir el menú móvil */}
-      {isMenuOpen && (
-        <div 
-          className="md:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
-          onClick={closeMenu}
-          aria-hidden="true"
-        />
-      )}
+      {/* Backdrop overlay */}
+      <div 
+        className={`md:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
     </>
   );
 };
