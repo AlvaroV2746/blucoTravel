@@ -55,7 +55,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             <div className="overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-2">
                 {guatapeAcommodations.map((activity) => (
-                  <TourCard key={activity.id} id={activity.id} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
+                  <TourCard key={activity.id} id={activity.id} type={activity.type} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
                 ))}
               </div>
             </div>
@@ -79,7 +79,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             <div className="overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-2">
                 {guatapeServices.map((activity) => (
-                  <TourCard key={activity.id} id={activity.id} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
+                  <TourCard key={activity.id} id={activity.id} type={activity.type} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
                 ))}
               </div>
             </div>
@@ -133,7 +133,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             <div className="overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-2">
                 {sanRafaAcommodations.map((activity) => (
-                  <TourCard key={activity.id} id={activity.id} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
+                  <TourCard key={activity.id} id={activity.id} type={activity.type} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
                 ))}
               </div>
             </div>
@@ -157,7 +157,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             <div className="overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-2">
                 {sanRafaServices.map((activity) => (
-                  <TourCard key={activity.id} id={activity.id} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
+                  <TourCard key={activity.id} id={activity.id} type={activity.type} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
                 ))}
               </div>
             </div>
@@ -210,7 +210,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             <div className="overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-2">
                 {packages.map((activity) => (
-                  <TourCard key={activity.id} id={activity.id} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
+                  <TourCard key={activity.id} id={activity.id} type={activity.type} nameKey={activity.name} img={activity.img} desc={activity.desc} stats={activity.stats} onSelect={onSelect} onAdd={onAdd} />
                 ))}
               </div>
             </div>

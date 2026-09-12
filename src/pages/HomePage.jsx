@@ -4,6 +4,7 @@ import { IMAGES } from '../data/images';
 import { data } from '../data/tours';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faFire } from '@fortawesome/free-solid-svg-icons'; 
 
 const HomePage = ({ onCartToggle, onNavigate }) => {
   const { t } = useTranslation();
@@ -91,7 +92,7 @@ const HomePage = ({ onCartToggle, onNavigate }) => {
       </div>
 
       {/* Destinos - debajo del carrusel */}
-      <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">Nuestros productos TOP</h3>
+      <h3 className="mt-10 text-2xl font-bold text-blue-900 mb-6 text-center">{t('common.top')}<FontAwesomeIcon icon={faFire} className="text-4xl text-orange-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.9)] animate-pulse" /></h3>
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {/* Guatapé */}
         <div

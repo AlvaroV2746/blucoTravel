@@ -32,7 +32,7 @@ const BlucoApp = () => {
 
   // Funciones de Lógica
   const addToCart = (activity) => {
-    if (!cart.find(item => item.id === activity.id)) {
+    if (!cart.find(item => item.id === activity.id && item.type === activity.type)) {
       setCart([...cart, activity]);
     }
     setIsCartOpen(true);
