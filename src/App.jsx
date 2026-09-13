@@ -155,9 +155,7 @@ const BlucoApp = () => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        {GSC_VERIFICATION && GSC_VERIFICATION.startsWith('PEGA') ? null : (
-          <meta name="google-site-verification" content={GSC_VERIFICATION} />
-        )}
+
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hrefLang="es" href={`${baseUrl}${esPath}`} />
         <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
