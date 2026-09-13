@@ -13,6 +13,7 @@ import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import CartSidebar from './components/CartSidebar';
 import ActivityDetailView from './components/ActivityDetailView';
 import SchemaOrg from './components/SchemaOrg';
+import WebVitalsReporter from './components/WebVitalsReporter';
 import { generateWebsiteSchema, generateBreadcrumbList } from './utils/schemas';
 import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,6 +24,7 @@ const travelAgencySchema = {
   name: 'BLUCO Travel',
   url: 'https://blucotravel.com',
   logo: 'https://blucotravel.com/logoFull.png',
+  slogan: 'Turismo sostenible que conecta viajeros con la magia de Colombia',
   telephone: '+57-318-455-9655',
   email: 'info@blucotravel.com',
   address: {
@@ -35,11 +37,20 @@ const travelAgencySchema = {
   priceRange: '$$',
   currenciesAccepted: 'COP',
   description: 'Agencia de turismo sostenible especializada en experiencias auténticas en Guatapé y San Rafael. Alojamientos ecológicos, actividades de aventura y productos artesanales locales.',
+  keywords: ['turismo sostenible', 'Guatapé', 'San Rafael', 'alojamiento', 'actividades', 'Colombia'],
+  knowsAbout: [
+    'Turismo sostenible',
+    'Alojamientos ecológicos',
+    'Experiencias de aventura',
+    'Productos artesanales locales',
+  ],
   sameAs: [
     'https://wa.me/573184559655',
     'https://instagram.com/blucotravel',
   ],
 };
+
+const GSC_VERIFICATION = 'VnbHtfXkXkX0h82I8aO2KSixPP2Nv7LLce9qKThjD8U';
 
 const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedActivity }) => {
   return (
@@ -142,10 +153,12 @@ const BlucoApp = () => {
     <>
       <Helmet>
         <html lang={i18n.language} />
-        <title>{t('meta.home.title')} | BLUCO Travel</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
+        {GSC_VERIFICATION && GSC_VERIFICATION.startsWith('PEGA') ? null : (
+          <meta name="google-site-verification" content={GSC_VERIFICATION} />
+        )}
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hrefLang="es" href={`${baseUrl}${esPath}`} />
         <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
@@ -159,6 +172,8 @@ const BlucoApp = () => {
       </Helmet>
 
       <SchemaOrg schema={[generateWebsiteSchema(), breadcrumbs]} />
+
+      <WebVitalsReporter />
 
       <div className="max-w-8xl mx-auto">
         <a href="#main-content" className="skip-link">{t('a11y.skipToContent')}</a>

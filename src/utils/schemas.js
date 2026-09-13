@@ -42,6 +42,8 @@ export const generateLodgingBusiness = ({
   locationName,
   lat,
   lng,
+  aggregateRating,
+  reviews,
 }) => {
   return {
     '@context': 'https://schema.org',
@@ -69,10 +71,35 @@ export const generateLodgingBusiness = ({
       longitude: lng,
     },
     currenciesAccepted: 'COP',
+    ...(aggregateRating ? { aggregateRating } : {}),
+    ...(reviews && reviews.length ? { review: reviews } : {}),
   };
 };
 
-export const generateProduct = ({ name, description, image, url, price, currency = 'COP' }) => ({
+export const generateReviewSchema = ({ reviewBody, author, datePublished, ratingValue }) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  reviewBody,
+  author: {
+    '@type': 'Person',
+    name: author,
+  },
+  datePublished,
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue,
+    bestRating: 5,
+  },
+});
+
+export const generateAggregateRatingSchema = ({ ratingValue, reviewCount, bestRating = 5 }) => ({
+  '@type': 'AggregateRating',
+  ratingValue,
+  reviewCount,
+  bestRating,
+});
+
+export const generateProduct = ({ name, description, image, url, price, currency = 'COP', aggregateRating, reviews }) => ({
   '@context': 'https://schema.org',
   '@type': 'Product',
   name,
@@ -93,6 +120,8 @@ export const generateProduct = ({ name, description, image, url, price, currency
       name: 'BLUCO Travel',
     },
   },
+  ...(aggregateRating ? { aggregateRating } : {}),
+  ...(reviews && reviews.length ? { review: reviews } : {}),
 });
 
 export const generateBreadcrumbList = (items) => ({

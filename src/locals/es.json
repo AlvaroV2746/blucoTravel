@@ -148,19 +148,24 @@
   },
   "seo": {
     "home": {
-      "description": "Descubre Guatapé y San Rafael con BLUCO Travel. Alojamientos ecológicos, cabalgatas, senderismo, kayak y tours de café. Turismo sostenible que apoya comunidades locales."
+      "description": "Descubre Guatapé y San Rafael con BLUCO Travel. Alojamientos ecológicos, cabalgatas, senderismo, kayak y tours de café. Turismo sostenible que apoya comunidades locales.",
+      "keywords": ["turismo sostenible Colombia", "Guatapé y San Rafael", "alojamientos ecológicos Antioquia", "turismo aventura Colombia", "experiencias auténticas Colombia"]
     },
     "services": {
-      "description": "Reserva alojamientos y actividades en Guatapé y San Rafael. Cabañas ecológicas, cabalgatas, kayak, senderismo en bosque de niebla y tours de café. Experiencias auténticas con guías locales."
+      "description": "Reserva alojamientos y actividades en Guatapé y San Rafael. Cabañas ecológicas, cabalgatas, kayak, senderismo en bosque de niebla y tours de café. Experiencias auténticas con guías locales.",
+      "keywords": ["actividades Guatapé", "alojamiento San Rafael", "cabalgatas Antioquia", "kayak Guatapé", "senderismo bosque de niebla", "tours de café"]
     },
     "about": {
-      "description": "Conoce la misión de BLUCO Travel: turismo sostenible que conecta viajeros con la magia de Colombia apoyando artesanos y guías locales. Sostenibilidad, comunidad y aventura."
+      "description": "Conoce la misión de BLUCO Travel: turismo sostenible que conecta viajeros con la magia de Colombia apoyando artesanos y guías locales. Sostenibilidad, comunidad y aventura.",
+      "keywords": ["agencia de turismo sostenible", "turismo comunidad Antioquia", "BLUCO Travel", "guías locales certificados"]
     },
     "contact": {
-      "description": "Planifica tu viaje a Guatapé y San Rafael. Contacta por WhatsApp, Instagram o email. BLUCO Travel te ayuda a crear tu itinerario personalizado."
+      "description": "Planifica tu viaje a Guatapé y San Rafael. Contacta por WhatsApp, Instagram o email. BLUCO Travel te ayuda a crear tu itinerario personalizado.",
+      "keywords": ["reservar viaje Guatapé", "contacto agencia turismo Colombia", "cotizar paquete turístico", "WhatsApp turismo Colombia"]
     },
     "products": {
-      "description": "Compra productos artesanales de Guatapé y San Rafael: ponchos tejidos, café orgánico, cerámica, miel y pulseras. Apoya directamente a artesanos locales."
+      "description": "Compra productos artesanales de Guatapé y San Rafael: ponchos tejidos, café orgánico, cerámica, miel y pulseras. Apoya directamente a artesanos locales.",
+      "keywords": ["artesanías Guatapé", "productos locales San Rafael", "ponchos tejidos Antioquia", "café orgánico Guatapé", "souvenirs Colombia"]
     }
   },
   "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados.",

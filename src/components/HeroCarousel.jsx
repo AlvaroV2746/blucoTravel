@@ -17,6 +17,7 @@ const buildSrcSet = (img) => {
   const mobile = img.replace(/\.webp$/, '-768.webp');
   return {
     srcSet: `${mobile} 768w, ${img} ${natural}w`,
+    avifSrcSet: `${mobile.replace(/\.webp$/, '.avif')} 768w, ${img.replace(/\.webp$/, '.avif')} ${natural}w`,
     sizes: '100vw',
   };
 };
@@ -49,7 +50,7 @@ const HeroCarousel = ({ slides }) => {
     <div className="relative">
       <Helmet>
         {firstSrcSet ? (
-          <link rel="preload" as="image" imagesrcset={firstSrcSet.srcSet} imagesizes={firstSrcSet.sizes} />
+          <link rel="preload" as="image" imagesrcset={firstSrcSet.avifSrcSet} imagesizes={firstSrcSet.sizes} />
         ) : (
           <link rel="preload" as="image" href={slides[0]?.img} />
         )}

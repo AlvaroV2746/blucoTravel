@@ -147,19 +147,24 @@
   },
   "seo": {
     "home": {
-      "description": "Discover Guatapé and San Rafael with BLUCO Travel. Eco-friendly accommodations, horseback riding, hiking, kayak and coffee tours. Sustainable tourism supporting local communities."
+      "description": "Discover Guatapé and San Rafael with BLUCO Travel. Eco-friendly accommodations, horseback riding, hiking, kayak and coffee tours. Sustainable tourism supporting local communities.",
+      "keywords": ["sustainable tourism Colombia", "Guatapé and San Rafael", "eco lodges Antioquia", "adventure tourism Colombia", "authentic experiences Colombia"]
     },
     "services": {
-      "description": "Book accommodations and activities in Guatapé and San Rafael. Eco cabins, horseback riding, kayak, cloud forest hiking and coffee tours. Authentic experiences with local guides."
+      "description": "Book accommodations and activities in Guatapé and San Rafael. Eco cabins, horseback riding, kayak, cloud forest hiking and coffee tours. Authentic experiences with local guides.",
+      "keywords": ["activities in Guatapé", "accommodation San Rafael", "horseback riding Antioquia", "kayak Guatapé", "cloud forest hiking", "coffee farm tours"]
     },
     "about": {
-      "description": "Learn about BLUCO Travel's mission: sustainable tourism connecting travelers with Colombia's magic while supporting local artisans and guides. Sustainability, community and adventure."
+      "description": "Learn about BLUCO Travel's mission: sustainable tourism connecting travelers with Colombia's magic while supporting local artisans and guides. Sustainability, community and adventure.",
+      "keywords": ["sustainable travel agency", "community tourism Antioquia", "BLUCO Travel", "certified local guides"]
     },
     "contact": {
-      "description": "Plan your trip to Guatapé and San Rafael. Contact via WhatsApp, Instagram or email. BLUCO Travel helps you create your personalized itinerary."
+      "description": "Plan your trip to Guatapé and San Rafael. Contact via WhatsApp, Instagram or email. BLUCO Travel helps you create your personalized itinerary.",
+      "keywords": ["book trip Guatapé", "contact travel agency Colombia", "tourism quote", "WhatsApp Colombia travel"]
     },
     "products": {
-      "description": "Buy handcrafted products from Guatapé and San Rafael: woven ponchos, organic coffee, ceramics, honey and bracelets. Support local artisans directly."
+      "description": "Buy handcrafted products from Guatapé and San Rafael: woven ponchos, organic coffee, ceramics, honey and bracelets. Support local artisans directly.",
+      "keywords": ["handicrafts Guatapé", "local products San Rafael", "woven ponchos Antioquia", "organic coffee Guatapé", "Colombia souvenirs"]
     }
   },
   "copyright": "© 2024 BLUCO Travel. All rights reserved.",
