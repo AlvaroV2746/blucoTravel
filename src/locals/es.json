@@ -43,11 +43,17 @@
     "accommodation": "Alojamiento",
     "activities": "Actividades",
     "top": "Lo mas vendido",
+    "whatsappMessage": "Hola, me gustaría cotizar estas actividades:\n-{{activityNames}}\n\nDías: {{days}}\nPersonas: {{people}}\n{{guideText}}",
+    "guideYes": "Guía en inglés: Sí",
+    "guideNo": "Guía en inglés: No",
     "packages": "Paquetes"
   },
   "cart": {
     "title": "Mi itinerario",
     "empty": "Aún no hay actividades seleccionadas.",
+    "days": "¿Cuántos días deseas disfrutar de tu viaje?",
+    "people": "¿Cuántas personas van a viajar?",
+    "guide": "¿Se requiere guía en inglés para este viaje?",
     "checkout": "Finalizar compra"
   },
   "guatapeAccommodations": {

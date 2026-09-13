@@ -7,6 +7,11 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
   const { t } = useTranslation();
   const safeCart = cart ? cart : [];
   
+  // Estados para las 3 nuevas opciones
+  const [days, setDays] = useState(1);
+  const [people, setPeople] = useState(1);
+  const [needsGuide, setNeedsGuide] = useState(false);
+
   // 1. Estado interno solo para manejar la animación
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -86,8 +91,59 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
 
         {/* Pie del carrito */}
         <div className="flex-shrink-0 p-6 bg-gray-50 border-t border-gray-200">
+          
+          {/* Opciones adicionales: visibles SOLO cuando hay productos en el carrito */}
+          {safeCart.length > 0 && (
+            <div className="mb-4 space-y-3 bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+              
+              {/* 1. Cantidad de días */}
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-semibold text-gray-700">
+                  {t('cart.days')}
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  value={days}
+                  onChange={(e) => setDays(e.target.value)}
+                  className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded text-sm text-gray-800 focus:outline-none focus:border-cyan-500"
+                />
+              </div>
+
+              {/* 2. Cantidad de personas */}
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-semibold text-gray-700">
+                  {t('cart.people')}
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  value={people}
+                  onChange={(e) => setPeople(e.target.value)}
+                  className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded text-sm text-gray-800 focus:outline-none focus:border-cyan-500"
+                />
+              </div>
+
+              {/* 3. Checkbox Guía en inglés */}
+              <div className="flex items-center gap-2 pt-1">
+                <input
+                  type="checkbox"
+                  id="englishGuide"
+                  checked={needsGuide}
+                  onChange={(e) => setNeedsGuide(e.target.checked)}
+                  className="w-4 h-4 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500 cursor-pointer"
+                />
+                <label htmlFor="englishGuide" className="text-sm font-medium text-gray-700 cursor-pointer">
+                  {t('cart.guide')}
+                </label>
+              </div>
+
+            </div>
+          )}
+
+          {/* Se pasan los estados directamente a la función onQuote del padre */}
           <button
-            onClick={onQuote}
+            onClick={() => onQuote(days, people, needsGuide)}
             disabled={safeCart.length === 0}
             className="w-full bg-cyan-500 text-white font-bold py-3 rounded cursor-pointer hover:bg-cyan-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
           >

@@ -42,12 +42,18 @@
     "makeQuote": "MAKE MY QUOTE",
     "accommodation": "Accommodation",
     "activities": "Activities",
-    "top": "Top Sale",
+    "whatsappMessage": "Hello, I would like to quote these activities:\n-{{activityNames}}\n\nDays: {{days}}\nPeople: {{people}}\n{{guideText}}",
+    "guideYes": "English guide: Yes",
+    "top": "Hot Sale",
+    "guideNo": "English guide: No",
     "packages": "Packages"
   },
   "cart": {
     "title": "My Itinerary",
     "empty": "No activities selected yet.",
+    "days": "How many days you want to enjoy your trip?.",
+    "people": "How many people is going to travel?.",
+    "guide": "English guide is required for this trip?.",
     "checkout": "Checkout"
   },
   "guatapeAccommodations": {
@@ -83,7 +89,7 @@
     "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "specialStats": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "deluxeTitle": "Deluxe San Rafael Accommodation",
-    "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
+    "deluxeDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "deluxeStats": "Our deluxe accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay."
   },
   "sanRafaActivities": {

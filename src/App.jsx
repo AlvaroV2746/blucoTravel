@@ -44,13 +44,20 @@ const BlucoApp = () => {
     setCart(newCart);
   };
 
-  const handleQuote = () => {
-    const activityNames = cart.map(item => t(item.name)).join(', ');
-    const text = encodeURIComponent(`Hello, I would like to quote these activities: ${activityNames}`);
-    window.open(`https://wa.me/573184559655?text=${text}`, '_blank');
-  };
-
+const handleQuote = (days, people, needsGuide) => {
+  const activityNames = cart.map(item => t(item.name)).join('\n-');
+  const guideText = needsGuide ? t('common.guideYes') : t('common.guideNo');
   
+  const message = t('common.whatsappMessage', {
+    activityNames,
+    days,
+    people,
+    guideText
+  });
+  
+  const text = encodeURIComponent(message);
+  window.open(`https://wa.me/573184559655?text=${text}`, '_blank');
+};  
 
   return (
     <div className=" max-w-8xl mx-auto">
@@ -58,8 +65,8 @@ const BlucoApp = () => {
       <Navbar onViewChange={setCurrentView} />
 
       {/* RENDERIZADO CONDICIONAL DE VISTAS */}
-      <main className="pt-30">
-        <div className="max-w-7xl mx-auto my-20">
+      <main className="pt-5">
+        <div className="max-w-7xl mx-auto my-30">
           {currentView === 'home' && <HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => setCurrentView('services')} />}
 {currentView === 'services' && (
   <>
