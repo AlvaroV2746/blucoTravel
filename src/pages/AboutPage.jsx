@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeaf, faUsers, faMountain } from '@fortawesome/free-solid-svg-icons';
-import cacaoTour from '../assets/images/cacaoTour.jpg';
+import { IMAGES } from '../data/images';
+import FAQSection from '../components/FAQSection';
 
 const AboutPage = () => {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>Nuestra Historia | BLUCO Travel</title>
+        <title>{t('meta.about.title')} | BLUCO Travel</title>
         <meta name="description" content={t('seo.about.description')} />
         <meta property="og:title" content="Nuestra Historia - BLUCO Travel Colombia" />
         <meta property="og:description" content={t('seo.about.description')} />
@@ -52,14 +53,18 @@ const AboutPage = () => {
 
           <div className="relative">
             <img
-              src={cacaoTour}
+              src={IMAGES['cacaoTour.jpg']}
               alt="Experiencia de tour de café en finca cafetera colombiana con BLUCO Travel"
+              loading="lazy"
+              decoding="async"
               className="w-full h-64 object-cover rounded-md transition-transform duration-500 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/20 rounded-md"></div>
           </div>
         </div>
       </div>
+
+      <FAQSection />
     </>
   );
 };

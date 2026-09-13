@@ -11,7 +11,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
   return (
     <>
       <Helmet>
-        <title>Alojamientos y Actividades | Guatapé y San Rafael</title>
+        <title>{t('meta.services.title')} | BLUCO Travel</title>
         <meta name="description" content={t('seo.services.description')} />
         <meta property="og:title" content="Alojamientos y Actividades en Guatapé y San Rafael | BLUCO Travel" />
         <meta property="og:description" content={t('seo.services.description')} />
@@ -27,7 +27,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             openSections['guatape'] ? 'rounded-t-2xl rounded-b-none' : 'rounded-2xl'
           }`}
         >
-          <img src={guatapeAcommodations[0].img} alt="Paisaje del embalse de Guatapé con cabañas ecológicas" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={guatapeAcommodations[0].img} alt="Paisaje del embalse de Guatapé con cabañas ecológicas" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-blue-900/50"></div>
           <div className="absolute left-4 top-4 z-10">
             <FontAwesomeIcon icon={faMountain} className="text-2xl text-white" />
@@ -102,7 +102,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             openSections['sanrafael'] ? 'rounded-t-2xl rounded-b-none' : 'rounded-2xl'
           }`}
         >
-          <img src={sanRafaAcommodations[0].img} alt="Río y naturaleza en San Rafael para turismo de aventura" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={sanRafaAcommodations[0].img} alt="Río y naturaleza en San Rafael para turismo de aventura" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-emerald-500/50"></div>
           <div className="absolute left-4 top-4 z-10">
             <FontAwesomeIcon icon={faLeaf} className="text-2xl text-white" />
@@ -177,7 +177,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             openSections['packages'] ? 'rounded-t-2xl rounded-b-none' : 'rounded-2xl'
           }`}
         >
-          <img src={packages[0].img} alt="Paquete turístico combinado con alojamiento y actividades en Guatapé y San Rafael" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={packages[0].img} alt="Paquete turístico combinado con alojamiento y actividades en Guatapé y San Rafael" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-red-500/50"></div>
           <div className="absolute left-4 top-4 z-10">
             <FontAwesomeIcon icon={faGift} className="text-2xl text-white" />
@@ -222,6 +222,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             </div>
           </div>
         </div>
+
       </div>
     </>
   );

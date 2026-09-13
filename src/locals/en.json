@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
   "navbar": {
     "home": "Home",
     "services": "Services",
@@ -10,7 +13,9 @@
     "title": "Explore Amazing Places",
     "subtitle": "Discover the most beautiful destinations in Colombia",
     "button": "Explore",
-    "slideAlt": "Carousel image {num}: tourism experiences in Guatapé and San Rafael"
+    "slideAlt": "Carousel image {num}: tourism experiences in Guatapé and San Rafael",
+    "previousSlide": "Previous image",
+    "nextSlide": "Next image"
   },
   "about": {
     "title": "Our Story",
@@ -157,5 +162,51 @@
       "description": "Buy handcrafted products from Guatapé and San Rafael: woven ponchos, organic coffee, ceramics, honey and bracelets. Support local artisans directly."
     }
   },
-  "copyright": "© 2024 BLUCO Travel. All rights reserved."
+  "copyright": "© 2024 BLUCO Travel. All rights reserved.",
+  "meta": {
+    "home": {
+      "title": "Sustainable Tourism in Colombia"
+    },
+    "services": {
+      "title": "Accommodations and Activities in Guatapé and San Rafael"
+    },
+    "about": {
+      "title": "Our Story"
+    },
+    "contact": {
+      "title": "Contact Us"
+    },
+    "products": {
+      "title": "Local Artisan Products"
+    }
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What services does BLUCO Travel offer?",
+        "answer": "We offer eco-friendly accommodations and authentic activities in Guatapé and San Rafael, Antioquia: horseback riding, kayak, cloud forest hiking and coffee tours. We also sell handcrafted local products."
+      },
+      {
+        "question": "How do I book an activity or accommodation?",
+        "answer": "You can build your plan in the Services section, add experiences to your cart and request a quote via WhatsApp at +57 318 455 9655. We reply quickly to confirm availability and dates."
+      },
+      {
+        "question": "Which payment methods do you accept?",
+        "answer": "We mainly work with your local currency COP (Colombian pesos). When you request your quote via WhatsApp we confirm the available payment methods for your booking."
+      },
+      {
+        "question": "Are the experiences guided by a local guide?",
+        "answer": "Yes. All our activities include certified local guides who know the region and support the sustainable tourism of the Guatapé and San Rafael communities."
+      },
+      {
+        "question": "Where are Guatapé and San Rafael located?",
+        "answer": "Guatapé and San Rafael are two municipalities in eastern Antioquia, Colombia, about 2 hours from Medellín, famous for their reservoir, El Peñol rock, crystal-clear waters and lush nature."
+      },
+      {
+        "question": "How does the positive impact get funded?",
+        "answer": "Every booking directly supports guides, artisans and local families. We promote sustainable tourism to protect ecosystems and generate fair income in the communities we visit."
+      }
+    ]
+  }
 }

@@ -4,16 +4,17 @@ import { LOCAL_PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import SchemaOrg from '../components/SchemaOrg';
 import { generateProduct, BASE_URL } from '../utils/schemas';
+import { getRoute } from '../utils/routes';
 
 const LocalProductsPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const productSchemas = LOCAL_PRODUCTS.map((product) =>
     generateProduct({
       name: t(product.name),
       description: t(product.desc),
       image: `${BASE_URL}/og-products.svg`,
-      url: `${BASE_URL}/productos`,
+      url: `${BASE_URL}${getRoute(i18n.language, 'products')}`,
       price: product.priceValue,
     })
   );
@@ -21,7 +22,7 @@ const LocalProductsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Productos Artesanales Locales | Guatapé y San Rafael</title>
+        <title>{t('meta.products.title')} | BLUCO Travel</title>
         <meta name="description" content={t('seo.products.description')} />
         <meta property="og:title" content="Productos Artesanales - BLUCO Travel Colombia" />
         <meta property="og:description" content={t('seo.products.description')} />

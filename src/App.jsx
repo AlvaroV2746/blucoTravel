@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,6 +14,7 @@ import CartSidebar from './components/CartSidebar';
 import ActivityDetailView from './components/ActivityDetailView';
 import SchemaOrg from './components/SchemaOrg';
 import { generateWebsiteSchema, generateBreadcrumbList } from './utils/schemas';
+import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const travelAgencySchema = {
@@ -62,10 +63,18 @@ const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedA
 const BlucoApp = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [openSections, setOpenSections] = useState({});
+
+  useEffect(() => {
+    const localized = toLocalizedPath(location.pathname, i18n.language);
+    if (localized !== location.pathname) {
+      navigate(localized, { replace: true });
+    }
+  }, [i18n.language, location.pathname, navigate]);
 
   const toggleSection = (section) => {
     setOpenSections(prev => ({
@@ -106,26 +115,26 @@ const BlucoApp = () => {
   const canonicalUrl = `${baseUrl}${location.pathname}`;
   const ogLocale = i18n.language === 'es' ? 'es_CO' : 'en_US';
 
+  const esPath = toLocalizedPath(location.pathname, 'es');
+  const enPath = toLocalizedPath(location.pathname, 'en');
+
+  const navLabels = {
+    services: t('navbar.services'),
+    about: t('navbar.about'),
+    contact: t('navbar.contact'),
+    products: t('navbar.products'),
+  };
+
+  const routeKey = resolveKey(location.pathname);
+
   const breadcrumbs = generateBreadcrumbList([
     {
       name: t('navbar.home'),
       url: `${baseUrl}`,
     },
-    ...(location.pathname === '/servicios' ? [{
-      name: t('navbar.services'),
-      url: `${baseUrl}/servicios`,
-    }] : []),
-    ...(location.pathname === '/nosotros' ? [{
-      name: t('navbar.about'),
-      url: `${baseUrl}/nosotros`,
-    }] : []),
-    ...(location.pathname === '/contacto' ? [{
-      name: t('navbar.contact'),
-      url: `${baseUrl}/contacto`,
-    }] : []),
-    ...(location.pathname === '/productos' ? [{
-      name: t('navbar.products'),
-      url: `${baseUrl}/productos`,
+    ...(routeKey !== 'home' ? [{
+      name: navLabels[routeKey] || '',
+      url: `${baseUrl}${getRoute(i18n.language, routeKey)}`,
     }] : []),
   ]);
 
@@ -133,13 +142,13 @@ const BlucoApp = () => {
     <>
       <Helmet>
         <html lang={i18n.language} />
-        <title template="BLUCO Travel — %s" defaultTitle="BLUCO Travel | Colombia" />
+        <title>{t('meta.home.title')} | BLUCO Travel</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hrefLang="es" href={`${baseUrl}${location.pathname}`} />
-        <link rel="alternate" hrefLang="en" href={`${baseUrl}${location.pathname}`} />
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}${esPath}`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
         <link rel="alternate" hrefLang="x-default" href={baseUrl} />
         <meta property="og:locale" content={ogLocale} />
         <meta property="og:type" content="website" />
@@ -152,12 +161,13 @@ const BlucoApp = () => {
       <SchemaOrg schema={[generateWebsiteSchema(), breadcrumbs]} />
 
       <div className="max-w-8xl mx-auto">
+        <a href="#main-content" className="skip-link">{t('a11y.skipToContent')}</a>
         <Navbar />
 
-        <main className="pt-5">
+        <main className="pt-5" id="main-content">
           <div className="max-w-7xl mx-auto my-30">
             <Routes>
-              <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => {}} />} />
+              <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
               <Route path="/servicios" element={
                 <ServicesRoute
                   onSelect={setSelectedActivity}
@@ -167,9 +177,21 @@ const BlucoApp = () => {
                   selectedActivity={selectedActivity}
                 />
               } />
+              <Route path="/services" element={
+                <ServicesRoute
+                  onSelect={setSelectedActivity}
+                  onAdd={addToCart}
+                  openSections={openSections}
+                  toggleSection={toggleSection}
+                  selectedActivity={selectedActivity}
+                />
+              } />
               <Route path="/nosotros" element={<AboutPage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/contacto" element={<ContactPage />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/productos" element={<LocalProductsPage />} />
+              <Route path="/products" element={<LocalProductsPage />} />
             </Routes>
           </div>
         </main>

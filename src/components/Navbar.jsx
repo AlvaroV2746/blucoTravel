@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import logoFull from '../assets/logos/logoFull.png';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { getRoute } from '../utils/routes';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -27,11 +28,11 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const mobileLinks = [
-    { path: '/servicios', label: t('navbar.services') },
-    { path: '/nosotros', label: t('navbar.about') },
-    { path: '/contacto', label: t('navbar.contact') },
-    { path: '/productos', label: t('navbar.products') }
-  ];
+    { key: 'services', label: t('navbar.services') },
+    { key: 'about', label: t('navbar.about') },
+    { key: 'contact', label: t('navbar.contact') },
+    { key: 'products', label: t('navbar.products') }
+  ].map((item) => ({ ...item, path: getRoute(i18n.language, item.key) }));
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
   const closeMenu = () => setIsMenuOpen(false);

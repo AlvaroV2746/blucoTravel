@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal"
+  },
   "navbar": {
     "home": "Inicio",
     "services": "Servicios",
@@ -10,7 +13,9 @@
     "title": "Explora lugares increíbles",
     "subtitle": "Descubre los destinos más bellos de Colombia",
     "button": "Explorar",
-    "slideAlt": "Imagen {num} del carrusel: experiencias turísticas en Guatapé y San Rafael"
+    "slideAlt": "Imagen {num} del carrusel: experiencias turísticas en Guatapé y San Rafael",
+    "previousSlide": "Imagen anterior",
+    "nextSlide": "Imagen siguiente"
   },
   "about": {
     "title": "Nuestra historia",
@@ -157,5 +162,51 @@
       "description": "Compra productos artesanales de Guatapé y San Rafael: ponchos tejidos, café orgánico, cerámica, miel y pulseras. Apoya directamente a artesanos locales."
     }
   },
-  "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados."
+  "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados.",
+  "meta": {
+    "home": {
+      "title": "Turismo Sostenible en Colombia"
+    },
+    "services": {
+      "title": "Alojamientos y Actividades en Guatapé y San Rafael"
+    },
+    "about": {
+      "title": "Nuestra Historia"
+    },
+    "contact": {
+      "title": "Contáctanos"
+    },
+    "products": {
+      "title": "Productos Artesanales Locales"
+    }
+  },
+  "faqs": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Qué servicios ofrece BLUCO Travel?",
+        "answer": "Ofrecemos alojamientos ecológicos y actividades auténticas en Guatapé y San Rafael, Antioquia: cabalgatas, kayak, senderismo en bosque de niebla y tours de café. También comercializamos productos artesanales de la región."
+      },
+      {
+        "question": "¿Cómo reservo una actividad o alojamiento?",
+        "answer": "Puedes armar tu plan desde la sección Servicios, añadir las experiencias a tu carrito y solicitarnos una cotización por WhatsApp al +57 318 455 9655. Respondemos rápido para confirmar disponibilidad y fechas."
+      },
+      {
+        "question": "¿Qué formas de pago aceptan?",
+        "answer": "Trabajamos principalmente con tu moneda local COP (pesos colombianos). Al solicitar tu cotización por WhatsApp te confirmamos los métodos de pago disponibles para tu reserva."
+      },
+      {
+        "question": "¿Las experiencias incluyen guía local?",
+        "answer": "Sí. Todas nuestras actividades cuentan con guías locales certificados que conocen la región y apoyan el turismo sostenible de las comunidades de Guatapé y San Rafael."
+      },
+      {
+        "question": "¿Dónde están ubicados Guatapé y San Rafael?",
+        "answer": "Guatapé y San Rafael son dos municipios del oriente antioqueño en Colombia, a aproximadamente 2 horas de Medellín, famosos por su embalse, su piedra el Peñol, sus aguas cristalinas y su naturaleza exuberante."
+      },
+      {
+        "question": "¿Cómo se financia el impacto positivo?",
+        "answer": "Cada reserva apoya directamente a guías, artesanos y familias locales. Promovemos el turismo sostenible para proteger los ecosistemas y generar ingresos justos en las comunidades que visitamos."
+      }
+    ]
+  }
 }

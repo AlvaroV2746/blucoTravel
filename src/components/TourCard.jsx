@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const TourCard = ({ id, type, nameKey, img, onSelect, onAdd, priceKey, desc, stats }) => {
@@ -10,7 +9,7 @@ const TourCard = ({ id, type, nameKey, img, onSelect, onAdd, priceKey, desc, sta
 
   return (
     <div className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-      <img src={img} alt={t(nameKey)} className="w-full h-48 object-cover cursor-pointer" onClick={() => onSelect({ id, type, name: nameKey, img, desc, stats })} />
+      <img src={img} alt={t(nameKey)} loading="lazy" decoding="async" className="w-full h-48 object-cover cursor-pointer" onClick={() => onSelect({ id, type, name: nameKey, img, desc, stats })} />
       <div className="p-4 flex-1">
         <h3 className="font-bold text-gray-900 line-clamp-2">{t(nameKey)}</h3>
         {priceKey && <div className="mt-2 text-cyan-600 font-medium">{t(priceKey)}</div>}

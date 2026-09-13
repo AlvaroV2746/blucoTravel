@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const ProductCard = ({ nameKey, img, priceKey, desc }) => {
@@ -6,7 +5,7 @@ const ProductCard = ({ nameKey, img, priceKey, desc }) => {
 
   return (
     <div className="rounded-xl bg-white shadow overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
-      <img src={img} alt={t(nameKey)} className="w-full h-48 object-cover" />
+      <img src={img} alt={t(nameKey)} loading="lazy" decoding="async" className="w-full h-48 object-cover" />
       <div className="p-4 flex-1">
         <h3 className="font-bold text-gray-900 line-clamp-2">{t(nameKey)}</h3>
         {priceKey && (

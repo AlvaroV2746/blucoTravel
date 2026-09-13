@@ -1,4 +1,3 @@
-import React from 'react';
 import logoFull from '../assets/logos/logoFull.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
