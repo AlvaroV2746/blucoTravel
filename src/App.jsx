@@ -50,7 +50,6 @@ const travelAgencySchema = {
   ],
 };
 
-const GSC_VERIFICATION = 'VnbHtfXkXkX0h82I8aO2KSixPP2Nv7LLce9qKThjD8U';
 
 const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedActivity }) => {
   return (
