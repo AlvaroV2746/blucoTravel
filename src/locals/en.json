@@ -1,5 +1,6 @@
 {
   "navbar": {
+    "home": "Home",
     "services": "Services",
     "about": "About Us",
     "contact": "Contact Us",
@@ -8,7 +9,8 @@
   "hero": {
     "title": "Explore Amazing Places",
     "subtitle": "Discover the most beautiful destinations in Colombia",
-    "button": "Explore"
+    "button": "Explore",
+    "slideAlt": "Carousel image {num}: tourism experiences in Guatapé and San Rafael"
   },
   "about": {
     "title": "Our Story",
@@ -89,20 +91,20 @@
     "specialDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "specialStats": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
     "deluxeTitle": "Deluxe San Rafael Accommodation",
-    "deluxeDesc": "Our special accommodations provide a unique experience with added amenities and services to make your stay memorable.",
+    "deluxeDesc": "Our deluxe accommodations offer the ultimate in comfort and luxury, with premium amenities and personalized services.",
     "deluxeStats": "Our deluxe accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay."
   },
   "sanRafaActivities": {
-    "RidingTitle": "Ecological Horseback Riding GUATAPE",
-    "RidingDesc": "We offer a variety of accommodations to suit your needs. Whether you're looking for a basic stay or a luxurious experience, we have options for everyone.",
-    "RidingStats": "Our basic accommodations provide a comfortable and affordable option for travelers seeking a simple yet enjoyable stay.",
-    "riverTitle": "River Kayaking GUATAPE",
+    "RidingTitle": "Ecological Horseback Riding San Rafael",
+    "RidingDesc": "We offer a variety of activities to suit your needs. Whether you're looking for a basic stay or a complete experience, we have options for everyone.",
+    "RidingStats": "Our basic options provide a comfortable and affordable experience for travelers seeking a simple yet enjoyable activity.",
+    "riverTitle": "River Kayaking San Rafael",
     "riverDesc": "Experience the thrill of the local rivers.",
     "riverStats": "Duration: 2h | Difficulty: Medium",
-    "forestTrekTitle": "Cloud Forest Trek GUATAPE",
+    "forestTrekTitle": "Cloud Forest Trek San Rafael",
     "forestTrekDesc": "Discover the amazing biodiversity of the forest.",
     "forestTrekStats": "Duration: 5h | Difficulty: Hard",
-    "coffeFarmTitle": "Coffee Farm Tour GUATAPE",
+    "coffeFarmTitle": "Coffee Farm Tour San Rafael",
     "coffeFarmDesc": "Learn the secrets of local coffee production.",
     "coffeFarmStats": "Duration: 4h | Difficulty: Easy",
     "birdWatchingTitle": "Ecological Bird Watching San Rafael",
@@ -110,13 +112,13 @@
     "birdWatchingStats": "Duration: 3h | Difficulty: Easy"
   },
   "packages": {
-    "birdWatchingTitle": "Ecological Bird Watching GUATAPE",
+    "birdWatchingTitle": "Ecological Bird Watching Guatapé",
     "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
     "birdWatchingStats": "Duration: 3h | Difficulty: Easy",
-    "orientalTitle": "Oriental River Kayaking GUATAPE",
+    "orientalTitle": "Oriental River Kayaking Guatapé",
     "orientalDesc": "Experience the thrill of the local rivers.",
     "orientalStats": "Duration: 2h | Difficulty: Medium",
-    "riverTitle": "Cloud Forest Trek GUATAPE",
+    "riverTitle": "Cloud Forest Trek Guatapé",
     "riverDesc": "Discover the amazing biodiversity of the forest.",
     "riverStats": "Duration: 5h | Difficulty: Hard"
   },
@@ -137,6 +139,23 @@
     "banglePrice": "Woven bracelet",
     "honeyPrice": "Pure organic honey",
     "lead": "Handcrafted products and unique souvenirs from each destination"
+  },
+  "seo": {
+    "home": {
+      "description": "Discover Guatapé and San Rafael with BLUCO Travel. Eco-friendly accommodations, horseback riding, hiking, kayak and coffee tours. Sustainable tourism supporting local communities."
+    },
+    "services": {
+      "description": "Book accommodations and activities in Guatapé and San Rafael. Eco cabins, horseback riding, kayak, cloud forest hiking and coffee tours. Authentic experiences with local guides."
+    },
+    "about": {
+      "description": "Learn about BLUCO Travel's mission: sustainable tourism connecting travelers with Colombia's magic while supporting local artisans and guides. Sustainability, community and adventure."
+    },
+    "contact": {
+      "description": "Plan your trip to Guatapé and San Rafael. Contact via WhatsApp, Instagram or email. BLUCO Travel helps you create your personalized itinerary."
+    },
+    "products": {
+      "description": "Buy handcrafted products from Guatapé and San Rafael: woven ponchos, organic coffee, ceramics, honey and bracelets. Support local artisans directly."
+    }
   },
   "copyright": "© 2024 BLUCO Travel. All rights reserved."
 }

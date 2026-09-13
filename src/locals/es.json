@@ -1,5 +1,6 @@
 {
   "navbar": {
+    "home": "Inicio",
     "services": "Servicios",
     "about": "Sobre nosotros",
     "contact": "Contáctanos",
@@ -8,7 +9,8 @@
   "hero": {
     "title": "Explora lugares increíbles",
     "subtitle": "Descubre los destinos más bellos de Colombia",
-    "button": "Explorar"
+    "button": "Explorar",
+    "slideAlt": "Imagen {num} del carrusel: experiencias turísticas en Guatapé y San Rafael"
   },
   "about": {
     "title": "Nuestra historia",
@@ -42,7 +44,7 @@
     "makeQuote": "COTIZAR AHORA",
     "accommodation": "Alojamiento",
     "activities": "Actividades",
-    "top": "Lo mas vendido",
+    "top": "Lo más vendido",
     "whatsappMessage": "Hola, me gustaría cotizar estas actividades:\n-{{activityNames}}\n\nDías: {{days}}\nPersonas: {{people}}\n{{guideText}}",
     "guideYes": "Guía en inglés: Sí",
     "guideNo": "Guía en inglés: No",
@@ -93,16 +95,16 @@
     "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
   },
   "sanRafaActivities": {
-    "RidingTitle": "Cabalgata Ecológica GUATAPÉ",
+    "RidingTitle": "Cabalgata Ecológica San Rafael",
     "RidingDesc": "Ofrecemos una variedad de actividades para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia completa, tenemos opciones para todos.",
     "RidingStats": "Nuestras opciones básicas brindan una experiencia cómoda y asequible para viajeros que buscan una actividad sencilla pero agradable.",
-    "riverTitle": "Kayak en el Río GUATAPÉ",
+    "riverTitle": "Kayak en el Río San Rafael",
     "riverDesc": "Experimenta la emoción de los ríos locales.",
     "riverStats": "Duración: 2h | Dificultad: Media",
-    "forestTrekTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
+    "forestTrekTitle": "Senderismo en el Bosque de Niebla San Rafael",
     "forestTrekDesc": "Descubre la increíble biodiversidad del bosque.",
     "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
-    "coffeFarmTitle": "Tour Finca Cafetera GUATAPÉ",
+    "coffeFarmTitle": "Tour Finca Cafetera San Rafael",
     "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
     "coffeFarmStats": "Duración: 4h | Dificultad: Fácil",
     "birdWatchingTitle": "Observación de Aves Ecológica San Rafael",
@@ -110,15 +112,15 @@
     "birdWatchingStats": "Duración: 3h | Dificultad: Fácil"
   },
   "packages": {
-    "birdWatchingTitle": "Observación de Aves Ecológica GUATAPÉ",
-    "birdWatchingDesc": "Observe the diverse bird species in their natural habitat.",
-    "birdWatchingStats": "Duration: 3h | Difficulty: Easy",
-    "orientalTitle": "Oriental River Kayaking GUATAPE",
-    "orientalDesc": "Experience the thrill of the local rivers.",
-    "orientalStats": "Duration: 2h | Difficulty: Medium",
-    "riverTitle": "Cloud Forest Trek GUATAPE",
-    "riverDesc": "Discover the amazing biodiversity of the forest.",
-    "riverStats": "Duration: 5h | Difficulty: Hard"
+    "birdWatchingTitle": "Observación de Aves Ecológica Guatapé",
+    "birdWatchingDesc": "Observe las diversas especies de aves en su hábitat natural.",
+    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil",
+    "orientalTitle": "Kayak Río Oriental Guatapé",
+    "orientalDesc": "Experimenta la emoción de los ríos locales.",
+    "orientalStats": "Duración: 2h | Dificultad: Media",
+    "riverTitle": "Senderismo Bosque de Niebla Guatapé",
+    "riverDesc": "Descubre la increíble biodiversidad del bosque.",
+    "riverStats": "Duración: 5h | Dificultad: Difícil"
   },
   "localProducts": {
     "ponchoTitle": "Poncho Hecho a Mano",
@@ -137,6 +139,23 @@
     "banglePrice": "Pulsera tejida",
     "honeyPrice": "Miel pura",
     "lead": "Productos artesanales y souvenirs únicos de cada destino"
+  },
+  "seo": {
+    "home": {
+      "description": "Descubre Guatapé y San Rafael con BLUCO Travel. Alojamientos ecológicos, cabalgatas, senderismo, kayak y tours de café. Turismo sostenible que apoya comunidades locales."
+    },
+    "services": {
+      "description": "Reserva alojamientos y actividades en Guatapé y San Rafael. Cabañas ecológicas, cabalgatas, kayak, senderismo en bosque de niebla y tours de café. Experiencias auténticas con guías locales."
+    },
+    "about": {
+      "description": "Conoce la misión de BLUCO Travel: turismo sostenible que conecta viajeros con la magia de Colombia apoyando artesanos y guías locales. Sostenibilidad, comunidad y aventura."
+    },
+    "contact": {
+      "description": "Planifica tu viaje a Guatapé y San Rafael. Contacta por WhatsApp, Instagram o email. BLUCO Travel te ayuda a crear tu itinerario personalizado."
+    },
+    "products": {
+      "description": "Compra productos artesanales de Guatapé y San Rafael: ponchos tejidos, café orgánico, cerámica, miel y pulseras. Apoya directamente a artesanos locales."
+    }
   },
   "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados."
 }

@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import logoFull from '../assets/logos/logoFull.png';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = ({ onViewChange }) => {
+const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,14 +27,19 @@ const Navbar = ({ onViewChange }) => {
   }, [isMenuOpen]);
 
   const mobileLinks = [
-    { id: 'services', label: t('navbar.services') },
-    { id: 'aboutus', label: t('navbar.about') },
-    { id: 'contactus', label: t('navbar.contact') },
-    { id: 'localproducts', label: t('navbar.products') }
+    { path: '/servicios', label: t('navbar.services') },
+    { path: '/nosotros', label: t('navbar.about') },
+    { path: '/contacto', label: t('navbar.contact') },
+    { path: '/productos', label: t('navbar.products') }
   ];
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleNavClick = (path) => {
+    navigate(path);
+    closeMenu();
+  };
 
   return (
     <>
@@ -42,7 +49,6 @@ const Navbar = ({ onViewChange }) => {
           : 'bg-blue-950/95 border-b border-blue-900/50'
       }`}>
         <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
-          {/* Logo a la izquierda */}
           <div className="flex items-center gap-2 cursor-pointer">
             <img
               src={logoFull}
@@ -51,18 +57,17 @@ const Navbar = ({ onViewChange }) => {
                 isScrolled ? 'brightness-0 invert' : ''
               }`}
               onClick={() => {
-                onViewChange('home');
+                navigate('/');
                 closeMenu();
               }}
             />
           </div>
 
-          {/* Menú de navegación desktop */}
           <nav className="hidden md:flex items-center gap-8">
             {mobileLinks.map((item) => (
               <button
-                key={item.id}
-                onClick={() => onViewChange(item.id)}
+                key={item.path}
+                onClick={() => handleNavClick(item.path)}
                 className="px-4 py-2 text-sm font-medium text-white relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full transition-colors duration-300 cursor-pointer hover:text-cyan-300"
               >
                 {item.label}
@@ -70,9 +75,7 @@ const Navbar = ({ onViewChange }) => {
             ))}
           </nav>
 
-          {/* Botones de Idioma y Hamburguesa */}
           <div className="flex items-center gap-4">
-            {/* Idiomas Desktop */}
             <div className="hidden sm:flex items-center gap-2">
               <button 
                 onClick={() => i18n.changeLanguage('es')} 
@@ -96,7 +99,6 @@ const Navbar = ({ onViewChange }) => {
               </button>
             </div>
 
-            {/* Botón hamburguesa con clase 'group' para el efecto hover coordinado */}
             <button
               onClick={toggleMenu}
               className="md:hidden p-2 rounded-lg text-white transition-all duration-300 cursor-pointer flex justify-center items-center w-10 h-10 hover:bg-cyan-500/10 group"
@@ -125,7 +127,6 @@ const Navbar = ({ onViewChange }) => {
         </div>
       </header>
 
-      {/* Menú mobile drawer */}
       <div 
         className={`md:hidden fixed top-30 left-0 right-0 z-40 bg-blue-950/98 backdrop-blur-xl border-b border-blue-900/50 shadow-2xl p-6 transition-all duration-300 ease-out transform ${
           isMenuOpen 
@@ -138,12 +139,9 @@ const Navbar = ({ onViewChange }) => {
       >
         <ul className="space-y-4 text-center">
           {mobileLinks.map((item) => (
-            <li key={item.id}>
+            <li key={item.path}>
               <button
-                onClick={() => {
-                  closeMenu();
-                  onViewChange(item.id);
-                }}
+                onClick={() => handleNavClick(item.path)}
                 className="w-full px-4 py-3 text-lg font-medium text-white rounded-lg hover:bg-cyan-500/20 transition-colors cursor-pointer"
               >
                 {item.label}
@@ -152,7 +150,6 @@ const Navbar = ({ onViewChange }) => {
           ))}
         </ul>
 
-        {/* Selector de idioma móvil dentro del menú desplegable */}
         <div className="mt-6 pt-6 border-t border-blue-900/50 flex justify-center gap-4">
           <button 
             onClick={() => { i18n.changeLanguage('es'); closeMenu(); }} 
@@ -177,7 +174,6 @@ const Navbar = ({ onViewChange }) => {
         </div>
       </div>
 
-      {/* Backdrop overlay */}
       <div 
         className={`md:hidden fixed inset-0 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
