@@ -150,7 +150,7 @@ const BlucoApp = () => {
 
   return (
     <>
-      <Helmet>
+      <Helmet titleTemplate="%s | BLUCO Travel">
         <html lang={i18n.language} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -11,7 +11,7 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t('meta.contact.title')} | BLUCO Travel</title>
+        <title>{t('meta.contact.title')}</title>
         <meta name="description" content={t('seo.contact.description')} />
         <meta name="keywords" content={t('seo.contact.keywords', { returnObjects: true }).join(', ')} />
         <meta property="og:title" content="Contáctanos - BLUCO Travel Colombia" />

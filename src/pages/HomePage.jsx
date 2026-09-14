@@ -12,7 +12,7 @@ const HomePage = ({ onNavigate }) => {
   return (
     <>
       <Helmet>
-        <title>{t('meta.home.title')} | BLUCO Travel</title>
+        <title>{t('meta.home.title')}</title>
         <meta name="description" content={t('seo.home.description')} />
         <meta name="keywords" content={t('seo.home.keywords', { returnObjects: true }).join(', ')} />
         <meta property="og:title" content="BLUCO Travel Colombia - Turismo Sostenible" />

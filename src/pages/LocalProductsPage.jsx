@@ -22,7 +22,7 @@ const LocalProductsPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t('meta.products.title')} | BLUCO Travel</title>
+        <title>{t('meta.products.title')}</title>
         <meta name="description" content={t('seo.products.description')} />
         <meta name="keywords" content={t('seo.products.keywords', { returnObjects: true }).join(', ')} />
         <meta property="og:title" content="Productos Artesanales - BLUCO Travel Colombia" />

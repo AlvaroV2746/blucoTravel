@@ -11,7 +11,7 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t('meta.about.title')} | BLUCO Travel</title>
+        <title>{t('meta.about.title')}</title>
         <meta name="description" content={t('seo.about.description')} />
         <meta name="keywords" content={t('seo.about.keywords', { returnObjects: true }).join(', ')} />
         <meta property="og:title" content="Nuestra Historia - BLUCO Travel Colombia" />
