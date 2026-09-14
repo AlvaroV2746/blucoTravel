@@ -159,3 +159,29 @@ export const generateWebsiteSchema = () => ({
     'query-input': 'required name=search_term_string',
   },
 });
+
+export const generateTravelAgencySchema = ({
+  name = 'BLUCO Travel',
+  description,
+  url = BASE_URL,
+  logo,
+  sameAs = [],
+  areaServed = ['Guatapé', 'San Rafael', 'Antioquia'],
+  priceRange = '$$',
+  currenciesAccepted = 'COP',
+  keywords = [],
+  knowsAbout = [],
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'TravelAgency',
+  name,
+  description,
+  url,
+  ...(logo ? { logo } : {}),
+  ...(sameAs.length ? { sameAs } : {}),
+  ...(areaServed.length ? { areaServed } : {}),
+  ...(priceRange ? { priceRange } : {}),
+  ...(currenciesAccepted ? { currenciesAccepted } : {}),
+  ...(keywords.length ? { keywords } : {}),
+  ...(knowsAbout.length ? { knowsAbout } : {}),
+});

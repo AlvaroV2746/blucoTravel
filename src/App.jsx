@@ -14,16 +14,25 @@ import CartSidebar from './components/CartSidebar';
 import ActivityDetailView from './components/ActivityDetailView';
 import SchemaOrg from './components/SchemaOrg';
 import WebVitalsReporter from './components/WebVitalsReporter';
-import { generateWebsiteSchema, generateBreadcrumbList } from './utils/schemas';
+import { generateWebsiteSchema, generateBreadcrumbList, generateTravelAgencySchema } from './utils/schemas';
 import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const travelAgencySchema = {
-  '@context': 'https://schema.org',
-  '@type': 'TravelAgency',
-  name: 'BLUCO Travel',
-  url: 'https://blucotravel.com',
-  logo: 'https://blucotravel.com/logoFull.png',
+  ...generateTravelAgencySchema({
+    name: 'BLUCO Travel',
+    url: 'https://blucotravel.com',
+    logo: 'https://blucotravel.com/logoFull.png',
+    areaServed: ['Guatapé', 'San Rafael', 'Antioquia'],
+    description: 'Agencia de turismo sostenible especializada en experiencias auténticas en Guatapé y San Rafael. Alojamientos ecológicos, actividades de aventura y productos artesanales locales.',
+    keywords: ['turismo sostenible', 'Guatapé', 'San Rafael', 'alojamiento', 'actividades', 'Colombia'],
+    knowsAbout: [
+      'Turismo sostenible',
+      'Alojamientos ecológicos',
+      'Experiencias de aventura',
+      'Productos artesanales locales',
+    ],
+  }),
   slogan: 'Turismo sostenible que conecta viajeros con la magia de Colombia',
   telephone: '+57-318-455-9655',
   email: 'info@blucotravel.com',
@@ -33,21 +42,6 @@ const travelAgencySchema = {
     addressRegion: 'Antioquia',
     addressLocality: 'Medellín',
   },
-  areaServed: ['Guatapé', 'San Rafael', 'Antioquia', 'Colombia'],
-  priceRange: '$$',
-  currenciesAccepted: 'COP',
-  description: 'Agencia de turismo sostenible especializada en experiencias auténticas en Guatapé y San Rafael. Alojamientos ecológicos, actividades de aventura y productos artesanales locales.',
-  keywords: ['turismo sostenible', 'Guatapé', 'San Rafael', 'alojamiento', 'actividades', 'Colombia'],
-  knowsAbout: [
-    'Turismo sostenible',
-    'Alojamientos ecológicos',
-    'Experiencias de aventura',
-    'Productos artesanales locales',
-  ],
-  sameAs: [
-    'https://wa.me/573184559655',
-    'https://instagram.com/blucotravel',
-  ],
 };
 
 

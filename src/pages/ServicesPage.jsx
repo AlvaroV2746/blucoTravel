@@ -14,12 +14,10 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
         <title>{t('meta.services.title')}</title>
         <meta name="description" content={t('seo.services.description')} />
         <meta name="keywords" content={t('seo.services.keywords', { returnObjects: true }).join(', ')} />
-        <meta property="og:title" content="Alojamientos y Actividades en Guatapé y San Rafael | BLUCO Travel" />
+        <meta property="og:title" content={`${t('meta.services.title')} | BLUCO Travel`} />
         <meta property="og:description" content={t('seo.services.description')} />
         <meta property="og:image" content="https://blucotravel.com/og-services.svg" />
-        <meta name="twitter:title" content="Alojamientos y Actividades en Guatapé y San Rafael | BLUCO Travel" />
-        <meta name="twitter:description" content={t('seo.services.description')} />
-        <meta name="twitter:image" content="https://blucotravel.com/og-services.svg" />
+
       </Helmet>
       <div className="max-w-7xl mx-auto px-2 space-y-0">
         <div 

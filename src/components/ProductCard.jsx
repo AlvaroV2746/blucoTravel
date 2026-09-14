@@ -1,11 +1,23 @@
 import { useTranslation } from 'react-i18next';
+import { buildSrcSet } from '../utils/images';
 
 const ProductCard = ({ nameKey, img, priceKey, desc }) => {
   const { t } = useTranslation();
+  const { srcSet, avifSrcSet, sizes } = buildSrcSet(img);
 
   return (
     <div className="rounded-xl bg-white shadow overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
-      <img src={img} alt={t(nameKey)} loading="lazy" decoding="async" className="w-full h-48 object-cover" />
+      <picture>
+        <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
+        <source type="image/webp" srcSet={srcSet} sizes={sizes} />
+        <img 
+          src={img} 
+          alt={t(nameKey)} 
+          loading="lazy" 
+          decoding="async" 
+          className="w-full h-48 object-cover" 
+        />
+      </picture>
       <div className="p-4 flex-1">
         <h3 className="font-bold text-gray-900 line-clamp-2">{t(nameKey)}</h3>
         {priceKey && (

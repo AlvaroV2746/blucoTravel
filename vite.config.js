@@ -1,9 +1,24 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import Sitemap from 'vite-plugin-sitemap'
+import { ROUTE_SEGMENTS } from './src/utils/routes'
+
+const SITE_HOST = 'https://blucotravel.com'
+const ALL_ROUTES = Array.from(
+  new Set([...Object.values(ROUTE_SEGMENTS.es), ...Object.values(ROUTE_SEGMENTS.en)])
+).map((path) => (path === '/' ? '/' : path))
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    Sitemap({
+      hostname: SITE_HOST,
+      dynamicRoutes: ALL_ROUTES,
+      readable: true,
+      exclude: ['/'],
+    }),
+  ],
   base: './',
   build: {
     rollupOptions: {

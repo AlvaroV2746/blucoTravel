@@ -15,14 +15,14 @@ const HomePage = ({ onNavigate }) => {
         <title>{t('meta.home.title')}</title>
         <meta name="description" content={t('seo.home.description')} />
         <meta name="keywords" content={t('seo.home.keywords', { returnObjects: true }).join(', ')} />
-        <meta property="og:title" content="BLUCO Travel Colombia - Turismo Sostenible" />
+        <meta property="og:title" content={`${t('meta.home.title')} | BLUCO Travel`} />
         <meta property="og:description" content={t('seo.home.description')} />
         <meta property="og:image" content="https://blucotravel.com/og-home.svg" />
-        <meta name="twitter:title" content="BLUCO Travel Colombia - Turismo Sostenible" />
-        <meta name="twitter:description" content={t('seo.home.description')} />
-        <meta name="twitter:image" content="https://blucotravel.com/og-home.svg" />
+
       </Helmet>
-      <div className="max-w-7xl mx-auto py-1">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 text-center my-6 tracking-tight ">
+        {t('common.title')}
+      </h1>      <div className="max-w-7xl mx-auto py-1">
         <HeroCarousel slides={data} />
 
         <h3 className="mt-10 text-2xl font-bold text-blue-900 mb-6 text-center">{t('common.top')}<FontAwesomeIcon icon={faFire} className="text-4xl text-orange-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.9)] animate-pulse" /></h3>

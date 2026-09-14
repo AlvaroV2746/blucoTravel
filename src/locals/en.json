@@ -44,6 +44,7 @@
   },
   "common": {
     "viewMore": "VIEW MORE",
+    "title": "Discover the Magic of Colombia with BLUCO Travel's Authentic Ecotourism",
     "add": "ADD",
     "goBack": "GO BACK",
     "makeQuote": "MAKE MY QUOTE",
@@ -170,19 +171,19 @@
   "copyright": "© 2024 BLUCO Travel. All rights reserved.",
   "meta": {
     "home": {
-      "title": "Sustainable Tourism in Colombia"
+      "title": "BLUCO Travel Colombia"
     },
     "services": {
-      "title": "Accommodations and Activities in Guatapé and San Rafael"
+      "title": "Services | BLUCO"
     },
     "about": {
-      "title": "Our Story"
+      "title": "Our Story | BLUCO"
     },
     "contact": {
-      "title": "Contact Us"
+      "title": "Contact Us | BLUCO"
     },
     "products": {
-      "title": "Local Artisan Products"
+      "title": "Local Products | BLUCO"
     }
   },
   "faqs": {

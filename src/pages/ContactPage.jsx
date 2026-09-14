@@ -14,12 +14,10 @@ const ContactPage = () => {
         <title>{t('meta.contact.title')}</title>
         <meta name="description" content={t('seo.contact.description')} />
         <meta name="keywords" content={t('seo.contact.keywords', { returnObjects: true }).join(', ')} />
-        <meta property="og:title" content="Contáctanos - BLUCO Travel Colombia" />
+        <meta property="og:title" content={`${t('meta.contact.title')} | BLUCO Travel`} />
         <meta property="og:description" content={t('seo.contact.description')} />
         <meta property="og:image" content="https://blucotravel.com/og-contact.svg" />
-        <meta name="twitter:title" content="Contáctanos - BLUCO Travel Colombia" />
-        <meta name="twitter:description" content={t('seo.contact.description')} />
-        <meta name="twitter:image" content="https://blucotravel.com/og-contact.svg" />
+
       </Helmet>
       <div className="max-w-2xl mx-auto">
         <h2 className="text-3xl font-bold text-blue-900 mb-4 border-b-2 border-cyan-500">

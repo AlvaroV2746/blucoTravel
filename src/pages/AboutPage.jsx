@@ -14,12 +14,10 @@ const AboutPage = () => {
         <title>{t('meta.about.title')}</title>
         <meta name="description" content={t('seo.about.description')} />
         <meta name="keywords" content={t('seo.about.keywords', { returnObjects: true }).join(', ')} />
-        <meta property="og:title" content="Nuestra Historia - BLUCO Travel Colombia" />
+        <meta property="og:title" content={`${t('meta.about.title')} | BLUCO Travel`} />
         <meta property="og:description" content={t('seo.about.description')} />
         <meta property="og:image" content="https://blucotravel.com/og-about.svg" />
-        <meta name="twitter:title" content="Nuestra Historia - BLUCO Travel Colombia" />
-        <meta name="twitter:description" content={t('seo.about.description')} />
-        <meta name="twitter:image" content="https://blucotravel.com/og-about.svg" />
+
       </Helmet>
       <div className="max-w-2xl mx-auto py-8">
         <h2 className="text-3xl font-bold text-blue-900 mb-4 border-b-2 border-cyan-500">

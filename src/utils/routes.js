@@ -14,7 +14,6 @@ export const ROUTE_SEGMENTS = {
     products: '/products',
   },
 };
-
 const ALL_MAPS = [ROUTE_SEGMENTS.es, ROUTE_SEGMENTS.en];
 
 export const getRoute = (lang, key) =>
