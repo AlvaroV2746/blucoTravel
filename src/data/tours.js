@@ -1,14 +1,31 @@
 import { IMAGES } from './images';
 
-const withImages = (items) => items.map(item => ({ ...item, img: IMAGES[item.img] ?? item.img }));
+const resolveGallery = (item, resolvedImage) => {
+  // Si el servicio ya tiene una galería personalizada definida, la usamos
+  if (item.gallery && Array.isArray(item.gallery) && item.gallery.length > 0) {
+    return item.gallery.map((key) => IMAGES[key] ?? key).filter(Boolean);
+  }
+  // Si no tiene galería explícita, triplicamos la imagen principal para la prueba
+  return [resolvedImage, resolvedImage, resolvedImage];
+};
+
+const withImages = (items) =>
+  items.map((item) => {
+    const resolvedImage = IMAGES[item.img] ?? item.img;
+    return {
+      ...item,
+      img: resolvedImage,
+      gallery: resolveGallery(item, resolvedImage),
+    };
+  });
 
 export const guatapeAcommodations = withImages([
-  { 
-    id: 1, 
-    name: "guatapeAccommodations.basicTitle", 
-    img: "room.webp", 
-    desc: "guatapeAccommodations.basicDesc", 
-    stats: "guatapeAccommodations.basicStats", 
+  {
+    id: 1,
+    name: "guatapeAccommodations.basicTitle",
+    img: "room.webp",
+    desc: "guatapeAccommodations.basicDesc",
+    stats: "guatapeAccommodations.basicStats",
     type: "guatape-accommodation",
     lat: 6.23429,
     lng: -75.16335,
@@ -16,12 +33,12 @@ export const guatapeAcommodations = withImages([
     starRating: 3,
     amenityFeature: ["Wifi incluido", "Desayuno incluido", "Vista al embalse"]
   },
-  { 
-    id: 2, 
-    name: "guatapeAccommodations.specialTitle", 
-    img: "room.webp", 
-    desc: "guatapeAccommodations.specialDesc", 
-    stats: "guatapeAccommodations.specialStats", 
+  {
+    id: 2,
+    name: "guatapeAccommodations.specialTitle",
+    img: "room.webp",
+    desc: "guatapeAccommodations.specialDesc",
+    stats: "guatapeAccommodations.specialStats",
     type: "guatape-accommodation",
     lat: 6.23429,
     lng: -75.16335,
@@ -29,12 +46,12 @@ export const guatapeAcommodations = withImages([
     starRating: 4,
     amenityFeature: ["Wifi incluido", "Desayuno incluido", "Balcón con vista", "Tour guiado"]
   },
-  { 
-    id: 3, 
-    name: "guatapeAccommodations.deluxeTitle", 
-    img: "room.webp", 
-    desc: "guatapeAccommodations.deluxeDesc", 
-    stats: "guatapeAccommodations.deluxeStats", 
+  {
+    id: 3,
+    name: "guatapeAccommodations.deluxeTitle",
+    img: "room.webp",
+    desc: "guatapeAccommodations.deluxeDesc",
+    stats: "guatapeAccommodations.deluxeStats",
     type: "guatape-accommodation",
     lat: 6.23429,
     lng: -75.16335,
@@ -45,42 +62,43 @@ export const guatapeAcommodations = withImages([
 ]);
 
 export const guatapeServices = withImages([
-  { 
-    id: 1, 
-    name: "guatapeActivities.RidingTitle", 
-    img: "horsebackRiding.jpg", 
-    desc: "guatapeActivities.RidingDesc", 
-    stats: "guatapeActivities.RidingStats", 
+  {
+    id: 1,
+    name: "guatapeActivities.RidingTitle",
+    img: "horsebackRiding.jpg",
+    gallery: ["horsebackRiding.jpg", "river.jpeg", "hiking.jpg"],
+    desc: "guatapeActivities.RidingDesc",
+    stats: "guatapeActivities.RidingStats",
     type: "guatape-activity",
     lat: 6.23429,
     lng: -75.16335
   },
-  { 
-    id: 2, 
-    name: "guatapeActivities.riverTitle", 
-    img: "river.jpeg", 
-    desc: "guatapeActivities.riverDesc", 
-    stats: "guatapeActivities.riverStats", 
+  {
+    id: 2,
+    name: "guatapeActivities.riverTitle",
+    img: "river.jpeg",
+    desc: "guatapeActivities.riverDesc",
+    stats: "guatapeActivities.riverStats",
     type: "guatape-activity",
     lat: 6.23429,
     lng: -75.16335
   },
-  { 
-    id: 3, 
-    name: "guatapeActivities.forestTrekTitle", 
-    img: "hiking.jpg", 
-    desc: "guatapeActivities.forestTrekDesc", 
-    stats: "guatapeActivities.forestTrekStats", 
+  {
+    id: 3,
+    name: "guatapeActivities.forestTrekTitle",
+    img: "hiking.jpg",
+    desc: "guatapeActivities.forestTrekDesc",
+    stats: "guatapeActivities.forestTrekStats",
     type: "guatape-activity",
     lat: 6.23429,
     lng: -75.16335
   },
-  { 
-    id: 4, 
-    name: "guatapeActivities.coffeFarmTitle", 
-    img: "cacaoTour.jpg", 
-    desc: "guatapeActivities.coffeFarmDesc", 
-    stats: "guatapeActivities.coffeFarmStats", 
+  {
+    id: 4,
+    name: "guatapeActivities.coffeFarmTitle",
+    img: "cacaoTour.jpg",
+    desc: "guatapeActivities.coffeFarmDesc",
+    stats: "guatapeActivities.coffeFarmStats",
     type: "guatape-activity",
     lat: 6.23429,
     lng: -75.16335
@@ -88,12 +106,12 @@ export const guatapeServices = withImages([
 ]);
 
 export const sanRafaAcommodations = withImages([
-  { 
-    id: 1, 
-    name: "sanRafaAccommodations.basicTitle", 
-    img: "room.webp", 
-    desc: "sanRafaAccommodations.basicDesc", 
-    stats: "sanRafaAccommodations.basicStats", 
+  {
+    id: 1,
+    name: "sanRafaAccommodations.basicTitle",
+    img: "room.webp",
+    desc: "sanRafaAccommodations.basicDesc",
+    stats: "sanRafaAccommodations.basicStats",
     type: "sanrafael-accommodation",
     lat: 6.29436,
     lng: -75.02589,
@@ -101,12 +119,12 @@ export const sanRafaAcommodations = withImages([
     starRating: 3,
     amenityFeature: ["Wifi incluido", "Desayuno incluido", "Acceso al río"]
   },
-  { 
-    id: 2, 
-    name: "sanRafaAccommodations.specialTitle", 
-    img: "room.webp", 
-    desc: "sanRafaAccommodations.specialDesc", 
-    stats: "sanRafaAccommodations.specialStats", 
+  {
+    id: 2,
+    name: "sanRafaAccommodations.specialTitle",
+    img: "room.webp",
+    desc: "sanRafaAccommodations.specialDesc",
+    stats: "sanRafaAccommodations.specialStats",
     type: "sanrafael-accommodation",
     lat: 6.29436,
     lng: -75.02589,
@@ -114,12 +132,12 @@ export const sanRafaAcommodations = withImages([
     starRating: 4,
     amenityFeature: ["Wifi incluido", "Desayuno incluido", "Zona de camping", "Guía local"]
   },
-  { 
-    id: 3, 
-    name: "sanRafaAccommodations.deluxeTitle", 
-    img: "room.webp", 
-    desc: "sanRafaAccommodations.deluxeDesc", 
-    stats: "sanRafaAccommodations.deluxeStats", 
+  {
+    id: 3,
+    name: "sanRafaAccommodations.deluxeTitle",
+    img: "room.webp",
+    desc: "sanRafaAccommodations.deluxeDesc",
+    stats: "sanRafaAccommodations.deluxeStats",
     type: "sanrafael-accommodation",
     lat: 6.29436,
     lng: -75.02589,
@@ -130,42 +148,43 @@ export const sanRafaAcommodations = withImages([
 ]);
 
 export const sanRafaServices = withImages([
-  { 
-    id: 1, 
-    name: "sanRafaActivities.RidingTitle", 
-    img: "horsebackRiding.jpg", 
-    desc: "sanRafaActivities.RidingDesc", 
-    stats: "sanRafaActivities.RidingStats", 
+  {
+    id: 1,
+    name: "sanRafaActivities.RidingTitle",
+    img: "horsebackRiding.jpg",
+    desc: "sanRafaActivities.RidingDesc",
+    stats: "sanRafaActivities.RidingStats",
     type: "sanrafael-activity",
     lat: 6.29436,
     lng: -75.02589
   },
-  { 
-    id: 3, 
-    name: "sanRafaActivities.forestTrekTitle", 
-    img: "hiking.jpg", 
-    desc: "sanRafaActivities.forestTrekDesc", 
-    stats: "sanRafaActivities.forestTrekStats", 
+  {
+    id: 3,
+    name: "sanRafaActivities.forestTrekTitle",
+    img: "hiking.jpg",
+    gallery: ["cacaoTour.jpg", "bird.jpeg", "pack.png"],
+    desc: "sanRafaActivities.forestTrekDesc",
+    stats: "sanRafaActivities.forestTrekStats",
     type: "sanrafael-activity",
     lat: 6.29436,
     lng: -75.02589
   },
-  { 
-    id: 4, 
-    name: "sanRafaActivities.coffeFarmTitle", 
-    img: "cacaoTour.jpg", 
-    desc: "sanRafaActivities.coffeFarmDesc", 
-    stats: "sanRafaActivities.coffeFarmStats", 
+  {
+    id: 4,
+    name: "sanRafaActivities.coffeFarmTitle",
+    img: "cacaoTour.jpg",
+    desc: "sanRafaActivities.coffeFarmDesc",
+    stats: "sanRafaActivities.coffeFarmStats",
     type: "sanrafael-activity",
     lat: 6.29436,
     lng: -75.02589
   },
-  { 
-    id: 5, 
-    name: "sanRafaActivities.birdWatchingTitle", 
-    img: "bird.jpeg", 
-    desc: "sanRafaActivities.birdWatchingDesc", 
-    stats: "sanRafaActivities.birdWatchingStats", 
+  {
+    id: 5,
+    name: "sanRafaActivities.birdWatchingTitle",
+    img: "bird.jpeg",
+    desc: "sanRafaActivities.birdWatchingDesc",
+    stats: "sanRafaActivities.birdWatchingStats",
     type: "sanrafael-activity",
     lat: 6.29436,
     lng: -75.02589
@@ -179,7 +198,11 @@ export const packages = withImages([
 ]);
 
 export const data = withImages([
-  { id: 1, img: "horsebackRiding.jpg" },
+  {
+    id: 1,
+    img: "horsebackRiding.jpg",
+    gallery: ["horsebackRiding.jpg", "river.jpeg", "hiking.jpg"]
+  },
   { id: 2, img: "cacaoTour.jpg" },
   { id: 3, img: "river.jpeg" }
 ]);

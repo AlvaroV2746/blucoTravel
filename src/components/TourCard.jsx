@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { buildSrcSet } from '../utils/images';
 
-const TourCard = ({ id, type, nameKey, img, onSelect, onAdd, priceKey, desc, stats }) => {
+const TourCard = ({ id, type, nameKey, img, onSelect, onAdd, priceKey, desc, stats, gallery }) => {
   const { t } = useTranslation();
   const { srcSet, avifSrcSet, sizes } = buildSrcSet(img);
 
@@ -11,7 +11,7 @@ const TourCard = ({ id, type, nameKey, img, onSelect, onAdd, priceKey, desc, sta
 
   return (
     <div className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
-      <picture onClick={() => onSelect({ id, type, name: nameKey, img, desc, stats })}>
+      <picture onClick={() => onSelect({ id, type, name: nameKey, img, desc, stats, gallery })}>
         <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
         <source type="image/webp" srcSet={srcSet} sizes={sizes} />
         <img 

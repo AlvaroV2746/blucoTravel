@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import SchemaOrg from './SchemaOrg';
+import DetailGallery from './DetailGallery';
 import { generateTouristAttraction, generateLodgingBusiness, BASE_URL } from '../utils/schemas';
 
 const isAccommodation = (type) => !!type && type.includes('accommodation');
@@ -28,6 +29,15 @@ const ActivityDetailView = ({ activity, onBack }) => {
 
   if (!activity) return null;
 
+  //Si activity.gallery existe y tiene elementos, los usamos. 
+  // Si no, intentamos usar activity.img, y si todo falla, un arreglo con una imagen por defecto.
+  const slides = (Array.isArray(activity.gallery) && activity.gallery.length > 0)
+    ? activity.gallery
+    : (activity.img ? [activity.img] : ['/images/room.webp']);
+
+  console.log(activity.gallery);
+  
+
   const common = {
     name: t(activity.name),
     description: t(activity.desc),
@@ -48,7 +58,7 @@ const ActivityDetailView = ({ activity, onBack }) => {
     : generateTouristAttraction(common);
 
   return (
-    <div 
+    <div
       className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 ${
         isAnimating ? 'opacity-100' : 'opacity-0'
       }`}
@@ -56,15 +66,15 @@ const ActivityDetailView = ({ activity, onBack }) => {
     >
       <SchemaOrg schema={activitySchema} />
 
-      <div 
+      <div
         className={`bg-white rounded-xl shadow-2xl border border-sky-100 overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 ease-out ${
           isAnimating ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-4'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="h-96 w-full bg-sky-100">
-          <img src={activity.img} alt={t(activity.name)} className="w-full h-full object-cover" />
-        </div>
+        {/* Renderizamos el carrusel con las diapositivas aseguradas */}
+        <DetailGallery slides={slides} alt={t(activity.name)} />
+        
         <div className="p-10">
           <h2 className="text-4xl font-black text-blue-900 uppercase mb-4">
             {t(activity.name)}
