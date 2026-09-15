@@ -44,7 +44,6 @@ const travelAgencySchema = {
   },
 };
 
-
 const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedActivity }) => {
   return (
     <div>
@@ -143,7 +142,7 @@ const BlucoApp = () => {
   ]);
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Helmet titleTemplate="%s | BLUCO Travel">
         <html lang={i18n.language} />
         <meta charSet="utf-8" />
@@ -166,11 +165,11 @@ const BlucoApp = () => {
 
       <WebVitalsReporter />
 
-      <div className="max-w-8xl mx-auto">
+      <div className="max-w-8xl mx-auto w-full flex flex-col flex-grow">
         <a href="#main-content" className="skip-link">{t('a11y.skipToContent')}</a>
         <Navbar />
 
-        <main className="pt-5" id="main-content">
+        <main className="pt-5 flex-grow" id="main-content">
           <div className="max-w-7xl mx-auto my-30">
             <Routes>
               <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
@@ -203,26 +202,26 @@ const BlucoApp = () => {
         </main>
 
         <Footer />
-
-        <button
-          onClick={() => setIsCartOpen(true)}
-          className="fixed bottom-8 right-8 bg-cyan-500 text-white p-4 rounded-full shadow-2xl z-40 cursor-pointer flex items-center justify-center hover:scale-110 hover:bg-cyan-400 transition"
-        >
-          <span className="relative flex items-center justify-center">
-            <span className="text-2xl"><FontAwesomeIcon icon={faPlane} rotation={-45} /></span>
-            {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-blue-900 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
-                {cart.length}
-              </span>
-            )}
-          </span>
-        </button>
-
-        {isCartOpen && (
-          <CartSidebar cart={cart} setIsCartOpen={setIsCartOpen} onRemove={removeFromCart} onQuote={handleQuote} />
-        )}
       </div>
-    </>
+
+      <button
+        onClick={() => setIsCartOpen(true)}
+        className="fixed bottom-8 right-8 bg-cyan-500 text-white p-4 rounded-full shadow-2xl z-40 cursor-pointer flex items-center justify-center hover:scale-110 hover:bg-cyan-400 transition"
+      >
+        <span className="relative flex items-center justify-center">
+          <span className="text-2xl"><FontAwesomeIcon icon={faPlane} rotation={-45} /></span>
+          {cart.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-blue-900 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+              {cart.length}
+            </span>
+          )}
+        </span>
+      </button>
+
+      {isCartOpen && (
+        <CartSidebar cart={cart} setIsCartOpen={setIsCartOpen} onRemove={removeFromCart} onQuote={handleQuote} />
+      )}
+    </div>
   );
 };
 
