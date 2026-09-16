@@ -24,6 +24,7 @@ export const guatapeAcommodations = withImages([
     id: 1,
     name: "guatapeAccommodations.basicTitle",
     img: "room.webp",
+    gallery: ["room.webp", "room.webp", "room.webp"],
     desc: "guatapeAccommodations.basicDesc",
     stats: "guatapeAccommodations.basicStats",
     type: "guatape-accommodation",
@@ -192,9 +193,9 @@ export const sanRafaServices = withImages([
 ]);
 
 export const packages = withImages([
-  { id: 1, name: "packages.birdWatchingTitle", img: "pack.png", desc: "packages.birdWatchingDesc", stats: "packages.birdWatchingStats", type: "package" },
-  { id: 2, name: "packages.orientalTitle", img: "pack.png", desc: "packages.orientalDesc", stats: "packages.orientalStats", type: "package" },
-  { id: 3, name: "packages.riverTitle", img: "pack.png", desc: "packages.riverDesc", stats: "packages.riverStats", type: "package" }
+  { id: 1, name: "packages.birdWatchingTitle", img: "pack.png",gallery: ["room.webp", "bird.jpeg", "cacaoTour.jpg"], desc: "packages.birdWatchingDesc", stats: "packages.birdWatchingStats", type: "package" },
+  { id: 2, name: "packages.orientalTitle", img: "pack.png",gallery: ["room.webp", "river.jpeg", "horsebackRiding.jpg"], desc: "packages.orientalDesc", stats: "packages.orientalStats", type: "package" },
+  { id: 3, name: "packages.riverTitle", img: "pack.png",gallery: ["room.webp", "hiking.jpg", "horsebackRiding.jpg"], desc: "packages.riverDesc", stats: "packages.riverStats", type: "package" }
 ]);
 
 export const data = withImages([
