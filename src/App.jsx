@@ -125,7 +125,7 @@ const BlucoApp = () => {
     services: t('navbar.services'),
     about: t('navbar.about'),
     contact: t('navbar.contact'),
-    products: t('navbar.products'),
+    // products: t('navbar.products'),
   };
 
   const routeKey = resolveKey(location.pathname);
@@ -195,8 +195,8 @@ const BlucoApp = () => {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contacto" element={<ContactPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/productos" element={<LocalProductsPage />} />
-              <Route path="/products" element={<LocalProductsPage />} />
+              {/* <Route path="/productos" element={<LocalProductsPage />} /> */}
+              {/* <Route path="/products" element={<LocalProductsPage />} /> */}
             </Routes>
           </div>
         </main>

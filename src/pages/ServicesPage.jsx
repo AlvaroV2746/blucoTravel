@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
-import { guatapeAcommodations, guatapeServices, sanRafaAcommodations, sanRafaServices, packages } from '../data/tours';
+import { guatapeAcommodations, guatapeServices, sanRafaAcommodations, sanRafaServices, packages, sections } from '../data/tours';
 import TourCard from '../components/TourCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMountain, faLeaf, faGift } from '@fortawesome/free-solid-svg-icons';
@@ -25,8 +25,8 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             openSections['guatape'] ? 'rounded-t-2xl rounded-b-none' : 'rounded-2xl'
           }`}
         >
-          <img src={guatapeAcommodations[0].img} alt="Paisaje del embalse de Guatapé con cabañas ecológicas" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-blue-900/50"></div>
+          <img src={sections[0].img} alt="Paisaje del embalse de Guatapé con cabañas ecológicas" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-blue-900/20"></div>
           <div className="absolute left-4 top-4 z-10">
             <FontAwesomeIcon icon={faMountain} className="text-2xl text-white" />
             <span className="ml-2 text-white font-medium text-sm">Guatapé</span>
@@ -122,8 +122,8 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             openSections['sanrafael'] ? 'rounded-t-2xl rounded-b-none' : 'rounded-2xl'
           }`}
         >
-          <img src={sanRafaAcommodations[0].img} alt="Río y naturaleza en San Rafael para turismo de aventura" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-emerald-500/50"></div>
+          <img src={sections[1].img} alt="Río y naturaleza en San Rafael para turismo de aventura" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-emerald-500/20"></div>
           <div className="absolute left-4 top-4 z-10">
             <FontAwesomeIcon icon={faLeaf} className="text-2xl text-white" />
             <span className="ml-2 text-white font-medium text-sm">San Rafael</span>
@@ -219,8 +219,8 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             openSections['packages'] ? 'rounded-t-2xl rounded-b-none' : 'rounded-2xl'
           }`}
         >
-          <img src={packages[0].img} alt="Paquete turístico combinado con alojamiento y actividades en Guatapé y San Rafael" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-red-500/50"></div>
+          <img src={sections[2].img} alt="Paquete turístico combinado con alojamiento y actividades en Guatapé y San Rafael" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-red-500/20"></div>
           <div className="absolute left-4 top-4 z-10">
             <FontAwesomeIcon icon={faGift} className="text-2xl text-white" />
             <span className="ml-2 text-white font-medium text-sm">Paquetes</span>
@@ -255,7 +255,7 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
               openSections['packages-list'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
             }`}>
               <div className="overflow-hidden">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-2">
                   {packages.map((activity) => (
                     <TourCard
                       key={activity.id}

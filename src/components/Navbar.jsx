@@ -30,8 +30,8 @@ const Navbar = () => {
   const mobileLinks = [
     { key: 'services', label: t('navbar.services') },
     { key: 'about', label: t('navbar.about') },
-    { key: 'contact', label: t('navbar.contact') },
-    { key: 'products', label: t('navbar.products') }
+    { key: 'contact', label: t('navbar.contact') }
+    // { key: 'products', label: t('navbar.products') }
   ].map((item) => ({ ...item, path: getRoute(i18n.language, item.key) }));
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);

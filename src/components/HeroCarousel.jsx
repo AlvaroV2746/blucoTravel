@@ -122,7 +122,7 @@ const HeroCarousel = ({ slides }) => {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
-        className="container-images relative overflow-hidden rounded-xl h-64 sm:h-80 md:h-100 lg:h-128 w-full select-none touch-pan-y cursor-grab active:cursor-grabbing"
+        className="container-images relative overflow-hidden rounded-xl h-64 sm:h-80 md:h-100 lg:h-128 w-full select-none touch-pan-y cursor-grab active:cursor-grabbing bg-gray-900"
         style={{ touchAction: 'pan-y' }}
       >
         <ul
@@ -135,20 +135,35 @@ const HeroCarousel = ({ slides }) => {
           }`}
         >
           {slides.map((item, index) => {
-            const srcSet = buildSrcSet(item.img);
+            const srcSetObj = buildSrcSet(item.img);
             const isFirst = index === 0;
             return (
-              <li key={item.id} className="w-full flex-shrink-0 h-full">
-                <img
-                  src={item.img}
-                  srcSet={srcSet?.srcSet}
-                  sizes={srcSet?.sizes}
-                  alt={t('hero.slideAlt', { num: item.id })}
-                  loading={isFirst ? 'eager' : 'lazy'}
-                  fetchPriority={isFirst ? 'high' : 'auto'}
-                  decoding="async"
-                  className="object-cover w-full h-full pointer-events-none select-none"
-                />
+              <li key={item.id} className="w-full flex-shrink-0 h-full relative overflow-hidden flex items-center justify-center bg-gray-900">
+                {/* 1. CAPA DE FONDO: Difuminado ambiental que llena todo el contenedor */}
+                <picture className="absolute inset-0 w-full h-full">
+                  {srcSetObj?.avifSrcSet && <source type="image/avif" srcSet={srcSetObj.avifSrcSet} sizes={srcSetObj.sizes} />}
+                  {srcSetObj?.srcSet && <source type="image/webp" srcSet={srcSetObj.srcSet} sizes={srcSetObj.sizes} />}
+                  <img
+                    src={item.img}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-full object-cover filter blur-xl opacity-60 scale-110 pointer-events-none select-none"
+                  />
+                </picture>
+
+                {/* 2. CAPA PRINCIPAL: 100% visible, centrada y sin cortes (object-contain con padding) */}
+                <picture className="relative z-10 w-full h-full flex items-center justify-center p-4 sm:p-6 md:p-8 scale-120">
+                  {srcSetObj?.avifSrcSet && <source type="image/avif" srcSet={srcSetObj.avifSrcSet} sizes={srcSetObj.sizes} />}
+                  {srcSetObj?.srcSet && <source type="image/webp" srcSet={srcSetObj.srcSet} sizes={srcSetObj.sizes} />}
+                  <img
+                    src={item.img}
+                    alt={t('hero.slideAlt', { num: item.id })}
+                    loading={isFirst ? 'eager' : 'lazy'}
+                    fetchPriority={isFirst ? 'high' : 'auto'}
+                    decoding="async"
+                    className="max-w-full max-h-full object-contain drop-shadow-xl pointer-events-none select-none"
+                  />
+                </picture>
               </li>
             );
           })}

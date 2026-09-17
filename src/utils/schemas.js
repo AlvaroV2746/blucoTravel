@@ -1,12 +1,19 @@
 export const BASE_URL = 'https://blucotravel.com';
 
+// Función auxiliar para garantizar que las imágenes sean URLs absolutas y en formato de arreglo.
+const formatImagesForSchema = (images) => {
+  if (!images) return undefined;
+  const imgArray = Array.isArray(images) ? images : [images];
+  return imgArray.map(img => img.startsWith('http') ? img : `${BASE_URL}${img}`);
+};
+
 export const generateTouristAttraction = ({ name, description, image, url, locationName, lat, lng }) => {
   return {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
     name,
     description,
-    image,
+    image: formatImagesForSchema(image),
     url,
     location: {
       '@type': 'Place',
@@ -50,7 +57,7 @@ export const generateLodgingBusiness = ({
     '@type': 'LodgingBusiness',
     name,
     description,
-    image,
+    image: formatImagesForSchema(image), // <--- Actualizado
     url,
     priceRange,
     starRating,
@@ -104,7 +111,7 @@ export const generateProduct = ({ name, description, image, url, price, currency
   '@type': 'Product',
   name,
   description,
-  image,
+  image: formatImagesForSchema(image), // <--- Actualizado
   brand: {
     '@type': 'Brand',
     name: 'BLUCO Travel',
@@ -177,7 +184,7 @@ export const generateTravelAgencySchema = ({
   name,
   description,
   url,
-  ...(logo ? { logo } : {}),
+  ...(logo ? { logo: formatImagesForSchema(logo)?.[0] } : {}), // <--- Actualizado para el logo
   ...(sameAs.length ? { sameAs } : {}),
   ...(areaServed.length ? { areaServed } : {}),
   ...(priceRange ? { priceRange } : {}),

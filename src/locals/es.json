@@ -17,7 +17,6 @@
     "previousSlide": "Imagen anterior",
     "nextSlide": "Imagen siguiente"
   },
-  
   "about": {
     "title": "Nuestra historia",
     "description": "En BLUCO, creemos en un turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoyamos a las comunidades locales...",
@@ -37,7 +36,7 @@
     "email": "Correo electrónico",
     "whatsappDesc": "Envíanos un mensaje para más información",
     "instagramDesc": "Sigue nuestras novedades en Instagram",
-    "emailDesc": "Escribe a información@blucotravel.com",
+    "emailDesc": "Escribe a info@blucotravel.com",
     "lead": "Estamos aquí para ayudarte a planificar tu viaje ideal a Colombia"
   },
   "products": {
@@ -48,91 +47,85 @@
     "title": "Descubre la Magia de Colombia con el Ecoturismo Auténtico de BLUCO Travel",
     "add": "AGREGAR",
     "goBack": "VOLVER",
-    "makeQuote": "COTIZAR AHORA",
+    "makeQuote": "COTIZAR MI VIAJE",
     "accommodation": "Alojamiento",
     "activities": "Actividades",
-    "top": "Lo más vendido",
     "whatsappMessage": "Hola, me gustaría cotizar estas actividades:\n-{{activityNames}}\n\nDías: {{days}}\nPersonas: {{people}}\n{{guideText}}",
     "guideYes": "Guía en inglés: Sí",
+    "top": "Lo más vendido",
     "guideNo": "Guía en inglés: No",
     "packages": "Paquetes"
   },
   "cart": {
     "title": "Mi itinerario",
     "empty": "Aún no hay actividades seleccionadas.",
-    "days": "¿Cuántos días deseas disfrutar de tu viaje?",
+    "days": "¿Cuántos días quieres disfrutar de tu viaje?",
     "people": "¿Cuántas personas van a viajar?",
     "guide": "¿Se requiere guía en inglés para este viaje?",
     "checkout": "Finalizar compra"
   },
   "guatapeAccommodations": {
-    "basicTitle": "Alojamiento Básico GUATAPÉ",
-    "basicDesc": "Ofrecemos una variedad de alojamientos para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia lujosa, tenemos opciones para todos.",
-    "basicStats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
-    "specialTitle": "Alojamiento Especial GUATAPÉ",
-    "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
-    "specialStats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
-    "deluxeTitle": "Alojamiento Deluxe GUATAPÉ",
-    "deluxeDesc": "Nuestros alojamientos deluxe ofrecen lo máximo en confort y lujo, con comodidades premium y servicios personalizados.",
-    "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
+    "basicTitle": "Alojamiento Básico en Guatapé",
+    "basicDesc": "Vive la combinación perfecta de comodidad y encanto local auténtico con nuestro acogedor Alojamiento Básico en Guatapé. Diseñado para viajeros que valoran un santuario limpio y restaurador después de un día explorando los coloridos zócalos y la majestuosa Piedra del Peñol, esta habitación cuenta con una cama confortable, WiFi de alta velocidad para mantenerse conectado y un ventilador refrescante. Empieza tus mañanas con un delicioso desayuno con ingredientes locales incluido en tu estadía y relájate en nuestras acogedoras áreas comunes donde podrás compartir historias con otros aventureros. Disfruta de una escapada económica que te mantiene cerca de la naturaleza, la cultura y experiencias sostenibles inolvidables.",
+    "basicStats": "| Ventilador incluido | Desayuno casero | Cama cómoda | WiFi de alta velocidad | Áreas comunes |",
+    "specialTitle": "Alojamiento Especial en Guatapé",
+    "specialDesc": "Nuestros alojamientos especiales ofrecen una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
+    "specialStats": "| Aire acondicionado | Piscina | Desayuno casero | Cama cómoda | WiFi de alta velocidad | Áreas comunes |",
+    "deluxeTitle": "Alojamiento Deluxe en Guatapé",
+    "deluxeDesc": "Déjate consentir con el retiro definitivo en nuestro Alojamiento Deluxe en Guatapé, creado para viajeros que desean elegancia superior, máximo confort y atención exclusiva. Eleva tu estancia con una habitación de lujo de alta gama con mobiliario premium, aire acondicionado moderno y WiFi de alta velocidad. Deléitate con un delicioso desayuno casero y un almuerzo gourmet incluidos cada día. Sal a relajarte en nuestra impecable piscina o da un corto paseo hasta el tranquilo río cercano. Relájate en sofisticadas áreas comunes y vive una escapada premium inolvidable, diseñada para sumergirte en la belleza natural y la vibrante cultura de Antioquia con total exclusividad.",
+    "deluxeStats": "| Aire acondicionado | Desayuno y almuerzo incluidos | Piscina | Habitación premium | WiFi de alta velocidad | Áreas comunes |"
   },
   "guatapeActivities": {
-    "RidingTitle": "Cabalgata Ecológica GUATAPÉ",
-    "RidingDesc": "Ofrecemos una variedad de actividades para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia completa, tenemos opciones para todos.",
-    "RidingStats": "Nuestras opciones básicas brindan una experiencia cómoda y asequible para viajeros que buscan una actividad sencilla pero agradable.",
-    "riverTitle": "Kayak en el Río GUATAPÉ",
-    "riverDesc": "Experimenta la emoción de los ríos locales.",
-    "riverStats": "Duración: 2h | Dificultad: Media",
-    "forestTrekTitle": "Senderismo en el Bosque de Niebla GUATAPÉ",
-    "forestTrekDesc": "Descubre la increíble biodiversidad del bosque.",
-    "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
-    "coffeFarmTitle": "Tour Finca Cafetera GUATAPÉ",
-    "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
-    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil"
+    "activity1Title": "Paseo en Barco por el Embalse de Guatapé",
+    "activity1Desc": "Embárcate en un inolvidable paseo panorámico en barco por las impresionantes aguas llenas de islas del Embalse de Guatapé. Siéntete completamente seguro durante todo el recorrido con equipos de seguridad de primera y seguro turístico integral. Disfruta de valiosos conocimientos de nuestro guía experto, que explica cada detalle de la ruta y los atractivos locales, y eleva tu aventura acuática con esquí acuático opcional para una emoción extra. ¡Descubre la magia del embalse desde una perspectiva completamente única!",
+    "activity1Stats": "| Equipo de seguridad | Seguro turístico | Guía experto | Esquí acuático opcional (cargo extra) |",
+    "activity2Title": "Piedra del Peñol y Tour Panorámico",
+    "activity2Desc": "Vive la icónica majestuosidad de Antioquia con nuestro completo tour a la Piedra del Peñol, con traslados de ida y vuelta desde el hotel para un viaje totalmente fluido. Disfruta de un delicioso almuerzo incluido y explora las vibrantes tiendas de souvenirs cercanas para comprar artesanías locales auténticas. Viaja con total tranquilidad gracias al seguro médico integral y un guía experto que te acompaña durante todo el recorrido. Admira los impresionantes alrededores desde la base o elige el ascenso opcional por el enorme monolito para disfrutar de vistas panorámicas de primer nivel del embalse.",
+    "activity2Stats": "| Almuerzo incluido | Visita a la Piedra del Peñol | Ascenso opcional | Tiendas de souvenirs cercanas | Seguro médico | Guía experto | Traslado de ida y vuelta |",
+    "activity3Title": "Plaza Principal de Guatapé y Tour Cultural",
+    "activity3Desc": "Sumérgete en el encanto colorido y el vibrante corazón de Antioquia con nuestro recorrido guiado a la plaza principal de Guatapé. Camina por pintorescas calles adornadas con los famosos y artísticos zócalos mientras un guía experto comparte historias fascinantes e historia local. Disfruta de un satisfactorio almuerzo local, un delicioso refrigerio en el camino y el seguro turístico integral para total tranquilidad. Termina tu travesía cultural con tiempo libre para visitar tiendas de souvenirs auténticos y llevarte un pedazo de la magia de Guatapé.",
+    "activity3Stats": "| Almuerzo incluido | Guía experto | Refrigerio incluido | Seguro turístico | Tiendas de souvenirs |"
   },
   "sanRafaAccommodations": {
-    "basicTitle": "Alojamiento Básico San Rafael",
-    "basicDesc": "Ofrecemos una variedad de alojamientos para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia lujosa, tenemos opciones para todos.",
-    "basicStats": "Nuestros alojamientos básicos brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable.",
-    "specialTitle": "Alojamiento Especial San Rafael",
-    "specialDesc": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
-    "specialStats": "Nuestros alojamientos especiales brindan una experiencia única con comodidades y servicios adicionales para hacer tu estancia memorable.",
-    "deluxeTitle": "Alojamiento Deluxe San Rafael",
-    "deluxeDesc": "Nuestros alojamientos deluxe ofrecen lo máximo en confort y lujo, con comodidades premium y servicios personalizados.",
-    "deluxeStats": "Nuestros alojamientos deluxe brindan una opción cómoda y asequible para viajeros que buscan una estancia sencilla pero agradable."
+    "basicTitle": "Alojamiento Básico en San Rafael",
+    "basicDesc": "Vive la exuberante belleza natural de San Rafael con nuestro acogedor y económico Alojamiento Básico. Diseñado para viajeros que buscan un santuario simple y restaurador después de explorar ríos cristalinos y vegetación tropical, esta habitación cuenta con una cama cómoda, WiFi de alta velocidad para mantenerse conectado y un ventilador refrescante. Empieza tu día con un delicioso desayuno casero incluido y relájate en nuestras acogedoras áreas comunes rodeadas de naturaleza y auténtica hospitalidad local.",
+    "basicStats": "| Ventilador incluido | Desayuno casero | Cama cómoda | WiFi de alta velocidad | Áreas comunes |",
+    "specialTitle": "Alojamiento Especial en San Rafael",
+    "specialDesc": "Eleva tu aventura en San Rafael con nuestro Alojamiento Especial, que ofrece un equilibrio mejorado entre comodidad y cercanía con la naturaleza. Disfruta de una noche reparadora en una cama confortable, aire acondicionado moderno y WiFi de alta velocidad. Despierta con un delicioso desayuno casero antes de darte un refrescante chapuzón en la piscina o bajar al cristalino río cercano. Relájate en acogedoras áreas comunes y abraza el vibrante y eco-friendly encanto de la capital de los ríos de Antioquia.",
+    "specialStats": "| Aire acondicionado | Piscina | Río cercano | Desayuno casero | Cama cómoda | WiFi de alta velocidad | Áreas comunes |",
+    "deluxeTitle": "Alojamiento Deluxe en San Rafael",
+    "deluxeDesc": "Sumérgete en el retiro definitivo de eco-lujo con nuestro Alojamiento Deluxe en San Rafael, creado para viajeros que desean elegancia suprema y cuidado exclusivo. Vive una habitación de alta gama con mobiliario premium, aire acondicionado moderno y WiFi de alta velocidad. Deléitate con un delicioso desayuno casero y un almuerzo gourmet incluidos cada día. Sal a relajarte en nuestra impecable piscina o explora el cercano río de aguas cristalinas. Relájate en sofisticadas áreas comunes para una estancia inolvidable de alta gama rodeada de los exuberantes bosques y ríos de San Rafael.",
+    "deluxeStats": "| Aire acondicionado | Desayuno y almuerzo incluidos | Piscina | Río cercano | Habitación premium | WiFi de alta velocidad | Áreas comunes |"
   },
   "sanRafaActivities": {
-    "RidingTitle": "Cabalgata Ecológica San Rafael",
-    "RidingDesc": "Ofrecemos una variedad de actividades para satisfacer tus necesidades. Ya sea que busques una estancia básica o una experiencia completa, tenemos opciones para todos.",
-    "RidingStats": "Nuestras opciones básicas brindan una experiencia cómoda y asequible para viajeros que buscan una actividad sencilla pero agradable.",
-    "riverTitle": "Kayak en el Río San Rafael",
-    "riverDesc": "Experimenta la emoción de los ríos locales.",
-    "riverStats": "Duración: 2h | Dificultad: Media",
-    "forestTrekTitle": "Senderismo en el Bosque de Niebla San Rafael",
-    "forestTrekDesc": "Descubre la increíble biodiversidad del bosque.",
-    "forestTrekStats": "Duración: 5h | Dificultad: Difícil",
-    "coffeFarmTitle": "Tour Finca Cafetera San Rafael",
-    "coffeFarmDesc": "Aprende los secretos de la producción local de café.",
-    "coffeFarmStats": "Duración: 4h | Dificultad: Fácil",
-    "birdWatchingTitle": "Observación de Aves Ecológica San Rafael",
-    "birdWatchingDesc": "Observa diversas especies de aves en su hábitat natural.",
-    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil"
+    "activity1Title": "Tour de Cacao Artesanal",
+    "activity1Desc": "Sumérgete en la dulce tradición de Antioquia con nuestro inmersivo Tour de Cacao Artesanal. Explora una auténtica finca cacaotera local mientras un guía experto revela cada paso del proceso, desde el grano fresco hasta el delicioso producto final. Deléitate con abundante chocolate para degustar y beber durante toda la experiencia y libera tu creatividad elaborando tu propia barra de chocolate personalizada para llevar a casa. Viaja con total tranquilidad sabiendo que el seguro médico está totalmente incluido.",
+    "activity1Stats": "| Elabora tu propia barra de chocolate | Guía experto del proceso del cacao | Degustaciones ilimitadas de chocolate | Visita a una finca cacaotera auténtica | Seguro médico |",
+    "activity2Title": "Tour de Café Auténtico en Finca",
+    "activity2Desc": "Vive el corazón de la cultura cafetera de Colombia en una pintoresca finca tradicional. Descubre los secretos detrás del café de clase mundial con un guía experto que explica cada etapa del proceso de producción, desde la cosecha hasta el tostado. Disfruta de experiencias prácticas e inmersivas con el café, saborea abundante café fresco durante todo el tour y siéntete completamente seguro con el seguro médico incluido en tu viaje.",
+    "activity2Stats": "| Degustaciones de café | Guía experto del proceso del café | Experiencias prácticas con el café | Visita a una finca cafetera tradicional | Seguro médico |",
+    "activity3Title": "Paseo a los Ríos Cristalinos de San Rafael",
+    "activity3Desc": "Escápate a la impresionante belleza natural de San Rafael en un viaje inolvidable a sus famosos ríos de aguas cristalinas. Disfruta de una experiencia fluida con transporte de ida y vuelta, un delicioso almuerzo incluido y un guía experto que lidera el camino. Relájate junto a las impresionantes aguas o elige entre emocionantes actividades opcionales como kayak en el río, inflables acuáticos y terapias relajantes. Viaja seguro y sin preocupaciones con el seguro médico integral incluido.",
+    "activity3Stats": "| Aguas cristalinas | Almuerzo incluido | Transporte de ida y vuelta | Guía experto | Actividades opcionales | Seguro médico |",
+    "activity4Title": "Experiencia de Observación de Aves en San Rafael",
+    "activity4Desc": "Descubre la vibrante biodiversidad de aves de los exuberantes paisajes de San Rafael con nuestra experiencia especializada de Observación de Aves. Viaja cómodamente con transporte de ida y vuelta incluido y explora ricos hábitats naturales junto a un guía naturalista experto que te ayudará a avistar e identificar especies locales. Recarga energías con un delicioso refrigerio y disfruta de total tranquilidad con el seguro médico incluido durante toda tu eco-aventura.",
+    "activity4Stats": "| Observación de aves guiada | Guía naturalista experto | Transporte de ida y vuelta | Refrigerio incluido | Seguro médico |"
   },
   "packages": {
-    "birdWatchingTitle": "Observación de Aves Ecológica Guatapé",
-    "birdWatchingDesc": "Observe las diversas especies de aves en su hábitat natural.",
-    "birdWatchingStats": "Duración: 3h | Dificultad: Fácil",
-    "orientalTitle": "Kayak Río Oriental Guatapé",
-    "orientalDesc": "Experimenta la emoción de los ríos locales.",
-    "orientalStats": "Duración: 2h | Dificultad: Media",
-    "riverTitle": "Senderismo Bosque de Niebla Guatapé",
-    "riverDesc": "Descubre la increíble biodiversidad del bosque.",
-    "riverStats": "Duración: 5h | Dificultad: Difícil"
+    "package1title": "Experiencia de Observación de Aves Ecológica",
+    "package1Desc": "Sumérgete en los vibrantes hábitats naturales de Antioquia con nuestro Tour de Observación de Aves Ecológica liderado por expertos. Disfruta de una experiencia fluida de principio a fin con transporte de ida y vuelta incluido, acompañado por un guía especializado en aves que te ayudará a avistar e identificar especies exóticas locales. Deléitate con deliciosas comidas durante todo el día, incluyendo desayuno, almuerzo y un refrescante refrigerio, mientras viajas con total tranquilidad gracias al seguro médico integral.",
+    "package1Stats": "| Guía especializado en aves | Transporte de ida y vuelta | Desayuno | Almuerzo | Refrigerio | Seguro médico |",
+    "package2Title": "Tour de Río y Senderismo en San Rafael",
+    "package2Desc": "Embárcate en una aventura inolvidable por los exuberantes paisajes y las aguas cristalinas de San Rafael. Este tour integral incluye transporte de ida y vuelta sin complicaciones, un guía experto liderando el camino y emocionantes senderos de caminata por naturaleza virgen. Saborea deliciosas comidas locales incluyendo desayuno, almuerzo y un energizante refrigerio a lo largo del camino. Descansa tranquilo sabiendo que el seguro médico integral está totalmente incluido para un viaje seguro y sin preocupaciones.",
+    "package2Stats": "| Transporte de ida y vuelta | Senderismo | Desayuno | Almuerzo | Refrigerio | Seguro médico | Guía experto |",
+    "package3Title": "Tour Definitivo de Cacao Artesanal y Chocoterapia",
+    "package3Desc": "Descubre el dulce corazón de la tradición colombiana con nuestro tour definitivo de Cacao y Chocoterapia. Disfruta de transporte de ida y vuelta sin complicaciones hasta una auténtica finca cacaotera local, donde un guía experto revela cada paso del proceso de elaboración del chocolate. Deléitate con degustaciones ilimitadas de chocolate, crea tu propia barra de chocolate personalizada para llevar a casa y consiéntete con una relajante sesión de chocoterapia. Mantente con energía durante todo el día con un delicioso desayuno, almuerzo y refrigerio incluidos, mientras viajas con total tranquilidad bajo un seguro médico integral.",
+    "package3Stats": "| Transporte de ida y vuelta | Degustaciones ilimitadas de chocolate | Barra de chocolate personalizada | Guía experto de cacao | Visita a una finca cacaotera | Sesión de chocoterapia | Seguro médico | Desayuno | Refrigerio | Almuerzo |"
   },
   "localProducts": {
     "ponchoTitle": "Poncho Hecho a Mano",
-    "ponchoDesc": "Poncho tradicional tejido artesanalmente.",
-    "coffeeTitle": "Granos de Café Orgánico",
+    "ponchoDesc": "Poncho tradicional tejido a mano.",
+    "coffeeTitle": "Café Orgánico en Grano",
     "coffeeDesc": "1 libra de café local premium.",
     "mugTitle": "Taza de Cerámica Artesanal",
     "mugDesc": "Taza de cerámica pintada a mano.",
@@ -149,30 +142,30 @@
   },
   "seo": {
     "home": {
-      "description": "Descubre Guatapé y San Rafael con BLUCO Travel. Alojamientos ecológicos, cabalgatas, senderismo, kayak y tours de café. Turismo sostenible que apoya comunidades locales.",
-      "keywords": ["turismo sostenible Colombia", "Guatapé y San Rafael", "alojamientos ecológicos Antioquia", "turismo aventura Colombia", "experiencias auténticas Colombia"]
+      "description": "Descubre Guatapé y San Rafael con BLUCO Travel. Alojamientos ecológicos, cabalgatas, senderismo, kayak y tours de café. Turismo sostenible que apoya a las comunidades locales.",
+      "keywords": ["turismo sostenible Colombia", "Guatapé y San Rafael", "alojamientos ecológicos Antioquia", "turismo de aventura Colombia", "experiencias auténticas Colombia"]
     },
     "services": {
       "description": "Reserva alojamientos y actividades en Guatapé y San Rafael. Cabañas ecológicas, cabalgatas, kayak, senderismo en bosque de niebla y tours de café. Experiencias auténticas con guías locales.",
-      "keywords": ["actividades Guatapé", "alojamiento San Rafael", "cabalgatas Antioquia", "kayak Guatapé", "senderismo bosque de niebla", "tours de café"]
+      "keywords": ["actividades en Guatapé", "alojamiento en San Rafael", "cabalgatas en Antioquia", "kayak en Guatapé", "senderismo en bosque de niebla", "tours de finca cafetera"]
     },
     "about": {
-      "description": "Conoce la misión de BLUCO Travel: turismo sostenible que conecta viajeros con la magia de Colombia apoyando artesanos y guías locales. Sostenibilidad, comunidad y aventura.",
-      "keywords": ["agencia de turismo sostenible", "turismo comunidad Antioquia", "BLUCO Travel", "guías locales certificados"]
+      "description": "Conoce la misión de BLUCO Travel: turismo sostenible que conecta a los viajeros con la magia de Colombia mientras apoya a artesanos y guías locales. Sostenibilidad, comunidad y aventura.",
+      "keywords": ["agencia de turismo sostenible", "turismo comunitario Antioquia", "BLUCO Travel", "guías locales certificados"]
     },
     "contact": {
-      "description": "Planifica tu viaje a Guatapé y San Rafael. Contacta por WhatsApp, Instagram o email. BLUCO Travel te ayuda a crear tu itinerario personalizado.",
-      "keywords": ["reservar viaje Guatapé", "contacto agencia turismo Colombia", "cotizar paquete turístico", "WhatsApp turismo Colombia"]
+      "description": "Planifica tu viaje a Guatapé y San Rafael. Contacta por WhatsApp, Instagram o correo electrónico. BLUCO Travel te ayuda a crear tu itinerario personalizado.",
+      "keywords": ["reservar viaje Guatapé", "contactar agencia de turismo Colombia", "cotizar turismo", "WhatsApp turismo Colombia"]
     },
     "products": {
-      "description": "Compra productos artesanales de Guatapé y San Rafael: ponchos tejidos, café orgánico, cerámica, miel y pulseras. Apoya directamente a artesanos locales.",
+      "description": "Compra productos artesanales de Guatapé y San Rafael: ponchos tejidos, café orgánico, cerámica, miel y pulseras. Apoya directamente a los artesanos locales.",
       "keywords": ["artesanías Guatapé", "productos locales San Rafael", "ponchos tejidos Antioquia", "café orgánico Guatapé", "souvenirs Colombia"]
     }
   },
   "copyright": "© 2024 BLUCO Travel. Todos los derechos reservados.",
   "meta": {
     "home": {
-      "title": "BLUCO Travel | Colombia"
+      "title": "BLUCO Travel Colombia"
     },
     "services": {
       "title": "Servicios | BLUCO"
@@ -184,7 +177,7 @@
       "title": "Contáctanos | BLUCO"
     },
     "products": {
-      "title": "Productos Artesanales | BLUCO"
+      "title": "Productos Locales | BLUCO"
     }
   },
   "faqs": {
@@ -192,23 +185,23 @@
     "items": [
       {
         "question": "¿Qué servicios ofrece BLUCO Travel?",
-        "answer": "Ofrecemos alojamientos ecológicos y actividades auténticas en Guatapé y San Rafael, Antioquia: cabalgatas, kayak, senderismo en bosque de niebla y tours de café. También comercializamos productos artesanales de la región."
+        "answer": "Ofrecemos alojamientos ecológicos y actividades auténticas en Guatapé y San Rafael, Antioquia: cabalgatas, kayak, senderismo en bosque de niebla y tours de café. También vendemos productos artesanales locales."
       },
       {
         "question": "¿Cómo reservo una actividad o alojamiento?",
-        "answer": "Puedes armar tu plan desde la sección Servicios, añadir las experiencias a tu carrito y solicitarnos una cotización por WhatsApp al +57 318 455 9655. Respondemos rápido para confirmar disponibilidad y fechas."
+        "answer": "Puedes armar tu plan en la sección de Servicios, añadir las experiencias a tu carrito y solicitar una cotización por WhatsApp al +57 318 455 9655. Respondemos rápido para confirmar disponibilidad y fechas."
       },
       {
-        "question": "¿Qué formas de pago aceptan?",
-        "answer": "Trabajamos principalmente con tu moneda local COP (pesos colombianos). Al solicitar tu cotización por WhatsApp te confirmamos los métodos de pago disponibles para tu reserva."
+        "question": "¿Qué métodos de pago aceptan?",
+        "answer": "Trabajamos principalmente con tu moneda local COP (pesos colombianos). Cuando solicitas tu cotización por WhatsApp te confirmamos los métodos de pago disponibles para tu reserva."
       },
       {
         "question": "¿Las experiencias incluyen guía local?",
-        "answer": "Sí. Todas nuestras actividades cuentan con guías locales certificados que conocen la región y apoyan el turismo sostenible de las comunidades de Guatapé y San Rafael."
+        "answer": "Sí. Todas nuestras actividades incluyen guías locales certificados que conocen la región y apoyan el turismo sostenible de las comunidades de Guatapé y San Rafael."
       },
       {
         "question": "¿Dónde están ubicados Guatapé y San Rafael?",
-        "answer": "Guatapé y San Rafael son dos municipios del oriente antioqueño en Colombia, a aproximadamente 2 horas de Medellín, famosos por su embalse, su piedra el Peñol, sus aguas cristalinas y su naturaleza exuberante."
+        "answer": "Guatapé y San Rafael son dos municipios del oriente de Antioquia, Colombia, a unas 2 horas de Medellín, famosos por su embalse, la Piedra del Peñol, sus aguas cristalinas y su naturaleza exuberante."
       },
       {
         "question": "¿Cómo se financia el impacto positivo?",

@@ -31,10 +31,12 @@ const HomePage = ({ onNavigate }) => {
             onClick={() => onNavigate('services')}
             className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
           >
-            <img src={IMAGES['room.webp']} alt="Cabaña ecológica con vista al embalse de Guatapé" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
+            <img src={IMAGES['basic-lodging-guatape']} alt="Cabaña ecológica con vista al embalse de Guatapé" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
             <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-4">
-              <h3 className="font-bold text-blue-900">{t('common.accommodation')}</h3>
-              <p className="mt-1 text-sm text-gray-600">Guatapé</p>
+              <h3 className="font-bold text-blue-900">{t('guatapeAccommodations.deluxeTitle')}</h3>
+              <p className="mt-1 text-sm text-gray-600">
+                {t('guatapeAccommodations.deluxeStats').slice(0, 60)}...
+              </p>
             </div>
           </div>
 
@@ -42,10 +44,10 @@ const HomePage = ({ onNavigate }) => {
             onClick={() => onNavigate('services')}
             className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
           >
-            <img src={IMAGES['river.jpeg']} alt="Río cristalino en San Rafael para kayak y actividades acuáticas" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
+            <img src={IMAGES['bluco-travel-river-nature-landscape-san-rafael.webp']} alt="Río cristalino en San Rafael para kayak y actividades acuáticas" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
             <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-4">
               <h3 className="font-bold text-emerald-500">{t('common.activities')}</h3>
-              <p className="mt-1 text-sm text-gray-600">San Rafael</p>
+              <p className="mt-1 text-sm text-gray-600">{t('sanRafaActivities.activity3Title')}</p>
             </div>
           </div>
 
@@ -53,10 +55,10 @@ const HomePage = ({ onNavigate }) => {
             onClick={() => onNavigate('services')}
             className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
           >
-            <img src={IMAGES['pack.png']} alt="Paquete turístico completo con alojamiento y actividades en Guatapé y San Rafael" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
+            <img src={IMAGES['bluco-travel-birdwatching.webp']} alt="Paquete turístico completo con alojamiento y actividades en Guatapé y San Rafael" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
             <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-4">
               <h3 className="font-bold text-red-600">{t('common.packages')}</h3>
-              <p className="mt-1 text-sm text-gray-600">Paquetes</p>
+              <p className="mt-1 text-sm text-gray-600">{t('packages.package1title')}</p>
             </div>
           </div>
         </div>

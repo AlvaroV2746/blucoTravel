@@ -52,7 +52,7 @@ const AboutPage = () => {
 
           <div className="relative">
             <img
-              src={IMAGES['cacaoTour.jpg']}
+              src={IMAGES['bluco-travel-cacao-farm-landscape-guatape.webp']}
               alt="Experiencia de tour de café en finca cafetera colombiana con BLUCO Travel"
               loading="lazy"
               decoding="async"

@@ -33,7 +33,7 @@ const ActivityDetailView = ({ activity, onBack }) => {
   // Si no, intentamos usar activity.img, y si todo falla, un arreglo con una imagen por defecto.
   const slides = (Array.isArray(activity.gallery) && activity.gallery.length > 0)
     ? activity.gallery
-    : (activity.img ? [activity.img] : ['/images/room.webp']);
+    : (activity.img ? [activity.img] : ['/images/bluco-travel-basic-lodging-guatape.webp']);
 
   console.log(activity.gallery);
   
