@@ -205,12 +205,12 @@ export const sections = withImages([
 
 export const packages = withImages([
   { id: 1, name: "packages.package1title", img: "bluco-travel-birdwatching.webp", gallery: ["bluco-travel-birdwatching.webp","bluco-travel-bird-1.webp"], desc: "packages.package1Desc", stats: "packages.package1Stats", type: "package" },
-  { id: 2, name: "packages.package2Title", img: "bluco-travel-crystal-clear-river-san-rafael.webp", gallery: ["bluco-travel-crystal-clear-river-san-rafael.webp", "bluco-travel-river-nature-landscape-san-rafael.webp"], desc: "packages.package2Desc", stats: "packages.package2Stats", type: "package" },
+  { id: 2, name: "packages.package2Title", img: "bluco-travel-crystal-clear-river-san-rafael.webp", gallery: ["bluco-travel-river-nature-landscape-san-rafael.webp"], desc: "packages.package2Desc", stats: "packages.package2Stats", type: "package" },
   { id: 3, name: "packages.package3Title", img: "bluco-travel-artisan-cacao-tour.webp", gallery: ["bluco-travel-artisan-cacao-tour.webp", "bluco-travel-fresh-cacao-harvest-bucket.webp", "bluco-travel-fresh-split-cacao-experience.webp"], desc: "packages.package3Desc", stats: "packages.package3Stats", type: "package" }
 ]);
 
 export const data = withImages([
-  { id: 1, img: "bluco-travel-ecological-horseback-riding-san-rafael.webp" },
-  { id: 2, img: "bluco-travel-penol-rock-guatape.webp" },
+  { id: 1, img: "bluco-travel-penol-rock-guatape.webp" },
+  { id: 2, img: "bluco-travel-ecological-horseback-riding-san-rafael.webp" },
   { id: 3, img: "bluco-travel-crystal-clear-river-san-rafael.webp" }
 ]);
