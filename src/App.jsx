@@ -1,14 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import ServicesPage from './pages/ServicesPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import LocalProductsPage from './pages/LocalProductsPage';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import CartSidebar from './components/CartSidebar';
 import ActivityDetailView from './components/ActivityDetailView';
@@ -17,6 +12,13 @@ import WebVitalsReporter from './components/WebVitalsReporter';
 import { generateWebsiteSchema, generateBreadcrumbList, generateTravelAgencySchema } from './utils/schemas';
 import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// 🚀 Carga perezosa (Code Splitting) de las páginas
+const HomePage = lazy(() => import('./pages/HomePage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+// const LocalProductsPage = lazy(() => import('./pages/LocalProductsPage'));
 
 const travelAgencySchema = {
   ...generateTravelAgencySchema({
@@ -43,6 +45,13 @@ const travelAgencySchema = {
     addressLocality: 'Medellín',
   },
 };
+
+// Componente visual mientras carga una página mediante Code Splitting
+const PageLoader = () => (
+  <div className="flex justify-center items-center py-32 min-h-[50vh]">
+    <div className="animate-spin rounded-full h-12 w-12 border-4 border-cyan-500 border-t-transparent shadow-md"></div>
+  </div>
+);
 
 const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedActivity }) => {
   return (
@@ -154,7 +163,7 @@ const BlucoApp = () => {
         <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
         <link rel="alternate" hrefLang="x-default" href={baseUrl} />
 
-        {/* Open Graph Dinámico corregido */}
+        {/* Open Graph Dinámico */}
         <meta property="og:site_name" content="BLUCO Travel" />
         <meta property="og:title" content="BLUCO Travel Colombia" />
         <meta property="og:description" content="Descubre los destinos más bellos de Colombia con BLUCO Travel. Turismo sostenible, alojamientos y actividades auténticas." />
@@ -184,31 +193,34 @@ const BlucoApp = () => {
 
         <main className="pt-5 flex-grow mx-4" id="main-content">
           <div className="max-w-7xl mx-auto my-30 ">
-            <Routes>
-              <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
-              <Route path="/servicios" element={
-                <ServicesRoute
-                  onSelect={setSelectedActivity}
-                  onAdd={addToCart}
-                  openSections={openSections}
-                  toggleSection={toggleSection}
-                  selectedActivity={selectedActivity}
-                />
-              } />
-              <Route path="/services" element={
-                <ServicesRoute
-                  onSelect={setSelectedActivity}
-                  onAdd={addToCart}
-                  openSections={openSections}
-                  toggleSection={toggleSection}
-                  selectedActivity={selectedActivity}
-                />
-              } />
-              <Route path="/nosotros" element={<AboutPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contacto" element={<ContactPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
+            {/* 🔄 Envolvemos las rutas con Suspense y nuestro PageLoader */}
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
+                <Route path="/servicios" element={
+                  <ServicesRoute
+                    onSelect={setSelectedActivity}
+                    onAdd={addToCart}
+                    openSections={openSections}
+                    toggleSection={toggleSection}
+                    selectedActivity={selectedActivity}
+                  />
+                } />
+                <Route path="/services" element={
+                  <ServicesRoute
+                    onSelect={setSelectedActivity}
+                    onAdd={addToCart}
+                    openSections={openSections}
+                    toggleSection={toggleSection}
+                    selectedActivity={selectedActivity}
+                  />
+                } />
+                <Route path="/nosotros" element={<AboutPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contacto" element={<ContactPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Routes>
+            </Suspense>
           </div>
         </main>
 
