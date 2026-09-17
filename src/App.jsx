@@ -169,7 +169,7 @@ const BlucoApp = () => {
         <a href="#main-content" className="skip-link">{t('a11y.skipToContent')}</a>
         <Navbar />
 
-        <main className="pt-5 flex-grow mx-10" id="main-content">
+        <main className="pt-5 flex-grow mx-4" id="main-content">
           <div className="max-w-7xl mx-auto my-30 ">
             <Routes>
               <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
