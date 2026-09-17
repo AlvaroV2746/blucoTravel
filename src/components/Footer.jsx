@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="order-1 flex justify-center sm:justify-start w-full sm:w-auto">
           <img
             src={IMAGES['bluco-travel-Logo.webp']}
-            alt="Logo BLUCO"
+            alt="Logotipo oficial de BLUCO Travel - Agencia de Turismo Sostenible en Antioquia Colombia"
             className="h-16 sm:h-20 w-auto object-contain filter invert brightness-0 mx-auto sm:mx-0"
           />
         </div>

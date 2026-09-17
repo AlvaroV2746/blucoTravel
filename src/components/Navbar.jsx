@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2 cursor-pointer">
             <img
               src={IMAGES['bluco-travel-Logo.webp']}
-              alt="Logo BLUCO"
+              alt="Logotipo de BLUCO Travel - Agencia de Turismo y Viajes en Colombia"
               className={`h-20 w-auto object-contain transition-all duration-300 ${isScrolled ? 'brightness-0 invert' : ''
                 }`}
               onClick={() => {
