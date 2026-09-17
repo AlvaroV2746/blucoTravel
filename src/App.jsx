@@ -165,12 +165,12 @@ const BlucoApp = () => {
 
       <WebVitalsReporter />
 
-      <div className="max-w-8xl mx-auto w-full flex flex-col flex-grow">
+      <div className="max-w-8xl mx-auto w-full flex flex-col flex-grow ">
         <a href="#main-content" className="skip-link">{t('a11y.skipToContent')}</a>
         <Navbar />
 
-        <main className="pt-5 flex-grow" id="main-content">
-          <div className="max-w-7xl mx-auto my-30">
+        <main className="pt-5 flex-grow mx-10" id="main-content">
+          <div className="max-w-7xl mx-auto my-30 ">
             <Routes>
               <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
               <Route path="/servicios" element={
