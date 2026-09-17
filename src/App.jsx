@@ -125,7 +125,6 @@ const BlucoApp = () => {
     services: t('navbar.services'),
     about: t('navbar.about'),
     contact: t('navbar.contact'),
-    // products: t('navbar.products'),
   };
 
   const routeKey = resolveKey(location.pathname);
@@ -155,13 +154,16 @@ const BlucoApp = () => {
         <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
         <link rel="alternate" hrefLang="x-default" href={baseUrl} />
 
-        {/* Open Graph Dinámico (Reemplaza al del index cuando React carga) */}
+        {/* Open Graph Dinámico corregido */}
         <meta property="og:site_name" content="BLUCO Travel" />
         <meta property="og:title" content="BLUCO Travel Colombia" />
         <meta property="og:description" content="Descubre los destinos más bellos de Colombia con BLUCO Travel. Turismo sostenible, alojamientos y actividades auténticas." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl || baseUrl} />
-        <meta property="og:image" content="https://blucotravel.com/og-home.svg" />
+        <meta property="og:image" content="https://blucotravel.com/bluco-travel-Logo-link.jpeg" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:locale" content={ogLocale} />
 
         {/* Twitter Cards */}
@@ -206,8 +208,6 @@ const BlucoApp = () => {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contacto" element={<ContactPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              {/* <Route path="/productos" element={<LocalProductsPage />} /> */}
-              {/* <Route path="/products" element={<LocalProductsPage />} /> */}
             </Routes>
           </div>
         </main>
