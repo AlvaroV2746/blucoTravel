@@ -22,7 +22,7 @@ const travelAgencySchema = {
   ...generateTravelAgencySchema({
     name: 'BLUCO Travel',
     url: 'https://blucotravel.com',
-    logo: 'https://blucotravel.com/logoFull.png',
+    logo: 'https://blucotravel.com/bluco-travel-Logo.webp',
     areaServed: ['Guatapé', 'San Rafael', 'Antioquia'],
     description: 'Agencia de turismo sostenible especializada en experiencias auténticas en Guatapé y San Rafael. Alojamientos ecológicos, actividades de aventura y productos artesanales locales.',
     keywords: ['turismo sostenible', 'Guatapé', 'San Rafael', 'alojamiento', 'actividades', 'Colombia'],
@@ -149,15 +149,26 @@ const BlucoApp = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
 
+        {/* Enlaces Canónicos e Internacionalización */}
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hrefLang="es" href={`${baseUrl}${esPath}`} />
         <link rel="alternate" hrefLang="en" href={`${baseUrl}${enPath}`} />
         <link rel="alternate" hrefLang="x-default" href={baseUrl} />
-        <meta property="og:locale" content={ogLocale} />
-        <meta property="og:type" content="website" />
+
+        {/* Open Graph Dinámico (Reemplaza al del index cuando React carga) */}
         <meta property="og:site_name" content="BLUCO Travel" />
+        <meta property="og:title" content="BLUCO Travel Colombia" />
+        <meta property="og:description" content="Descubre los destinos más bellos de Colombia con BLUCO Travel. Turismo sostenible, alojamientos y actividades auténticas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl || baseUrl} />
+        <meta property="og:image" content="https://blucotravel.com/og-home.svg" />
+        <meta property="og:locale" content={ogLocale} />
+
+        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@blucotravel" />
+
+        {/* Datos Estructurados Schema.org */}
         <script type="application/ld+json">{JSON.stringify(travelAgencySchema)}</script>
       </Helmet>
 

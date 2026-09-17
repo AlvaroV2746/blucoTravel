@@ -146,4 +146,8 @@ export const IMAGES = {
   // Paquetes
   'bluco-travel-map-package-seccion.avif': '/images/bluco-travel-map-package-seccion.avif',
   'bluco-travel-map-package-seccion.webp': '/images/bluco-travel-map-package-seccion.webp',
+  // BLUCO
+  'bluco-travel-Logo.avif': '/images/bluco-travel-Logo.avif',
+  'bluco-travel-Logo.webp': '/images/bluco-travel-Logo.webp',
+
 };
