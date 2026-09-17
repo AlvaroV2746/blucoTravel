@@ -1,4 +1,4 @@
-import logoFull from '../assets/logos/logoFull.png';
+import {IMAGES} from '../data/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Logo - centrado en mobile, izquierda en PC */}
         <div className="order-1 flex justify-center sm:justify-start w-full sm:w-auto">
           <img
-            src="../../public/images/bluco-travel-Logo.webp"
+            src={IMAGES['bluco-travel-Logo.webp']}
             alt="Logo BLUCO"
             className="h-16 sm:h-20 w-auto object-contain filter invert brightness-0 mx-auto sm:mx-0"
           />

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { getRoute } from '../utils/routes';
+import { IMAGES } from '../data/images';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -50,7 +51,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
           <div className="flex items-center gap-2 cursor-pointer">
             <img
-              src="../../public/images/bluco-travel-Logo.webp"
+              src={IMAGES['bluco-travel-Logo.webp']}
               alt="Logo BLUCO"
               className={`h-20 w-auto object-contain transition-all duration-300 ${isScrolled ? 'brightness-0 invert' : ''
                 }`}
