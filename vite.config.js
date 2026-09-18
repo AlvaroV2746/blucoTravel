@@ -24,7 +24,7 @@ export default defineConfig({
       filename: 'stats.html', // Nombre del archivo de reporte generado
       gzipSize: true,   // Muestra el tamaño comprimido (gzip) que es el real para la web
       brotliSize: true  // Muestra el tamaño con compresión brotli
-    }), // 👈 2. Lo añades a los plugins
+    }),
   ],
   base: './',
   build: {

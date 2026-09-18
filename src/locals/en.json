@@ -111,6 +111,11 @@
     "activity4Desc": "Discover the vibrant avian biodiversity of San Rafael's lush landscapes with our specialized Bird Watching experience. Journey comfortably with roundtrip transportation included and explore rich natural habitats alongside an expert nature guide who will help you spot and identify local species. Recharge along the way with a delicious snack, and enjoy complete peace of mind with medical insurance included throughout your eco-adventure.",
     "activity4Stats": "| Guided Bird Watching | Expert Nature Guide | Roundtrip Transportation | Included Snack | Medical Insurance |"
   },
+  "sanCrisActivities": {
+    "activity1Title": "Grandparents' House Tour",
+    "activity1Desc": "Immerse yourself in the peace and charm of rural life with our immersive Countryside Experience. Explore wide green spaces and natural trails while an expert guide accompanies you to discover the secrets of local agriculture and farm life. Delight in the authentic flavors of traditional gastronomy and relax in comfortable leisure areas surrounded by pure air. Travel with complete peace of mind knowing you have medical assistance throughout your entire visit.",
+    "activity1Stats": "| Guided Tour of Local Crops | Direct Interaction with Farm Animals | Rest Areas and Hammocks | Traditional Food Tasting | Medical Assistance Included |"
+  },
   "packages": {
     "package1title": "Ecological Bird Watching Experience",
     "package1Desc": "Immerse yourself in the vibrant natural habitats of Antioquia with our expert-led Ecological Bird Watching Tour. Enjoy a seamless experience from start to finish with convenient roundtrip transportation, accompanied by a specialized bird guide who will help you spot and identify local exotic species. Delight in delicious meals throughout the day, including breakfast, lunch, and a refreshing snack, while traveling with complete peace of mind thanks to full medical insurance.",

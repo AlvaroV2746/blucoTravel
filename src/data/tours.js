@@ -197,10 +197,24 @@ export const sanRafaServices = withImages([
     lng: -75.02589
   }
 ]);
+export const sanCrisServices = withImages([
+  {
+    id: 1,
+    name: "sanCrisActivities.activity1Title",
+    img: "bluco-travel-san-cristobal-vertical-plants.webp",
+    gallery: ["bluco-travel-san-cristobal-vertical-plants.webp", "bluco-travel-san-cristobal-los-abuelos-photos.webp", "bluco-travel-san-cristobal-lobby.webp", "bluco-travel-san-cristobal-outside-los-abuelos.webp"],
+    desc: "sanCrisActivities.activity1Desc",
+    stats: "sanCrisActivities.activity1Stats",
+    type: "sanCristobal-activity",
+    lat: 6.29436,
+    lng: -75.02589
+  }
+]);
 export const sections = withImages([
   { id: 1, name: "bluco-travel-guatape-seccion", img: "bluco-travel-guatape-seccion.webp", type: "section" },
   { id: 2, name: "bluco-travel-san-rafael-seccion", img: "bluco-travel-san-rafael-seccion.webp", type: "section" },
-  { id: 3, name: "bluco-travel-map-package-seccion", img: "bluco-travel-map-package-seccion.webp", type: "section" }
+  { id: 3, name: "bluco-travel-map-package-seccion", img: "bluco-travel-map-package-seccion.webp", type: "section" },
+  { id: 4, name: "bluco-travel-san-cristobal-panoramic", img: "bluco-travel-san-cristobal-panoramic.webp", type: "section" }
 ]);
 
 export const packages = withImages([

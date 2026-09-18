@@ -111,6 +111,11 @@
     "activity4Desc": "Descubre la vibrante biodiversidad de aves de los exuberantes paisajes de San Rafael con nuestra experiencia especializada de Observación de Aves. Viaja cómodamente con transporte de ida y vuelta incluido y explora ricos hábitats naturales junto a un guía naturalista experto que te ayudará a avistar e identificar especies locales. Recarga energías con un delicioso refrigerio y disfruta de total tranquilidad con el seguro médico incluido durante toda tu eco-aventura.",
     "activity4Stats": "| Observación de aves guiada | Guía naturalista experto | Transporte de ida y vuelta | Refrigerio incluido | Seguro médico |"
   },
+  "sanCrisActivities": {
+    "activity1Title": "Tour 'La Casa De Los Abuelos'",
+    "activity1Desc": "Sumérgete en la paz y el encanto de la vida rural con nuestra inmersiva Experiencia Campestre. Explora amplios espacios verdes y senderos naturales mientras un guía experto te acompaña a descubrir los secretos de la agricultura local y la vida en la finca. Deléitate con los sabores auténticos de la gastronomía tradicional y relájate en cómodas zonas de esparcimiento rodeado de aire puro. Viaja con total tranquilidad sabiendo que cuentas con asistencia médica durante toda tu visita.",
+    "activity1Stats": "| Recorrido guiado por cultivos locales | Interacción directa con animales de granja | Zonas de descanso y hamacas | Degustación de gastronomía tradicional | Seguro médico incluido |"
+      },
   "packages": {
     "package1title": "Experiencia de Observación de Aves Ecológica",
     "package1Desc": "Sumérgete en los vibrantes hábitats naturales de Antioquia con nuestro Tour de Observación de Aves Ecológica liderado por expertos. Disfruta de una experiencia fluida de principio a fin con transporte de ida y vuelta incluido, acompañado por un guía especializado en aves que te ayudará a avistar e identificar especies exóticas locales. Deléitate con deliciosas comidas durante todo el día, incluyendo desayuno, almuerzo y un refrescante refrigerio, mientras viajas con total tranquilidad gracias al seguro médico integral.",

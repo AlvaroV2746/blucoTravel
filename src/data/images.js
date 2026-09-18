@@ -95,6 +95,18 @@ export const IMAGES = {
   'bluco-travel-birdwatching.webp': '/images/bluco-travel-birdwatching.webp',
   'bluco-travel-birdwatching.avif': '/images/bluco-travel-birdwatching.avif',
 
+  //San Cristobal
+  'bluco-travel-san-cristobal-los-abuelos-photos.webp': '/images/bluco-travel-san-cristobal-los-abuelos-photos.webp',
+  'bluco-travel-san-cristobal-los-abuelos-photos.avif': '/images/bluco-travel-san-cristobal-los-abuelos-photos.avif',
+  'bluco-travel-san-cristobal-lobby.webp': '/images/bluco-travel-san-cristobal-lobby.webp',
+  'bluco-travel-san-cristobal-lobby.avif': '/images/bluco-travel-san-cristobal-lobby.avif',
+  'bluco-travel-san-cristobal-vertical-plants.webp': '/images/bluco-travel-san-cristobal-vertical-plants.webp',
+  'bluco-travel-san-cristobal-vertical-plants.avif': '/images/bluco-travel-san-cristobal-vertical-plants.avif',
+  'bluco-travel-san-cristobal-outside-los-abuelos.webp': '/images/bluco-travel-san-cristobal-outside-los-abuelos.webp',
+  'bluco-travel-san-cristobal-outside-los-abuelos.avif': '/images/bluco-travel-san-cristobal-outside-los-abuelos.avif',
+  'bluco-travel-san-cristobal-panoramic.webp': '/images/bluco-travel-san-cristobal-panoramic.webp',
+
+
   // Alojamientos archivos directos
   'bluco-travel-basic-lodging-guatape.avif': '/images/bluco-travel-basic-lodging-guatape.avif',
   'bluco-travel-basic-lodging-guatape.webp': '/images/bluco-travel-basic-lodging-guatape.webp',
