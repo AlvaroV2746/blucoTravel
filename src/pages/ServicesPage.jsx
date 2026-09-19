@@ -207,9 +207,9 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
             }`}
         >
           <img src={sections[3].img} alt="Río y naturaleza en San Rafael para turismo de aventura" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-emerald-500/20"></div>
+          <div className="absolute inset-0 bg-purple-600/20"></div>
           <div className="absolute left-4 top-4 z-10">
-            <FontAwesomeIcon icon={faLeaf} className="text-2xl text-white" />
+            <FontAwesomeIcon icon={faMountain} className="text-2xl text-white" />
             <span className="ml-2 text-white font-medium text-sm">San Cristobal</span>
           </div>
           <svg
@@ -224,15 +224,15 @@ const ServicesPage = ({ onSelect, onAdd, openSections, toggleSection }) => {
 
         <div className={`grid transition-all duration-700 ease-in-out overflow-hidden ${openSections['sancristobal'] ? 'grid-rows-[1fr] opacity-100 mb-6' : 'grid-rows-[0fr] opacity-0'
           }`}>
-          <div className="overflow-hidden bg-emerald-100/60 p-6 rounded-t-none rounded-b-2xl border border-emerald-200 space-y-4">
+          <div className="overflow-hidden bg-purple-100/60 p-6 rounded-t-none rounded-b-2xl border border-purple-200 space-y-4">
             <div
               onClick={() => toggleSection('sancristobal-act')}
-              className={`rounded-lg bg-emerald-100 text-emerald-800 font-medium px-3 py-1.5 hover:bg-emerald-200 cursor-pointer flex items-center gap-2 w-fit transition-all duration-300 ${openSections['sancristobal-act'] ? 'md:px-[135px]' : 'md:px-[30px]'
+              className={`rounded-lg bg-purple-100 text-purple-800 font-medium px-3 py-1.5 hover:bg-purple-200 cursor-pointer flex items-center gap-2 w-fit transition-all duration-300 ${openSections['sancristobal-act'] ? 'md:px-[135px]' : 'md:px-[30px]'
                 }`}
             >
-              <FontAwesomeIcon icon={faLeaf} className="text-emerald-600 text-sm mr-2" />
+              <FontAwesomeIcon icon={faLeaf} className="text-purple-600 text-sm mr-2" />
               <span>{t('common.activities')}</span>
-              <span className="ml-2 text-xs text-emerald-600 font-bold">{sanCrisServices.length}</span>
+              <span className="ml-2 text-xs text-purple-600 font-bold">{sanCrisServices.length}</span>
             </div>
 
             <div className={`grid transition-all duration-500 ease-in-out overflow-hidden ${openSections['sancristobal-act'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
