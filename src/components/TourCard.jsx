@@ -49,7 +49,7 @@ const TourCard = ({ id, type, nameKey, img, onSelect, onAdd, priceKey, desc, sta
           {desc && <p className="mt-1 text-sm text-gray-500 line-clamp-2">{t(desc)}</p>}
         </div>
         <div className="mt-4 flex gap-2">
-          <button onClick={() => onSelect({ id, type, name: nameKey, img, desc, stats })} className="flex-1 text-sm font-semibold text-cyan-600 border border-cyan-300 rounded-lg py-2 hover:bg-cyan-50 transition">
+          <button onClick={() => onSelect({ id, type, name: nameKey, img, desc, stats, gallery })} className="flex-1 text-sm font-semibold text-cyan-600 border border-cyan-300 rounded-lg py-2 hover:bg-cyan-50 transition">
             {t('common.viewMore')}
           </button>
           <button onClick={() => onAdd({ id, type, name: nameKey, img })} className="flex-1 text-sm font-bold text-white bg-cyan-500 rounded-lg py-2 hover:bg-cyan-600 transition">
