@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -11,6 +11,7 @@ import SchemaOrg from './components/SchemaOrg';
 import WebVitalsReporter from './components/WebVitalsReporter';
 import { generateWebsiteSchema, generateBreadcrumbList, generateTravelAgencySchema } from './utils/schemas';
 import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
+import { resolveCatalogItem } from './data/searchCatalog';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // 🚀 Carga perezosa (Code Splitting) de las páginas
@@ -18,6 +19,7 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const SearchResultsPage = lazy(() => import('./pages/SearchResultsPage'));
 // const LocalProductsPage = lazy(() => import('./pages/LocalProductsPage'));
 
 const travelAgencySchema = {
@@ -66,6 +68,7 @@ const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedA
         <ActivityDetailView
           activity={selectedActivity}
           onBack={() => onSelect(null)}
+          onAdd={onAdd}
         />
       )}
     </div>
@@ -76,6 +79,7 @@ const BlucoApp = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -84,9 +88,35 @@ const BlucoApp = () => {
   useEffect(() => {
     const localized = toLocalizedPath(location.pathname, i18n.language);
     if (localized !== location.pathname) {
-      navigate(localized, { replace: true });
+      navigate(localized + location.search, { replace: true });
     }
-  }, [i18n.language, location.pathname, navigate]);
+  }, [i18n.language, location.pathname, location.search, navigate]);
+
+  const itemParam = searchParams.get('item');
+  const detailsFromUrl = itemParam
+    ? (() => {
+        const [type, id] = itemParam.split(':');
+        return resolveCatalogItem(type, id);
+      })()
+    : null;
+
+  const displayActivity = detailsFromUrl ?? selectedActivity;
+
+  const handleSelect = (activity) => {
+    if (activity) {
+      setSearchParams({ item: `${activity.type}:${activity.id}` }, { replace: true });
+      setSelectedActivity(activity);
+    } else {
+      setSelectedActivity(null);
+      const next = new URLSearchParams(searchParams);
+      next.delete('item');
+      setSearchParams(next, { replace: true });
+    }
+  };
+
+  const openDetailFromResults = (activity) => {
+    navigate(`${getRoute(i18n.language, 'services')}?item=${activity.type}:${activity.id}`);
+  };
 
   const toggleSection = (section) => {
     setOpenSections(prev => ({
@@ -134,6 +164,7 @@ const BlucoApp = () => {
     services: t('navbar.services'),
     about: t('navbar.about'),
     contact: t('navbar.contact'),
+    search: t('search.title'),
   };
 
   const routeKey = resolveKey(location.pathname);
@@ -199,26 +230,28 @@ const BlucoApp = () => {
                 <Route path="/" element={<HomePage onCartToggle={() => setIsCartOpen(true)} onNavigate={() => navigate(getRoute(i18n.language, 'services'))} />} />
                 <Route path="/servicios" element={
                   <ServicesRoute
-                    onSelect={setSelectedActivity}
+                    onSelect={handleSelect}
                     onAdd={addToCart}
                     openSections={openSections}
                     toggleSection={toggleSection}
-                    selectedActivity={selectedActivity}
+                    selectedActivity={displayActivity}
                   />
                 } />
                 <Route path="/services" element={
                   <ServicesRoute
-                    onSelect={setSelectedActivity}
+                    onSelect={handleSelect}
                     onAdd={addToCart}
                     openSections={openSections}
                     toggleSection={toggleSection}
-                    selectedActivity={selectedActivity}
+                    selectedActivity={displayActivity}
                   />
                 } />
                 <Route path="/nosotros" element={<AboutPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contacto" element={<ContactPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/buscar" element={<SearchResultsPage onSelect={openDetailFromResults} onAdd={addToCart} />} />
+                <Route path="/search" element={<SearchResultsPage onSelect={openDetailFromResults} onAdd={addToCart} />} />
               </Routes>
             </Suspense>
           </div>

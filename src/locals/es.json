@@ -46,6 +46,7 @@
     "viewMore": "VER MÁS",
     "title": "BLUCO Travel | Agencia de Turismo Sostenible",
     "add": "AGREGAR",
+    "added": "AGREGADO",
     "goBack": "VOLVER",
     "makeQuote": "COTIZAR MI VIAJE",
     "accommodation": "Alojamiento",
@@ -183,6 +184,22 @@
     },
     "products": {
       "title": "Productos Locales | BLUCO"
+    }
+  },
+  "search": {
+    "placeholder": "Buscar tours, alojamientos, productos…",
+    "searchLabel": "Buscar",
+    "title": "Búsqueda",
+    "metaTitle": "Resultados para “{{query}}”",
+    "results": "{{count}} resultados para “{{query}}”",
+    "noResults": "No encontramos resultados para “{{query}}”.",
+    "noResultsInline": "Sin coincidencias…",
+    "tryAnother": "Prueba con términos como “cacao”, “café”, “barco” o “Guatapé”.",
+    "categories": {
+      "activities": "Actividades y tours",
+      "accommodation": "Alojamientos",
+      "packages": "Paquetes",
+      "products": "Productos locales"
     }
   },
   "faqs": {

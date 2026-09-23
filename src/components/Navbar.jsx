@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { getRoute } from '../utils/routes';
 import { IMAGES } from '../data/images';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -74,6 +75,10 @@ const Navbar = () => {
             ))}
           </nav>
 
+          <div className="hidden lg:block flex-1 max-w-md mx-6">
+            <SearchBar />
+          </div>
+
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-2">
               <button
@@ -142,6 +147,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        <div className="mt-4">
+          <SearchBar />
+        </div>
 
         <div className="mt-6 pt-6 border-t border-blue-900/50 flex justify-center gap-4">
           <button

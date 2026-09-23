@@ -46,6 +46,7 @@
     "viewMore": "VIEW MORE",
     "title": "BLUCO Travel | Sustainable Tourism Agency",
     "add": "ADD",
+    "added": "ADDED",
     "goBack": "GO BACK",
     "makeQuote": "MAKE MY QUOTE",
     "accommodation": "Accommodation",
@@ -183,6 +184,22 @@
     },
     "products": {
       "title": "Local Products | BLUCO"
+    }
+  },
+  "search": {
+    "placeholder": "Search tours, lodging, products…",
+    "searchLabel": "Search",
+    "title": "Search",
+    "metaTitle": "Results for “{{query}}”",
+    "results": "{{count}} results for “{{query}}”",
+    "noResults": "We couldn't find any results for “{{query}}”.",
+    "noResultsInline": "No matches…",
+    "tryAnother": "Try terms like “cacao”, “coffee”, “boat” or “Guatapé”.",
+    "categories": {
+      "activities": "Tours & Activities",
+      "accommodation": "Accommodation",
+      "packages": "Packages",
+      "products": "Local Products"
     }
   },
   "faqs": {
