@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
+﻿import { useEffect, useRef, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +7,7 @@ import { getRoute } from '../utils/routes';
 import useDebouncedValue from '../hooks/useDebouncedValue';
 import { searchCatalog, CATEGORY_KEYS, identifierOf, resolveCatalogItem } from '../data/searchCatalog';
 
-const SearchBar = ({ className = '' }) => {
+const SearchBar = ({ className = '', onCloseMenu }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
@@ -15,7 +15,7 @@ const SearchBar = ({ className = '' }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const containerRef = useRef(null);
   
-  // Aumentamos a 400ms para evitar ejecuciones innecesarias mientras se escribe rápido
+  // Aumentamos a 400ms para evitar ejecuciones innecesarias mientras se escribe rÃ¡pido
   const debouncedQuery = useDebouncedValue(query, 400);
 
   const results = useMemo(() => {
@@ -34,9 +34,6 @@ const SearchBar = ({ className = '' }) => {
   const searchPath = getRoute(i18n.language, 'search');
   const effectiveActiveIndex = activeIndex >= 0 && activeIndex < normalizedResults.length ? activeIndex : -1;
 
-  useEffect(() => {
-    setActiveIndex(-1);
-  }, [debouncedQuery]);
 
   useEffect(() => {
     const onPointerDown = (e) => {
@@ -51,6 +48,7 @@ const SearchBar = ({ className = '' }) => {
   const goToDetail = (item) => {
     setOpen(false);
     setQuery('');
+    onCloseMenu?.();
     if (item.category !== 'product' && resolveCatalogItem(item.type, item.id)) {
       navigate(`${servicesPath}?item=${identifierOf(item)}`);
     } else {
@@ -60,6 +58,7 @@ const SearchBar = ({ className = '' }) => {
 
   const goToResults = (term) => {
     setOpen(false);
+    onCloseMenu?.();
     navigate(`${searchPath}?q=${encodeURIComponent(term.trim())}`);
   };
 

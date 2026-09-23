@@ -1,21 +1,20 @@
-import {IMAGES} from '../data/images';
+import { IMAGES } from '../data/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-blue-950/95 w-full min-h-[120px] items-end mt-auto">
-      <div className="py-6 flex flex-col sm:flex-row items-center gap-8 w-full justify-between px-4 sm:px-6">
+    <footer className="bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950 border-t border-cyan-500/30 shadow-2xl shadow-cyan-950/20 w-full min-h-[120px] items-end mt-auto">
+      <div className="pt-6 flex flex-col sm:flex-row items-center gap-8 w-full justify-between px-6 sm:px-12">
         {/* Logo - centrado en mobile, izquierda en PC */}
         <div className="order-1 flex justify-center sm:justify-start w-full sm:w-auto">
           <img
             src={IMAGES['bluco-travel-Logo.webp']}
             alt="Logotipo oficial de BLUCO Travel - Agencia de Turismo Sostenible en Antioquia Colombia"
-            className="h-16 sm:h-20 w-auto object-contain filter invert brightness-0 mx-auto sm:mx-0"
+            className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(6,182,212,0.3)] brightness-0 invert mx-auto sm:mx-0"
           />
         </div>
 
@@ -37,8 +36,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright al final */}
-      <div className=" sm:mt-2 text-center text-sm text-gray-400 px-4">
+      {/* Copyright al final con una sutil línea divisoria */}
+      <div className="sm:mt-2 pb-4 text-center text-sm text-gray-400 px-4">
         <p>{t('copyright')}</p>
       </div>
     </footer>
