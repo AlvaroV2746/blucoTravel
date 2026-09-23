@@ -5,6 +5,7 @@ export const ROUTE_SEGMENTS = {
     about: '/nosotros',
     contact: '/contacto',
     products: '/productos',
+    search: '/buscar',
   },
   en: {
     home: '/',
@@ -12,6 +13,7 @@ export const ROUTE_SEGMENTS = {
     about: '/about',
     contact: '/contact',
     products: '/products',
+    search: '/search',
   },
 };
 const ALL_MAPS = [ROUTE_SEGMENTS.es, ROUTE_SEGMENTS.en];

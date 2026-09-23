@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 const useCarouselGesture = (slidesArray) => {
   const safeSlides = Array.isArray(slidesArray) ? slidesArray : [];

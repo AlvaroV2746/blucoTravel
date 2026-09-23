@@ -11,9 +11,10 @@ const locationNameFor = (type) => {
   return 'Guatapé';
 };
 
-const ActivityDetailView = ({ activity, onBack }) => {
+const ActivityDetailView = ({ activity, onBack, onAdd }) => {
   const { t } = useTranslation();
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsAnimating(true), 10);
@@ -85,12 +86,29 @@ const ActivityDetailView = ({ activity, onBack }) => {
           <p className="text-lg text-gray-600 leading-relaxed mb-10">
             {t(activity.desc)}
           </p>
-          <button
-            onClick={handleClose}
-            className="bg-cyan-500 text-white font-bold py-4 px-8 rounded text-lg cursor-pointer hover:bg-cyan-600 transition"
-          >
-            {t('common.goBack')}
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={handleClose}
+              className="flex-1 bg-blue-900/10 text-blue-900 font-bold py-4 px-8 rounded text-lg cursor-pointer hover:bg-blue-900/20 transition"
+            >
+              {t('common.goBack')}
+            </button>
+            {onAdd && (
+              <button
+                onClick={() => {
+                  onAdd(activity);
+                  setIsAdded(true);
+                }}
+                disabled={isAdded}
+                className={`flex-1 font-bold py-4 px-8 rounded text-lg transition ${isAdded
+                    ? 'bg-emerald-500 text-white cursor-default'
+                    : 'bg-cyan-500 text-white cursor-pointer hover:bg-cyan-600'
+                  }`}
+              >
+                {isAdded ? t('common.added') : t('common.add')}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
