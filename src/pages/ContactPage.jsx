@@ -33,7 +33,7 @@ const ContactPage = () => {
               <h3 className="font-medium text-gray-900 mb-1">{t('contact.whatsapp')}</h3>
               <p className="text-gray-600 text-sm">{t('contact.whatsappDesc')}</p>
               <a
-                href="https://wa.me/573184559655"
+                href="https://wa.me/573000726521"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-gray-600 mt-3 rounded py-2 text-center text-sm font-medium transition-colors hover:text-cyan-400"

@@ -18,7 +18,7 @@ const FAQSection = () => {
     <>
       <SchemaOrg schema={faqSchema} />
 
-      <section className="mt-12 max-w-3xl mx-auto" aria-labelledby="faq-title">
+      <section id="faq" className="mt-12 max-w-3xl mx-auto scroll-mt-32" aria-labelledby="faq-title">
         <h2 id="faq-title" className="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-cyan-500 pb-2 text-center">
           {t('faqs.title')}
         </h2>

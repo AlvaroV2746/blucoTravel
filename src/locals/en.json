@@ -168,7 +168,21 @@
       "keywords": ["handicrafts Guatapé", "local products San Rafael", "woven ponchos Antioquia", "organic coffee Guatapé", "Colombia souvenirs"]
     }
   },
-  "copyright": "© 2024 BLUCO Travel. All rights reserved.",
+  "copyright": "© 2026 BLUCO Travel. All rights reserved.",
+  "footer": {
+    "slogan": "Sustainable tourism connecting travelers with the magic of Colombia",
+    "destinations": "Destinations",
+    "cities": ["Medellín", "San Rafael", "Guatapé", "San Cristóbal", "Santa Fe de Antioquia"],
+    "links": "Links",
+    "about": "About Us",
+    "faq": "Frequently Asked Questions",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "contactTitle": "Contact Us",
+    "email": "info@blucotravel.com",
+    "phone": "300 072 6521",
+    "address": "Medellín, Colombia"
+  },
   "meta": {
     "home": {
       "title": "BLUCO Travel Colombia"
@@ -211,7 +225,7 @@
       },
       {
         "question": "How do I book an activity or accommodation?",
-        "answer": "You can build your plan in the Services section, add experiences to your cart and request a quote via WhatsApp at +57 318 455 9655. We reply quickly to confirm availability and dates."
+        "answer": "You can build your plan in the Services section, add experiences to your cart and request a quote via WhatsApp at +57 300 072 6521. We reply quickly to confirm availability and dates."
       },
       {
         "question": "Which payment methods do you accept?",

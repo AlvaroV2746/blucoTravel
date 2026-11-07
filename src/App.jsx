@@ -20,6 +20,7 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SearchResultsPage = lazy(() => import('./pages/SearchResultsPage'));
+const LegalPage = lazy(() => import('./pages/LegalPage'));
 // const LocalProductsPage = lazy(() => import('./pages/LocalProductsPage'));
 
 const travelAgencySchema = {
@@ -38,7 +39,7 @@ const travelAgencySchema = {
     ],
   }),
   slogan: 'Turismo sostenible que conecta viajeros con la magia de Colombia',
-  telephone: '+57-318-455-9655',
+  telephone: '+57-300-072-6521',
   email: 'info@blucotravel.com',
   address: {
     '@type': 'PostalAddress',
@@ -150,7 +151,7 @@ const BlucoApp = () => {
     });
 
     const text = encodeURIComponent(message);
-    window.open(`https://wa.me/573184559655?text=${text}`, '_blank');
+    window.open(`https://wa.me/573000726521?text=${text}`, '_blank');
   };
 
   const baseUrl = 'https://blucotravel.com';
@@ -165,6 +166,8 @@ const BlucoApp = () => {
     about: t('navbar.about'),
     contact: t('navbar.contact'),
     search: t('search.title'),
+    terms: t('footer.terms'),
+    privacy: t('footer.privacy'),
   };
 
   const routeKey = resolveKey(location.pathname);
@@ -252,6 +255,10 @@ const BlucoApp = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/buscar" element={<SearchResultsPage onSelect={openDetailFromResults} onAdd={addToCart} />} />
                 <Route path="/search" element={<SearchResultsPage onSelect={openDetailFromResults} onAdd={addToCart} />} />
+                <Route path="/terminos" element={<LegalPage kind="terms" />} />
+                <Route path="/privacidad" element={<LegalPage kind="privacy" />} />
+                <Route path="/terms" element={<LegalPage kind="terms" />} />
+                <Route path="/privacy" element={<LegalPage kind="privacy" />} />
               </Routes>
             </Suspense>
           </div>
