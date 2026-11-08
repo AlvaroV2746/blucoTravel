@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +12,7 @@ const NATURAL_WIDTHS = {
 };
 
 const buildSrcSet = (img) => {
-  if (!img) return null;
+  if (!img || !img.includes('/images/')) return null;
   const base = img.split('/').pop().replace(/\.webp$/, '');
   const natural = NATURAL_WIDTHS[base];
   if (!natural) return null;
@@ -30,8 +31,10 @@ const AUTO_ADVANCE_MS = 10000;
 
 const HeroCarousel = ({ slides }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const listRef = useRef();
   const containerRef = useRef();
+  const movedRef = useRef(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const dragRef = useRef({ active: false, startX: 0, startIndex: 0 });
@@ -67,6 +70,7 @@ const HeroCarousel = ({ slides }) => {
 
   const handlePointerDown = (e) => {
     listRef.current?.setPointerCapture?.(e.pointerId);
+    movedRef.current = false;
     dragRef.current = { active: true, startX: e.clientX, startIndex: currentIndex };
     setDragOffset(0);
   };
@@ -74,6 +78,7 @@ const HeroCarousel = ({ slides }) => {
   const handlePointerMove = (e) => {
     if (!dragRef.current.active) return;
     const raw = e.clientX - dragRef.current.startX;
+    if (Math.abs(raw) > 8) movedRef.current = true;
     const atFirst = dragRef.current.startIndex === 0;
     const atLast = dragRef.current.startIndex === slides.length - 1;
     let offset = raw;
@@ -100,6 +105,21 @@ const HeroCarousel = ({ slides }) => {
 
   const handlePointerUp = () => endDrag();
   const handlePointerCancel = () => endDrag();
+
+  const handleSlideClick = (item) => {
+    if (movedRef.current) {
+      movedRef.current = false;
+      return;
+    }
+
+    if (!item.targetUrl) return;
+
+    if (item.targetUrl.startsWith('/')) {
+      navigate(item.targetUrl);
+    } else {
+      window.location.assign(item.targetUrl);
+    }
+  };
 
   const firstSrcSet = buildSrcSet(slides[0]?.imgIcon);
   const style = {
@@ -138,7 +158,11 @@ const HeroCarousel = ({ slides }) => {
             const srcSetObj = buildSrcSet(item.img);
             const isFirst = index === 0;
             return (
-              <li key={item.id} className="w-full flex-shrink-0 h-full relative overflow-hidden flex items-center justify-center bg-gray-900">
+              <li
+                key={item.id}
+                onClick={() => handleSlideClick(item)}
+                className={`w-full flex-shrink-0 h-full relative overflow-hidden flex items-center justify-center bg-gray-900 ${item.targetUrl ? 'cursor-pointer' : ''}`}
+              >
                 {/* 1. CAPA DE FONDO: Difuminado ambiental que llena todo el contenedor */}
                 <picture className="absolute inset-0 w-full h-full">
                   {srcSetObj?.avifSrcSet && <source type="image/avif" srcSet={srcSetObj.avifSrcSet} sizes={srcSetObj.sizes} />}
@@ -157,7 +181,7 @@ const HeroCarousel = ({ slides }) => {
                   {srcSetObj?.srcSet && <source type="image/webp" srcSet={srcSetObj.srcSet} sizes={srcSetObj.sizes} />}
                   <img
                     src={item.img}
-                    alt={t('hero.slideAlt', { num: item.id })}
+                    alt={item.description || t('hero.slideAlt', { num: index + 1 })}
                     loading={isFirst ? 'eager' : 'lazy'}
                     fetchPriority={isFirst ? 'high' : 'auto'}
                     decoding="async"
