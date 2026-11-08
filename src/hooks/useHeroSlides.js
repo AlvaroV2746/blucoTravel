@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { data as fallbackSlides } from '../data/tours';
 
+// Limpiamos la URL para evitar espacios o saltos de línea accidentales en Vercel
+const configuredApiUrl = import.meta.env.VITE_API_URL?.trim();
 const API_BASE_URL = import.meta.env.DEV
   ? ''
-  : (import.meta.env.VITE_API_URL ?? 'https://inventario.blucotravel.com');
+  : (configuredApiUrl || 'https://inventario.blucotravel.com');
+
 const POLL_INTERVAL_MS = 45000;
 
 const mapSlide = (slide) => ({
@@ -25,7 +28,10 @@ export function useHeroSlides() {
       controller = new AbortController();
 
       try {
-        const response = await fetch(`${API_BASE_URL}/api/public/slides`, {
+        const targetUrl = `${API_BASE_URL}/api/public/slides`;
+        console.log('Consultando slides en:', targetUrl); // Para depurar en la consola del navegador en producción
+
+        const response = await fetch(targetUrl, {
           signal: controller.signal,
         });
 
@@ -40,9 +46,15 @@ export function useHeroSlides() {
 
         if (!active) return;
 
-        setSlides(remoteSlides.length > 0 ? remoteSlides : fallbackSlides);
+        if (remoteSlides.length > 0) {
+          setSlides(remoteSlides);
+        } else {
+          console.warn('La API respondió sin slides, usando respaldo estático.');
+          setSlides(fallbackSlides);
+        }
       } catch (error) {
         if (error.name === 'AbortError' || !active) return;
+        console.error('Error al sincronizar slides públicos:', error);
         setSlides(fallbackSlides);
       }
     };
