@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { data as fallbackSlides } from '../data/tours';
 
-// Forzamos la URL de producción si Vercel no inyecta la variable o si estamos en producción
 const configuredApiUrl = import.meta.env.VITE_API_URL?.trim();
 const API_BASE_URL = configuredApiUrl || 'https://inventario.blucotravel.com';
 
@@ -28,7 +27,7 @@ export function useHeroSlides() {
 
       try {
         const targetUrl = `${API_BASE_URL}/api/public/slides`;
-        console.log('Consultando slides en:', targetUrl); // Deberá mostrar la URL completa
+        console.log('Consultando slides en:', targetUrl); 
 
         const response = await fetch(targetUrl, {
           signal: controller.signal,
