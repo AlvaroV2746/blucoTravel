@@ -1,23 +1,21 @@
 import { useEffect, useState } from 'react';
 import { data as fallbackSlides } from '../data/tours';
 
+// Forzamos la URL de producción si Vercel no inyecta la variable o si estamos en producción
 const configuredApiUrl = import.meta.env.VITE_API_URL?.trim();
-const API_BASE_URL = import.meta.env.DEV
-  ? ''
-  : (configuredApiUrl || 'https://inventario.blucotravel.com');
+const API_BASE_URL = configuredApiUrl || 'https://inventario.blucotravel.com';
+
 const POLL_INTERVAL_MS = 45000;
 
 const mapSlide = (slide) => ({
   id: slide.id,
-  img: slide.imageUrl,         // Por si el carrusel lee .img
-  imageUrl: slide.imageUrl,     // Por si el carrusel lee .imageUrl
+  img: slide.imageUrl,
+  imageUrl: slide.imageUrl,
   targetUrl: slide.targetUrl || '',
   description: slide.description || '',
 });
 
 export function useHeroSlides() {
-  console.log(API_BASE_URL);
-  
   const [slides, setSlides] = useState(fallbackSlides);
 
   useEffect(() => {
@@ -29,7 +27,10 @@ export function useHeroSlides() {
       controller = new AbortController();
 
       try {
-        const response = await fetch(`${API_BASE_URL}/api/public/slides`, {
+        const targetUrl = `${API_BASE_URL}/api/public/slides`;
+        console.log('Consultando slides en:', targetUrl); // Deberá mostrar la URL completa
+
+        const response = await fetch(targetUrl, {
           signal: controller.signal,
         });
 
@@ -44,9 +45,14 @@ export function useHeroSlides() {
 
         if (!active) return;
 
-        setSlides(remoteSlides.length > 0 ? remoteSlides : fallbackSlides);
+        if (remoteSlides.length > 0) {
+          setSlides(remoteSlides);
+        } else {
+          setSlides(fallbackSlides);
+        }
       } catch (error) {
         if (error.name === 'AbortError' || !active) return;
+        console.error('Error al sincronizar slides públicos:', error);
         setSlides(fallbackSlides);
       }
     };
