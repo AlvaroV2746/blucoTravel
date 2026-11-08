@@ -27,6 +27,11 @@ export default defineConfig({
     }),
   ],
   base: './',
+  server: {
+    proxy: {
+      '/api': 'http://localhost:4000',
+    },
+  },
   build: {
     rollupOptions: {
       output: {
