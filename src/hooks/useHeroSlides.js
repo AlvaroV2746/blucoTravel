@@ -16,6 +16,8 @@ const mapSlide = (slide) => ({
 });
 
 export function useHeroSlides() {
+  console.log(API_BASE_URL);
+  
   const [slides, setSlides] = useState(fallbackSlides);
 
   useEffect(() => {
