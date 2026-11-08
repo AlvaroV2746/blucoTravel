@@ -142,7 +142,12 @@ const HeroCarousel = ({ slides }) => {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
-        className="container-images relative overflow-hidden rounded-xl h-64 sm:h-80 md:h-100 lg:h-128 w-full select-none touch-pan-y cursor-grab active:cursor-grabbing bg-gray-900"
+        onClick={() => handleSlideClick(slides[currentIndex])}
+        className={`container-images relative overflow-hidden rounded-xl h-64 sm:h-80 md:h-100 lg:h-128 w-full select-none touch-pan-y ${
+          slides[currentIndex]?.targetUrl
+            ? 'cursor-pointer'
+            : 'cursor-grab active:cursor-grabbing'
+        } bg-gray-900`}
         style={{ touchAction: 'pan-y' }}
       >
         <ul
@@ -160,8 +165,7 @@ const HeroCarousel = ({ slides }) => {
             return (
               <li
                 key={item.id}
-                onClick={() => handleSlideClick(item)}
-                className={`w-full flex-shrink-0 h-full relative overflow-hidden flex items-center justify-center bg-gray-900 ${item.targetUrl ? 'cursor-pointer' : ''}`}
+                className="w-full flex-shrink-0 h-full relative overflow-hidden flex items-center justify-center bg-gray-900"
               >
                 {/* 1. CAPA DE FONDO: Difuminado ambiental que llena todo el contenedor */}
                 <picture className="absolute inset-0 w-full h-full">
