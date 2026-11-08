@@ -9,7 +9,8 @@ const POLL_INTERVAL_MS = 45000;
 
 const mapSlide = (slide) => ({
   id: slide.id,
-  img: slide.imageUrl,
+  img: slide.imageUrl,         // Por si el carrusel lee .img
+  imageUrl: slide.imageUrl,     // Por si el carrusel lee .imageUrl
   targetUrl: slide.targetUrl || '',
   description: slide.description || '',
 });
