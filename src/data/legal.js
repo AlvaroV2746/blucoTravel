@@ -12,6 +12,7 @@ export const LEGAL = {
             'Razón Social: BLUCO TRAVEL S.A.S.',
             'NIT: 902.123.767-0',
             'Matrícula Mercantil: 862118-12 (Cámara de Comercio de Medellín para Antioquia)',
+            'Registro Nacional de Turismo (RNT): 306338',
             'Domicilio Principal: Bello, Antioquia, Colombia',
             'Códigos CIIU: 7911 (Actividades de las agencias de viaje) y 7990 (Otros servicios de reserva y actividades conexas)',
             'Canal Oficial de Atención y PQR:',
@@ -22,7 +23,7 @@ export const LEGAL = {
         {
           heading: '2. Objeto de la Agencia y Servicios Turísticos',
           paragraphs: [
-            'BLUCO TRAVEL S.A.S. actúa como agencia de viajes operadora y mayorista, encargada de diseñar, intermediar y comercializar experiencias turísticas sostenibles, comunitarias y de aventura en Colombia. La Agencia diseña itinerarios, gestiona reservas de alojamiento, transporte terrestre, guías profesionales y actividades conexas con proveedores locales debidamente certificados.',
+            'BLUCO TRAVEL S.A.S. actúa como agencia de viajes operadora, encargada de diseñar, intermediar y comercializar experiencias turísticas sostenibles, comunitarias y de aventura en Colombia. La Agencia diseña itinerarios, gestiona reservas de alojamiento, transporte terrestre, guías profesionales y actividades conexas con proveedores locales debidamente certificados.',
           ],
         },
         {
@@ -41,8 +42,9 @@ export const LEGAL = {
             {
               heading: 'Cancelaciones por el Usuario',
               list: [
-                'Si el Usuario cancela su participación con más de 15 días de anticipación a la fecha de inicio del servicio, tendrá derecho a la devolución del 100% del valor abonado, o a un bono redimible por el 100% del saldo a favor para futuras experiencias.',
-                'Cancelaciones realizadas con menos del tiempo estipulado o inasistencia (No Show) no son objeto de reembolso, debido a los compromisos operativos adquiridos previamente con proveedores locales y transporte.',
+                'Si el Usuario cancela su participación con más de quince (15) días de anticipación a la fecha de inicio del servicio, tendrá derecho a la devolución del 100% del valor abonado, o a un bono redimible por el 100% del saldo a favor para futuras experiencias.',
+                'Cancelaciones realizadas entre los siete (7) y catorce (14) días previos al viaje estarán sujetas a una retención del 30% por gastos operativos y de gestión.',
+                'Cancelaciones con menos de siete (7) días o inasistencia (No Show) no son objeto de reembolso, debido a los compromisos adquiridos con proveedores locales y transporte.',
               ],
             },
             {
@@ -54,7 +56,13 @@ export const LEGAL = {
           ],
         },
         {
-          heading: '5. Deberes y Responsabilidades del Pasajero',
+          heading: '5. Prevención de Explotación Sexual (Ley 679 de 2001)',
+          paragraphs: [
+            'En desarrollo de lo dispuesto en el artículo 17 de la Ley 679 de 2001, la agencia advierte al turista que la explotación y el abuso sexual de menores de edad en el país son sancionados penal y administrativamente, conforme a las leyes vigentes.',
+          ],
+        },
+        {
+          heading: '6. Deberes y Responsabilidades del Pasajero',
           list: [
             'El Usuario se compromete a portar su documento de identidad original, seguir las instrucciones de los guías y coordinadores, mantener un comportamiento respetuoso con las comunidades locales y el medio ambiente (sostenibilidad turística).',
             'El Usuario es responsable de informar cualquier condición médica especial, alergias o restricciones físicas antes de tomar el tour.',
@@ -87,7 +95,7 @@ export const LEGAL = {
             'Gestionar la reserva, contratación y ejecución de los servicios turísticos ofrecidos por la Agencia.',
             'Enviar confirmaciones de viaje, itinerarios, información operativa y alertas de seguridad.',
             'Atender peticiones, quejas, reclamos (PQR) y solicitudes de soporte al cliente.',
-            'Cumplir con obligaciones legales, contables y tributarias ante la DIAN y autoridades del sector turismo (MinCIT / RNT).',
+            'Cumplir con obligaciones legales, contables y tributarias ante la DIAN y autoridades del sector turismo (MinCIT / RNT 306338).',
             'Con autorización previa del titular, enviar información comercial, boletines de nuevos destinos y ofertas promocionales de BLUCO Travel.',
           ],
         },
@@ -128,6 +136,7 @@ export const LEGAL = {
             'Company Name: BLUCO TRAVEL S.A.S.',
             'Tax ID (NIT): 902.123.767-0',
             'Commercial Registration: 862118-12 (Chamber of Commerce of Medellín for Antioquia)',
+            'National Tourism Registry (RNT): 306338',
             'Main Office: Bello, Antioquia, Colombia',
             'CIIU Codes: 7911 (Travel agency activities) and 7990 (Other reservation services and related activities)',
             'Official Customer Service and PQR Channel:',
@@ -138,7 +147,7 @@ export const LEGAL = {
         {
           heading: '2. Purpose of the Agency and Tourism Services',
           paragraphs: [
-            'BLUCO TRAVEL S.A.S. acts as an operating and wholesale travel agency, responsible for designing, intermediating and marketing sustainable, community and adventure tourism experiences in Colombia. The Agency designs itineraries and manages accommodation, ground transportation, professional guides and related activities with duly certified local providers.',
+            'BLUCO TRAVEL S.A.S. acts as an operating travel agency, responsible for designing, intermediating and marketing sustainable, community and adventure tourism experiences in Colombia. The Agency designs itineraries and manages accommodation, ground transportation, professional guides and related activities with duly certified local providers.',
           ],
         },
         {
@@ -157,8 +166,9 @@ export const LEGAL = {
             {
               heading: 'Cancellations by the User',
               list: [
-                'If the User cancels their participation more than 15 days before the service start date, they will be entitled to a refund of 100% of the amount paid, or to a voucher redeemable for 100% of the balance in favor of future experiences.',
-                'Cancellations made with less than the stipulated time or no-shows are not eligible for a refund, due to the operational commitments previously acquired with local providers and transportation.',
+                'If the User cancels their participation more than fifteen (15) days before the service start date, they will be entitled to a refund of 100% of the amount paid, or to a voucher redeemable for 100% of the balance in favor of future experiences.',
+                'Cancellations made between seven (7) and fourteen (14) days before the trip will be subject to a 30% retention for operational and management expenses.',
+                'Cancellations made less than seven (7) days before the trip or no-shows are not eligible for a refund, due to the commitments acquired with local providers and transportation.',
               ],
             },
             {
@@ -170,7 +180,13 @@ export const LEGAL = {
           ],
         },
         {
-          heading: '5. Passenger Duties and Responsibilities',
+          heading: '5. Prevention of Sexual Exploitation (Law 679 of 2001)',
+          paragraphs: [
+            'Pursuant to Article 17 of Law 679 of 2001, the agency warns tourists that the sexual exploitation and abuse of minors in the country are subject to criminal and administrative sanctions under current laws.',
+          ],
+        },
+        {
+          heading: '6. Passenger Duties and Responsibilities',
           list: [
             'The User agrees to carry their original identity document, follow the instructions of guides and coordinators, and maintain respectful behavior toward local communities and the environment (sustainable tourism).',
             'The User is responsible for informing any special medical condition, allergies or physical restrictions before taking the tour.',
@@ -203,7 +219,7 @@ export const LEGAL = {
             'Manage the reservation, contracting and execution of the tourism services offered by the Agency.',
             'Send travel confirmations, itineraries, operational information and safety alerts.',
             'Handle requests, complaints and claims (PQR) and customer support requests.',
-            'Comply with legal, accounting and tax obligations before the DIAN and tourism sector authorities (MinCIT / RNT).',
+            'Comply with legal, accounting and tax obligations before the DIAN and tourism sector authorities (MinCIT / RNT 306338).',
             'With prior authorization from the data subject, send commercial information, newsletters about new destinations and promotional offers from BLUCO Travel.',
           ],
         },
