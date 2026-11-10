@@ -42,6 +42,23 @@
   "products": {
     "title": "Nuestros productos comunitarios"
   },
+  "webServices": {
+    "loading": "Cargando servicios...",
+    "retry": "Reintentar",
+    "emptySection": "Próximamente agregaremos servicios en esta sección.",
+    "showMore": "Leer más",
+    "showLess": "Leer menos",
+    "previousImage": "Imagen anterior",
+    "nextImage": "Imagen siguiente",
+    "count_one": "{{count}} servicio",
+    "count_other": "{{count}} servicios",
+    "maintenance": {
+      "title": "Sección de servicios en mantenimiento.",
+      "description": "Comunícate con nosotros por WhatsApp para más información.",
+      "whatsapp": "Escribir por WhatsApp",
+      "whatsappMessage": "Hola, quiero información sobre sus servicios."
+    }
+  },
   "common": {
     "viewMore": "VER MÁS",
     "title": "BLUCO Travel | Agencia de Turismo Sostenible",

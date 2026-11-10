@@ -12,6 +12,12 @@ import WebVitalsReporter from './components/WebVitalsReporter';
 import { generateWebsiteSchema, generateBreadcrumbList, generateTravelAgencySchema } from './utils/schemas';
 import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
 import { resolveCatalogItem } from './data/searchCatalog';
+import { useWebServices } from './hooks/useWebServices';
+import {
+  findWebServiceActivity,
+  translateActivityText,
+  WEB_SERVICE_TYPE,
+} from './utils/webServices';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // 🚀 Carga perezosa (Code Splitting) de las páginas
@@ -56,10 +62,14 @@ const PageLoader = () => (
   </div>
 );
 
-const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedActivity }) => {
+const ServicesRoute = ({ onSelect, onAdd, openSections, toggleSection, selectedActivity, services }) => {
   return (
     <div>
       <ServicesPage
+        sections={services.sections}
+        isLoading={services.isLoading}
+        hasError={services.hasError}
+        onRetry={services.refetch}
         onSelect={onSelect}
         onAdd={onAdd}
         openSections={openSections}
@@ -85,6 +95,7 @@ const BlucoApp = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [openSections, setOpenSections] = useState({});
+  const webServices = useWebServices();
 
   useEffect(() => {
     const localized = toLocalizedPath(location.pathname, i18n.language);
@@ -97,6 +108,9 @@ const BlucoApp = () => {
   const detailsFromUrl = itemParam
     ? (() => {
         const [type, id] = itemParam.split(':');
+        if (type === WEB_SERVICE_TYPE) {
+          return findWebServiceActivity(webServices.sections, id, i18n.language);
+        }
         return resolveCatalogItem(type, id);
       })()
     : null;
@@ -140,7 +154,9 @@ const BlucoApp = () => {
   };
 
   const handleQuote = (days, people, needsGuide) => {
-    const activityNames = cart.map(item => t(item.name)).join('\n-');
+    const activityNames = cart
+      .map(item => translateActivityText(t, item.name, item.isDynamic))
+      .join('\n-');
     const guideText = needsGuide ? t('common.guideYes') : t('common.guideNo');
 
     const message = t('common.whatsappMessage', {
@@ -238,6 +254,7 @@ const BlucoApp = () => {
                     openSections={openSections}
                     toggleSection={toggleSection}
                     selectedActivity={displayActivity}
+                    services={webServices}
                   />
                 } />
                 <Route path="/services" element={
@@ -247,6 +264,7 @@ const BlucoApp = () => {
                     openSections={openSections}
                     toggleSection={toggleSection}
                     selectedActivity={displayActivity}
+                    services={webServices}
                   />
                 } />
                 <Route path="/nosotros" element={<AboutPage />} />

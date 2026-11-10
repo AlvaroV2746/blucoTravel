@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SchemaOrg from './SchemaOrg';
 import DetailGallery from './DetailGallery';
 import { generateTouristAttraction, generateLodgingBusiness, BASE_URL } from '../utils/schemas';
+import { translateActivityText } from '../utils/webServices';
 
 const isAccommodation = (type) => !!type && type.includes('accommodation');
 
@@ -30,6 +31,8 @@ const ActivityDetailView = ({ activity, onBack, onAdd }) => {
 
   if (!activity) return null;
 
+  const text = (value) => translateActivityText(t, value, activity.isDynamic);
+
   //Si activity.gallery existe y tiene elementos, los usamos. 
   // Si no, intentamos usar activity.img, y si todo falla, un arreglo con una imagen por defecto.
   const slides = (Array.isArray(activity.gallery) && activity.gallery.length > 0)
@@ -40,11 +43,11 @@ const ActivityDetailView = ({ activity, onBack, onAdd }) => {
   
 
   const common = {
-    name: t(activity.name),
-    description: t(activity.desc),
+    name: text(activity.name),
+    description: text(activity.desc),
     image: `${BASE_URL}/og-services.svg`,
     url: window.location.href,
-    locationName: locationNameFor(activity.type),
+    locationName: activity.locationName || locationNameFor(activity.type),
     lat: activity.lat,
     lng: activity.lng,
   };
@@ -74,17 +77,19 @@ const ActivityDetailView = ({ activity, onBack, onAdd }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Renderizamos el carrusel con las diapositivas aseguradas */}
-        <DetailGallery slides={slides} alt={t(activity.name)} />
+        <DetailGallery slides={slides} alt={text(activity.name)} />
         
         <div className="p-10">
           <h2 className="text-4xl font-black text-blue-900 uppercase mb-4">
-            {t(activity.name)}
+            {text(activity.name)}
           </h2>
-          <div className="inline-block bg-sky-100 text-blue-900 px-4 py-2 rounded-full font-semibold mb-6">
-            {t(activity.stats)}
-          </div>
+          {activity.stats && (
+            <div className="inline-block bg-sky-100 text-blue-900 px-4 py-2 rounded-full font-semibold mb-6">
+              {text(activity.stats)}
+            </div>
+          )}
           <p className="text-lg text-gray-600 leading-relaxed mb-10">
-            {t(activity.desc)}
+            {text(activity.desc)}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button

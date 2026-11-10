@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { data as fallbackSlides } from '../data/tours';
-
-const configuredApiUrl = import.meta.env.VITE_API_URL?.trim();
-const API_BASE_URL = configuredApiUrl || 'https://inventario.blucotravel.com';
+import { API_BASE_URL } from '../utils/api';
 
 const POLL_INTERVAL_MS = 45000;
 

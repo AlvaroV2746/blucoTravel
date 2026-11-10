@@ -42,6 +42,23 @@
   "products": {
     "title": "Our Community Products"
   },
+  "webServices": {
+    "loading": "Loading services...",
+    "retry": "Try again",
+    "emptySection": "We'll add services to this section soon.",
+    "showMore": "Read more",
+    "showLess": "Read less",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "count_one": "{{count}} service",
+    "count_other": "{{count}} services",
+    "maintenance": {
+      "title": "Services section under maintenance.",
+      "description": "Contact us on WhatsApp for more information.",
+      "whatsapp": "Message us on WhatsApp",
+      "whatsappMessage": "Hello, I would like information about your services."
+    }
+  },
   "common": {
     "viewMore": "VIEW MORE",
     "title": "BLUCO Travel | Sustainable Tourism Agency",

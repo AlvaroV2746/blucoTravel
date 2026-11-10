@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { translateActivityText } from '../utils/webServices';
 
 const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
   const { t } = useTranslation();
+  const itemName = (item) => translateActivityText(t, item.name, item.isDynamic);
   const safeCart = cart ? cart : [];
   
   // Estados para las 3 nuevas opciones
@@ -72,9 +74,9 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
               if (!item || !item.name) return null;
               return (
                 <div key={index} className="flex items-center gap-4 mb-4 border-b border-gray-100 pb-4">
-                  <img src={item.img} alt={t(item.name)} className="w-16 h-16 object-cover rounded" />
+                  <img src={item.img} alt={itemName(item)} className="w-16 h-16 object-cover rounded" />
                   <div className="flex-1">
-                    <span className="font-semibold text-blue-950">{t(item.name)}</span>
+                    <span className="font-semibold text-blue-950">{itemName(item)}</span>
                     <span className="text-sm text-gray-500"></span>
                   </div>
                   <button
