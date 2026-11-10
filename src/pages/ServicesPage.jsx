@@ -71,7 +71,7 @@ const ServicesPage = ({
         <meta property="og:image" content="https://blucotravel.com/og-services.svg" />
       </Helmet>
 
-      <div className="max-w-7xl mx-auto px-2 space-y-6">
+      <div className="max-w-7xl mx-auto px-2 space-y-0">
         {isLoading && visibleSections.length === 0 && (
           <StatusBlock message={t('webServices.loading')} />
         )}

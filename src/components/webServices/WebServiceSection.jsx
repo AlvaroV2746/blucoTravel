@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { pickLocalizedText } from '../../utils/webServices';
-import { hasThemeColor, hexToRgba } from '../../utils/webServiceTheme';
+import { hexToRgba, resolveAccent, tintColor } from '../../utils/webServiceTheme';
 import WebServiceIcon from './WebServiceIcon';
 import WebServiceSubSection from './WebServiceSubSection';
+
+const ARROW_PATH = 'M7.23 7.23l1.84 1.84 4.58 4.58L7.23 20.77z';
 
 const WebServiceSection = ({
   section,
@@ -17,8 +19,7 @@ const WebServiceSection = ({
   const { t } = useTranslation();
 
   const title = pickLocalizedText(section, 'title', lang);
-  const accent = hasThemeColor(section.colorTheme) ? section.colorTheme : null;
-  const overlayColor = accent ? hexToRgba(accent, 0.45) : 'rgba(15, 23, 42, 0.45)';
+  const accent = resolveAccent(section.colorTheme);
   const subSections = (section.subSections ?? []).filter(
     (subSection) => (subSection.items ?? []).length > 0,
   );
@@ -32,7 +33,7 @@ const WebServiceSection = ({
         className={`relative block h-40 w-full cursor-pointer overflow-hidden text-left shadow-md transition-all duration-300 hover:shadow-xl ${
           isOpen ? 'rounded-b-none rounded-t-2xl' : 'rounded-2xl'
         }`}
-        style={{ backgroundColor: accent ?? '#0f172a' }}
+        style={{ backgroundColor: accent }}
       >
         {section.bannerUrl && (
           <img
@@ -43,11 +44,11 @@ const WebServiceSection = ({
             className="absolute inset-0 h-full w-full object-cover"
           />
         )}
-        <div className="absolute inset-0" style={{ backgroundColor: overlayColor }} />
+        <div className="absolute inset-0" style={{ backgroundColor: hexToRgba(accent, 0.2) }} />
 
-        <div className="absolute left-4 top-4 z-10 flex items-center gap-3 text-white">
+        <div className="absolute left-4 top-4 z-10 flex items-center text-white">
           <WebServiceIcon name={section.icon} className="text-2xl" />
-          <span className="text-lg font-semibold drop-shadow">{title}</span>
+          <span className="ml-2 text-sm font-medium">{title}</span>
         </div>
 
         <svg
@@ -58,7 +59,7 @@ const WebServiceSection = ({
           fill="currentColor"
           aria-hidden="true"
         >
-          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+          <path d={ARROW_PATH} />
         </svg>
       </button>
 
@@ -69,35 +70,33 @@ const WebServiceSection = ({
         }`}
       >
         <div
-          className="overflow-hidden rounded-b-2xl border border-t-0 p-6"
+          className="space-y-3 overflow-hidden rounded-b-2xl rounded-t-none border p-6"
           style={{
-            backgroundColor: accent ? hexToRgba(accent, 0.06) : '#f8fafc',
-            borderColor: accent ? hexToRgba(accent, 0.3) : '#e2e8f0',
+            backgroundColor: tintColor(accent, 0.9),
+            borderColor: tintColor(accent, 0.72),
           }}
         >
-          <div className="space-y-4">
-            {subSections.length === 0 && (
-              <p className="text-sm text-gray-500">{t('webServices.emptySection')}</p>
-            )}
+          {subSections.length === 0 && (
+            <p className="text-sm text-gray-500">{t('webServices.emptySection')}</p>
+          )}
 
-            {subSections.map((subSection) => {
-              const key = `subsection-${subSection.id}`;
+          {subSections.map((subSection) => {
+            const key = `subsection-${subSection.id}`;
 
-              return (
-                <WebServiceSubSection
-                  key={subSection.id}
-                  subSection={subSection}
-                  lang={lang}
-                  sectionTitle={title}
-                  accentColor={accent ?? '#64748b'}
-                  isOpen={Boolean(openSections[key])}
-                  onToggle={() => toggleSection(key)}
-                  onSelect={onSelect}
-                  onAdd={onAdd}
-                />
-              );
-            })}
-          </div>
+            return (
+              <WebServiceSubSection
+                key={subSection.id}
+                subSection={subSection}
+                lang={lang}
+                sectionTitle={title}
+                accentColor={accent}
+                isOpen={Boolean(openSections[key])}
+                onToggle={() => toggleSection(key)}
+                onSelect={onSelect}
+                onAdd={onAdd}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
