@@ -69,6 +69,8 @@
     "accommodation": "Alojamiento",
     "activities": "Actividades",
     "whatsappMessage": "Hola, me gustaría cotizar estas actividades:\n-{{activityNames}}\n\nDías: {{days}}\nPersonas: {{people}}\n{{guideText}}",
+    "whatsappQuoteMessage": "Hola, soy {{name}}. Tengo el número de cotización {{code}}, me gustaría tener más información.",
+    "quoteError": "No pudimos registrar tu cotización. Intenta de nuevo.",
     "guideYes": "Guía en inglés: Sí",
     "top": "Lo más vendido",
     "guideNo": "Guía en inglés: No",
@@ -80,7 +82,8 @@
     "days": "¿Cuántos días quieres disfrutar de tu viaje?",
     "people": "¿Cuántas personas van a viajar?",
     "guide": "¿Se requiere guía en inglés para este viaje?",
-    "checkout": "Finalizar compra"
+    "checkout": "Finalizar compra",
+    "clientName": "Tu nombre"
   },
   "guatapeAccommodations": {
     "basicTitle": "Alojamiento Básico en Guatapé",

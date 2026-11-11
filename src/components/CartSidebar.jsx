@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { translateActivityText } from '../utils/webServices';
 
-const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
+const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote, isQuoting = false }) => {
   const { t } = useTranslation();
   const itemName = (item) => translateActivityText(t, item.name, item.isDynamic);
   const safeCart = cart ? cart : [];
@@ -13,6 +13,8 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
   const [days, setDays] = useState(1);
   const [people, setPeople] = useState(1);
   const [needsGuide, setNeedsGuide] = useState(false);
+  const [clientName, setClientName] = useState('');
+  const [quoteError, setQuoteError] = useState('');
 
   // 1. Estado interno solo para manejar la animación
   const [isAnimating, setIsAnimating] = useState(false);
@@ -126,6 +128,22 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
                 />
               </div>
 
+              {/* Nombre del cliente */}
+              <div className="flex flex-col gap-1">
+                <label htmlFor="client-name" className="text-xs font-semibold text-gray-700">
+                  {t('cart.clientName')}
+                </label>
+                <input
+                  id="client-name"
+                  type="text"
+                  value={clientName}
+                  onChange={(e) => setClientName(e.target.value)}
+                  maxLength={150}
+                  required
+                  className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded text-sm text-gray-800 focus:outline-none focus:border-cyan-500"
+                />
+              </div>
+
               {/* 3. Checkbox Guía en inglés */}
               <div className="flex items-center gap-2 pt-1">
                 <input
@@ -143,10 +161,19 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote }) => {
             </div>
           )}
 
+          {quoteError && <p className="mb-2 text-sm text-red-600">{quoteError}</p>}
+
           {/* Se pasan los estados directamente a la función onQuote del padre */}
           <button
-            onClick={() => onQuote(days, people, needsGuide)}
-            disabled={safeCart.length === 0}
+            onClick={async () => {
+              setQuoteError('');
+              try {
+                await onQuote(days, people, needsGuide, clientName.trim());
+              } catch (error) {
+                setQuoteError(error.message || t('common.quoteError'));
+              }
+            }}
+            disabled={safeCart.length === 0 || isQuoting || clientName.trim().length < 2}
             className="w-full bg-cyan-500 text-white font-bold py-3 rounded cursor-pointer hover:bg-cyan-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             {t("common.makeQuote")}

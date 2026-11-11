@@ -69,6 +69,8 @@
     "accommodation": "Accommodation",
     "activities": "Activities",
     "whatsappMessage": "Hello, I would like to quote these activities:\n-{{activityNames}}\n\nDays: {{days}}\nPeople: {{people}}\n{{guideText}}",
+    "whatsappQuoteMessage": "Hello, I'm {{name}}. I have quotation number {{code}} and would like more information.",
+    "quoteError": "We couldn't register your quotation. Please try again.",
     "guideYes": "English guide: Yes",
     "top": "Hot Sale",
     "guideNo": "English guide: No",
@@ -80,7 +82,8 @@
     "days": "How many days you want to enjoy your trip?.",
     "people": "How many people is going to travel?.",
     "guide": "English guide is required for this trip?.",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "clientName": "Your name"
   },
   "guatapeAccommodations": {
     "basicTitle": "Basic Guatapé Accommodation",

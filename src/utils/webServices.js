@@ -28,6 +28,7 @@ export function toWebServiceActivity(item, lang, sectionTitle = '') {
     gallery: images,
     locationName: sectionTitle,
     isDynamic: true,
+    bookable: Boolean(item.bookable),
   };
 }
 

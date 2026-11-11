@@ -13,9 +13,9 @@ import { generateWebsiteSchema, generateBreadcrumbList, generateTravelAgencySche
 import { resolveKey, toLocalizedPath, getRoute } from './utils/routes';
 import { resolveCatalogItem } from './data/searchCatalog';
 import { useWebServices } from './hooks/useWebServices';
+import { API_BASE_URL } from './utils/api';
 import {
   findWebServiceActivity,
-  translateActivityText,
   WEB_SERVICE_TYPE,
 } from './utils/webServices';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -95,6 +95,7 @@ const BlucoApp = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [openSections, setOpenSections] = useState({});
+  const [isQuoting, setIsQuoting] = useState(false);
   const webServices = useWebServices();
 
   useEffect(() => {
@@ -153,23 +154,55 @@ const BlucoApp = () => {
     setCart(newCart);
   };
 
-  const handleQuote = (days, people, needsGuide) => {
-    const activityNames = cart
-      .map(item => translateActivityText(t, item.name, item.isDynamic))
-      .join('\n-');
-    const guideText = needsGuide ? t('common.guideYes') : t('common.guideNo');
+  const handleQuote = async (days, people, needsGuide, clientName) => {
+    if (isQuoting) return;
 
-    const message = t('common.whatsappMessage', {
-      activityNames,
-      days,
-      people,
-      guideText
-    });
+    const dayCount = Math.max(1, Number(days) || 1);
+    const passengerCount = Math.max(1, Number(people) || 1);
+    const bookableItems = cart.filter(item => item.isDynamic && item.bookable);
 
-    const text = encodeURIComponent(message);
-    window.open(`https://wa.me/573000726521?text=${text}`, '_blank');
+    if (bookableItems.length === 0 || bookableItems.length !== cart.length) {
+      throw new Error(t('common.quoteError'));
+    }
+
+    // Se abre la pestaña antes de la petición para evitar el bloqueo de popups.
+    const whatsappWindow = window.open('', '_blank');
+    setIsQuoting(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/public/quotations`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: bookableItems.map(item => ({ webServiceItemId: item.id, quantity: 1 })),
+          days: dayCount,
+          passengers: passengerCount,
+          needsGuide: Boolean(needsGuide),
+          clientName
+        })
+      });
+
+      if (!response.ok) throw new Error(t('common.quoteError'));
+
+      const payload = await response.json();
+      const message = t('common.whatsappQuoteMessage', {
+        name: clientName,
+        code: payload.data.code
+      });
+      const url = `https://wa.me/573000726521?text=${encodeURIComponent(message)}`;
+
+      if (whatsappWindow) {
+        whatsappWindow.location.href = url;
+      } else {
+        window.open(url, '_blank');
+      }
+    } catch (error) {
+      whatsappWindow?.close();
+      throw error;
+    } finally {
+      setIsQuoting(false);
+    }
   };
-
   const baseUrl = 'https://blucotravel.com';
   const canonicalUrl = `${baseUrl}${location.pathname}`;
   const ogLocale = i18n.language === 'es' ? 'es_CO' : 'en_US';
@@ -300,7 +333,7 @@ const BlucoApp = () => {
       </button>
 
       {isCartOpen && (
-        <CartSidebar cart={cart} setIsCartOpen={setIsCartOpen} onRemove={removeFromCart} onQuote={handleQuote} />
+        <CartSidebar cart={cart} setIsCartOpen={setIsCartOpen} onRemove={removeFromCart} onQuote={handleQuote} isQuoting={isQuoting} />
       )}
     </div>
   );
