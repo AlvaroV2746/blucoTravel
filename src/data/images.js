@@ -60,6 +60,10 @@ export const IMAGES = {
   // 📁 6. MAPA COMPLETO DE ARCHIVOS (AVIF / WEBP DIRECTOS)
   // ==========================================
 
+  // Medellin
+  'Medellin-pict.avif': '/images/Medellin-pict.avif',
+  'Medellin-pict.webp': '/images/Medellin-pict.webp',
+
   // Guatapé
   'bluco-travel-boat-ride-guatape-reservoir.avif': '/images/bluco-travel-boat-ride-guatape-reservoir.avif',
   'bluco-travel-boat-ride-guatape-reservoir.webp': '/images/bluco-travel-boat-ride-guatape-reservoir.webp',

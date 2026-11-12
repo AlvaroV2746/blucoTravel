@@ -42,7 +42,51 @@
   "products": {
     "title": "Nuestros productos comunitarios"
   },
-  "webServices": {
+  "home": {
+    "destinations": {
+      "title": "Explora nuestros destinos",
+      "didYouKnow": "¿Sabías que?",
+      "genericCuriosity": "Cada destino de Antioquia guarda historias, paisajes y sabores únicos. Descúbrelos con BLUCO Travel.",
+      "viewMore": "Ver más",
+      "close": "Cerrar"
+    },
+    "featured": {
+      "title": "Nuestros paquetes recomendados",
+      "quote": "Cotizar",
+      "whatsappMessage": "Hola, estoy interesado en el paquete: {{code}}"
+    },
+    "agency": {
+      "title": "Una agencia con experiencia",
+      "experience": "Nuestro equipo tiene más de 5 años de experiencia liderando tours por todo Colombia",
+      "support": "Disponibles 24/7 para cualquier incidente, duda o apoyo durante todo tu viaje"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "lead": "Cuéntanos sobre tu viaje y te respondemos a tu correo."
+    }
+  },
+  "contactForm": {
+    "fields": {
+      "name": "Nombre",
+      "country": "País",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "description": "Descripción"
+    },
+    "accept": {
+      "before": "Acepto los ",
+      "terms": "Términos y Condiciones",
+      "and": " y la ",
+      "privacy": "Política de Privacidad"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "email": "Ingresa un correo válido.",
+      "terms": "Debes aceptar los términos y condiciones."
+    },
+    "submit": "Enviar",
+    "mailSubject": "Contacto desde la web: {{name}}"
+  },  "webServices": {
     "loading": "Cargando servicios...",
     "retry": "Reintentar",
     "emptySection": "Próximamente agregaremos servicios en esta sección.",

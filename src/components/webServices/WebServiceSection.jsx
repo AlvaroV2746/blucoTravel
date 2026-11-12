@@ -25,7 +25,7 @@ const WebServiceSection = ({
   );
 
   return (
-    <section>
+    <section id={`section-${section.id}`} className="scroll-mt-32">
       <button
         type="button"
         onClick={onToggle}

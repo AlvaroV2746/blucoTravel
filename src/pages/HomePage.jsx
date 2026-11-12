@@ -1,14 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
-import { IMAGES } from '../data/images';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFire } from '@fortawesome/free-solid-svg-icons';
 import HeroCarousel from '../components/HeroCarousel';
+import ContactForm from '../components/ContactForm';
+import MunicipalitiesGrid from '../components/home/MunicipalitiesGrid';
+import FeaturedPackages from '../components/home/FeaturedPackages';
+import AgencyExperience from '../components/home/AgencyExperience';
 import { useHeroSlides } from '../hooks/useHeroSlides';
+import { useFeaturedPackages, useMunicipalities } from '../hooks/usePublicInventory';
 
-const HomePage = ({ onNavigate }) => {
+const HomePage = () => {
   const { t } = useTranslation();
   const heroSlides = useHeroSlides();
+  const { data: municipalities } = useMunicipalities();
+  const { data: featuredPackages } = useFeaturedPackages();
 
   return (
     <>
@@ -19,50 +23,43 @@ const HomePage = ({ onNavigate }) => {
         <meta property="og:title" content={`${t('meta.home.title')} | BLUCO Travel`} />
         <meta property="og:description" content={t('seo.home.description')} />
         <meta property="og:image" content="https://blucotravel.com/og-home.svg" />
-
       </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 text-center my-6 tracking-tight ">
         {t('common.title')}
-      </h1>      <div className="max-w-7xl mx-auto py-1">
+      </h1>
+      <div className="max-w-7xl mx-auto py-1 space-y-16">
         <HeroCarousel key={heroSlides.length} slides={heroSlides} />
 
-        <h3 className="mt-10 text-2xl font-bold text-blue-900 mb-6 text-center">{t('common.top')}<FontAwesomeIcon icon={faFire} className="text-4xl text-orange-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.9)] animate-pulse" /></h3>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          <div
-            onClick={() => onNavigate('services')}
-            className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <img src={IMAGES['basic-lodging-guatape']} alt="Cabaña ecológica con vista al embalse de Guatapé" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
-            <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-4">
-              <h3 className="font-bold text-blue-900">{t('guatapeAccommodations.deluxeTitle')}</h3>
-              <p className="mt-1 text-sm text-gray-600">
-                {t('guatapeAccommodations.deluxeStats').slice(0, 60)}...
-              </p>
-            </div>
-          </div>
+        {/* {para agregar municipios en main page, modificar municipalities.js} */}
+        {municipalities.length > 0 && (
+          <section>
+            <h2 className="mb-8 text-center text-2xl font-bold text-blue-900 md:text-3xl">
+              {t('home.destinations.title')}
+            </h2>
+            <MunicipalitiesGrid municipalities={municipalities} />
+          </section>
+        )}
 
-          <div
-            onClick={() => onNavigate('services')}
-            className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <img src={IMAGES['bluco-travel-river-nature-landscape-san-rafael.webp']} alt="Río cristalino en San Rafael para kayak y actividades acuáticas" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
-            <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-4">
-              <h3 className="font-bold text-emerald-500">{t('common.activities')}</h3>
-              <p className="mt-1 text-sm text-gray-600">{t('sanRafaActivities.activity3Title')}</p>
-            </div>
-          </div>
+        {featuredPackages.length > 0 && (
+          <section>
+            <h2 className="mb-8 text-center text-2xl font-bold text-blue-900 md:text-3xl">
+              {t('home.featured.title')}
+            </h2>
+            <FeaturedPackages packages={featuredPackages.slice(0, 4)} />
+          </section>
+        )}
 
-          <div
-            onClick={() => onNavigate('services')}
-            className="group relative rounded-2xl overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-          >
-            <img src={IMAGES['bluco-travel-birdwatching.webp']} alt="Paquete turístico completo con alojamiento y actividades en Guatapé y San Rafael" loading="lazy" decoding="async" className="w-full h-48 object-cover group-hover:opacity-90 transition-opacity" />
-            <div className="absolute bottom-0 left-0 right-0 bg-white/80 p-4">
-              <h3 className="font-bold text-red-600">{t('common.packages')}</h3>
-              <p className="mt-1 text-sm text-gray-600">{t('packages.package1title')}</p>
-            </div>
+        <AgencyExperience />
+
+        <section>
+          <h2 className="mb-2 text-center text-2xl font-bold text-blue-900 md:text-3xl">
+            {t('home.contact.title')}
+          </h2>
+          <p className="mb-8 text-center text-gray-500">{t('home.contact.lead')}</p>
+          <div className="mx-auto max-w-3xl">
+            <ContactForm />
           </div>
-        </div>
+        </section>
       </div>
     </>
   );

@@ -42,7 +42,51 @@
   "products": {
     "title": "Our Community Products"
   },
-  "webServices": {
+  "home": {
+    "destinations": {
+      "title": "Explore our destinations",
+      "didYouKnow": "Did you know?",
+      "genericCuriosity": "Every destination in Antioquia holds unique stories, landscapes and flavors. Discover them with BLUCO Travel.",
+      "viewMore": "View more",
+      "close": "Close"
+    },
+    "featured": {
+      "title": "Our recommended packages",
+      "quote": "Get a quote",
+      "whatsappMessage": "Hello, I'm interested in the package: {{code}}"
+    },
+    "agency": {
+      "title": "An experienced agency",
+      "experience": "Our team has more than 5 years of experience leading tours across Colombia",
+      "support": "Available 24/7 for any incident, question or support during your whole trip"
+    },
+    "contact": {
+      "title": "Contact us",
+      "lead": "Tell us about your trip and we'll reply to your email."
+    }
+  },
+  "contactForm": {
+    "fields": {
+      "name": "Name",
+      "country": "Country",
+      "phone": "Phone",
+      "email": "Email",
+      "description": "Description"
+    },
+    "accept": {
+      "before": "I accept the ",
+      "terms": "Terms and Conditions",
+      "and": " and the ",
+      "privacy": "Privacy Policy"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email.",
+      "terms": "You must accept the terms and conditions."
+    },
+    "submit": "Send",
+    "mailSubject": "Website contact: {{name}}"
+  },  "webServices": {
     "loading": "Loading services...",
     "retry": "Try again",
     "emptySection": "We'll add services to this section soon.",

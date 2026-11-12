@@ -1,6 +1,10 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
+import { useSearchParams } from 'react-router-dom';
 import WebServiceSection from '../components/webServices/WebServiceSection';
+import { normalizeName } from '../utils/municipalities';
+import { pickLocalizedText } from '../utils/webServices';
 
 const hasVisibleItems = (section) =>
   (section.subSections ?? []).some((subSection) => (subSection.items ?? []).length > 0);
@@ -57,8 +61,37 @@ const ServicesPage = ({
   toggleSection,
 }) => {
   const { t, i18n } = useTranslation();
+  const [searchParams] = useSearchParams();
   const lang = i18n.language?.startsWith('en') ? 'en' : 'es';
   const visibleSections = sections.filter(hasVisibleItems);
+  const municipio = searchParams.get('municipio') ?? '';
+  const handledMunicipio = useRef('');
+
+  // Desde la home: "Ver más" abre la sección del municipio y hace scroll hasta ella.
+  useEffect(() => {
+    if (!municipio || handledMunicipio.current === municipio || visibleSections.length === 0) {
+      return;
+    }
+
+    const target = normalizeName(municipio);
+    const section = visibleSections.find(
+      (entry) =>
+        normalizeName(entry.title) === target ||
+        normalizeName(pickLocalizedText(entry, 'title', lang)) === target,
+    );
+
+    handledMunicipio.current = municipio;
+    if (!section) return;
+
+    const key = `section-${section.id}`;
+    if (!openSections[key]) toggleSection(key);
+
+    requestAnimationFrame(() => {
+      document
+        .getElementById(`section-${section.id}`)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [municipio, visibleSections, lang, openSections, toggleSection]);
 
   return (
     <>

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import ContactForm from '../components/ContactForm';
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -78,6 +79,11 @@ const ContactPage = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="mt-12">
+          <h3 className="mb-6 text-2xl font-bold text-blue-900">{t('home.contact.title')}</h3>
+          <ContactForm />
         </div>
       </div>
     </>
