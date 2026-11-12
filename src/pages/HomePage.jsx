@@ -6,12 +6,11 @@ import MunicipalitiesGrid from '../components/home/MunicipalitiesGrid';
 import FeaturedPackages from '../components/home/FeaturedPackages';
 import AgencyExperience from '../components/home/AgencyExperience';
 import { useHeroSlides } from '../hooks/useHeroSlides';
-import { useFeaturedPackages, useMunicipalities } from '../hooks/usePublicInventory';
+import { useFeaturedPackages } from '../hooks/usePublicInventory'; // Ya no necesitamos useMunicipalities aquí
 
 const HomePage = () => {
   const { t } = useTranslation();
   const heroSlides = useHeroSlides();
-  const { data: municipalities } = useMunicipalities();
   const { data: featuredPackages } = useFeaturedPackages();
 
   return (
@@ -30,15 +29,13 @@ const HomePage = () => {
       <div className="max-w-7xl mx-auto py-1 space-y-16">
         <HeroCarousel key={heroSlides.length} slides={heroSlides} />
 
-        {/* {para agregar municipios en main page, modificar municipalities.js} */}
-        {municipalities.length > 0 && (
-          <section>
-            <h2 className="mb-8 text-center text-2xl font-bold text-blue-900 md:text-3xl">
-              {t('home.destinations.title')}
-            </h2>
-            <MunicipalitiesGrid municipalities={municipalities} />
-          </section>
-        )}
+        {/* Sección de Municipios controlada puramente por el archivo local */}
+        <section>
+          <h2 className="mb-8 text-center text-2xl font-bold text-blue-900 md:text-3xl">
+            {t('home.destinations.title')}
+          </h2>
+          <MunicipalitiesGrid />
+        </section>
 
         {featuredPackages.length > 0 && (
           <section>
