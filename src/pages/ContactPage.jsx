@@ -20,7 +20,7 @@ const ContactPage = () => {
         <meta property="og:image" content="https://blucotravel.com/og-contact.svg" />
 
       </Helmet>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto bg-slate-50 p-6 rounded-2xl">
         <h2 className="text-3xl font-bold text-blue-900 mb-4 border-b-2 border-cyan-500">
           {t('contact.title')}
         </h2>
@@ -82,7 +82,6 @@ const ContactPage = () => {
         </div>
 
         <div className="mt-12">
-          <h3 className="mb-6 text-2xl font-bold text-blue-900">{t('home.contact.title')}</h3>
           <ContactForm />
         </div>
       </div>

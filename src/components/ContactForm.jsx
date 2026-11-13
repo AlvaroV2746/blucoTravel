@@ -18,7 +18,7 @@ const emptyForm = {
 const inputClass =
   'w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20';
 
-const ContactForm = () => {
+const ContactForm = ({ className = 'bg-white' }) => {
   const { t, i18n } = useTranslation();
   const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState({});
@@ -65,7 +65,7 @@ const ContactForm = () => {
     errors[field] ? <p className="mt-1 text-xs text-red-600">{errors[field]}</p> : null;
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-4 rounded-2xl bg-white p-6 shadow-sm">
+    <form onSubmit={handleSubmit} noValidate className={`space-y-4 rounded-2xl p-6 shadow-sm ${className}`}>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="cf-name" className="mb-1 block text-sm font-medium text-gray-700">

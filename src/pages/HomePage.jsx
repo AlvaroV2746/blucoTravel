@@ -54,7 +54,7 @@ const HomePage = () => {
           </h2>
           <p className="mb-8 text-center text-gray-500">{t('home.contact.lead')}</p>
           <div className="mx-auto max-w-3xl">
-            <ContactForm />
+            <ContactForm className="bg-slate-50" />
           </div>
         </section>
       </div>

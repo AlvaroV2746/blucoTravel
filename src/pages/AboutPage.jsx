@@ -19,7 +19,7 @@ const AboutPage = () => {
         <meta property="og:image" content="https://blucotravel.com/og-about.svg" />
 
       </Helmet>
-      <div className="max-w-2xl mx-auto py-8">
+      <div className="max-w-2xl mx-auto py-8 bg-slate-100 p-6 rounded-2xl">
         <h2 className="text-3xl font-bold text-blue-900 mb-4 border-b-2 border-cyan-500">
           {t('about.title')}
         </h2>
