@@ -22,6 +22,7 @@ const ContactForm = ({ className = 'bg-white' }) => {
   const { t, i18n } = useTranslation();
   const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
   const lang = i18n.language?.startsWith('en') ? 'en' : 'es';
 
   const update = (field) => (event) => {
@@ -46,6 +47,10 @@ const ContactForm = ({ className = 'bg-white' }) => {
     event.preventDefault();
     if (!validate()) return;
 
+    setForm(emptyForm);
+    setErrors({});
+    setSubmitted(true);
+
     const subject = t('contactForm.mailSubject', { name: form.name.trim() });
     const body = [
       `${t('contactForm.fields.name')}: ${form.name.trim()}`,
@@ -63,6 +68,29 @@ const ContactForm = ({ className = 'bg-white' }) => {
 
   const errorText = (field) =>
     errors[field] ? <p className="mt-1 text-xs text-red-600">{errors[field]}</p> : null;
+
+  if (submitted) {
+    return (
+      <div className="rounded-2xl border border-green-200 bg-green-50 p-6 shadow-sm text-center">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-green-600 text-2xl">✓</span>
+        </div>
+        <h3 className="text-lg font-semibold text-green-800">{t('contactForm.confirmation.title')}</h3>
+        <p className="mt-1 text-green-600">{t('contactForm.confirmation.message')}</p>
+        <button
+          type="button"
+          onClick={() => {
+            setSubmitted(false);
+            setForm(emptyForm);
+            setErrors({});
+          }}
+          className="mt-4 rounded-lg bg-green-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-green-700"
+        >
+          {t('contactForm.confirmation.another')}
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} noValidate className={`space-y-4 rounded-2xl p-6 shadow-sm ${className}`}>

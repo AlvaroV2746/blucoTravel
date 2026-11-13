@@ -85,7 +85,12 @@
       "terms": "You must accept the terms and conditions."
     },
     "submit": "Send",
-    "mailSubject": "Website contact: {{name}}"
+    "mailSubject": "Website contact: {{name}}",
+    "confirmation": {
+      "title": "Message sent",
+      "message": "Your email client will open to complete the sending.",
+      "another": "Send another message"
+    }
   },  "webServices": {
     "loading": "Loading services...",
     "retry": "Try again",

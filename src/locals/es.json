@@ -85,7 +85,12 @@
       "terms": "Debes aceptar los términos y condiciones."
     },
     "submit": "Enviar",
-    "mailSubject": "Contacto desde la web: {{name}}"
+    "mailSubject": "Contacto desde la web: {{name}}",
+    "confirmation": {
+      "title": "Mensaje enviado",
+      "message": "Se abrirá tu aplicación de correo para completar el envío.",
+      "another": "Enviar otro mensaje"
+    }
   },  "webServices": {
     "loading": "Cargando servicios...",
     "retry": "Reintentar",
