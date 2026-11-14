@@ -282,7 +282,7 @@ const MunicipalitiesGrid = () => {
   if (!dataToRender || dataToRender.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-6 md:gap-8">
+    <div className="flex flex-col whitespace-pre-line gap-6 md:gap-8">
       {dataToRender.map((item, index) => (
         <MunicipalityRow
           key={item.id}

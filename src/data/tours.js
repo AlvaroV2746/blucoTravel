@@ -224,7 +224,5 @@ export const packages = withImages([
 ]);
 
 export const data = withImages([
-  { id: 1, img: "bluco-travel-penol-rock-guatape.webp" },
-  { id: 2, img: "bluco-travel-ecological-horseback-riding-san-rafael.webp" },
-  { id: 3, img: "bluco-travel-crystal-clear-river-san-rafael.webp" }
+  { id: 1, img: "banner-defecto-slides.jpeg" }
 ]);

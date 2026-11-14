@@ -60,6 +60,7 @@ export const IMAGES = {
   // 📁 6. MAPA COMPLETO DE ARCHIVOS (AVIF / WEBP DIRECTOS)
   // ==========================================
 
+  'banner-defecto-slides.jpeg': '/images/banner-defecto-slides.jpeg',
   // Medellin
   'Medellin-pict.avif': '/images/Medellin-pict.avif',
   'Medellin-pict.webp': '/images/Medellin-pict.webp',
