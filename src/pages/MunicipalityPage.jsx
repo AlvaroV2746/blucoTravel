@@ -48,7 +48,7 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
 
       <article className="space-y-10">
         <header className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-blue-900">
-          <div className="relative aspect-video w-full">
+          <div className="relative h-[70vh] w-full">
             {municipality.imageUrl && (
               <img
                 src={municipality.imageUrl}
