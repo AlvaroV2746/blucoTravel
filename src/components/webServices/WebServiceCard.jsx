@@ -1,25 +1,36 @@
 import { useTranslation } from 'react-i18next';
 import { pickLocalizedList, pickLocalizedText } from '../../utils/webServices';
 
-const MAX_VISIBLE_CHIPS = 3;
-
-const WebServiceCard = ({ item, activity, lang, onSelect, onAdd }) => {
+const WebServiceCard = ({
+  item,
+  activity,
+  lang,
+  onSelect,
+  onAdd,
+  showActions = true,
+  showDescription = false,
+}) => {
   const { t } = useTranslation();
 
   const title = pickLocalizedText(item, 'title', lang);
   const cover = item.images?.[0] ?? '';
   const included = pickLocalizedList(item, 'includedServices', lang);
-  const visibleChips = included.slice(0, MAX_VISIBLE_CHIPS);
-  const hiddenChipsCount = included.length - visibleChips.length;
+  const description = showDescription ? pickLocalizedText(item, 'description', lang) : '';
 
   const openDetail = () => onSelect(activity);
 
   return (
     <article
       onClick={openDetail}
-      className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
+      className={`group flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg ${
+        showDescription ? 'h-[22rem]' : 'h-[18rem]'
+      }`}
     >
-      <div className="relative flex h-32 w-full items-center justify-center overflow-hidden bg-gray-900">
+      <div
+        className={`relative flex w-full shrink-0 items-center justify-center overflow-hidden bg-gray-900 ${
+          showDescription ? 'aspect-[2/1]' : 'h-32'
+        }`}
+      >
         {cover && (
           <>
             <img
@@ -41,51 +52,43 @@ const WebServiceCard = ({ item, activity, lang, onSelect, onAdd }) => {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col justify-between gap-3 p-3">
-        <div className="space-y-2">
+      <div className="flex min-h-0 flex-1 flex-col justify-between gap-3 p-3">
+        <div className="min-h-0 space-y-2">
           <h3 className="line-clamp-2 text-sm font-bold text-gray-900">{title}</h3>
 
-          {visibleChips.length > 0 && (
-            <ul className="flex flex-wrap gap-1">
-              {visibleChips.map((service) => (
-                <li
-                  key={service}
-                  className="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] text-gray-700"
-                >
-                  {service}
-                </li>
-              ))}
-              {hiddenChipsCount > 0 && (
-                <li className="rounded-full border border-gray-200 px-2 py-0.5 text-[11px] text-gray-500">
-                  +{hiddenChipsCount}
-                </li>
-              )}
-            </ul>
+          {included.length > 0 && (
+            <p className="line-clamp-2 text-xs text-gray-600">{included.join(' · ')}</p>
+          )}
+
+          {description && (
+            <p className="line-clamp-3 text-xs leading-relaxed text-gray-500">{description}</p>
           )}
         </div>
 
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={(event) => {
-              event.stopPropagation();
-              openDetail();
-            }}
-            className="flex-1 rounded-lg border border-cyan-300 py-1.5 text-xs font-semibold text-cyan-600 transition hover:bg-cyan-50"
-          >
-            {t('common.viewMore')}
-          </button>
-          <button
-            type="button"
-            onClick={(event) => {
-              event.stopPropagation();
-              onAdd(activity);
-            }}
-            className="flex-1 rounded-lg bg-cyan-500 py-1.5 text-xs font-bold text-white transition hover:bg-cyan-600"
-          >
-            {t('common.add')}
-          </button>
-        </div>
+        {showActions && (
+          <div className="flex shrink-0 gap-2">
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                openDetail();
+              }}
+              className="flex-1 rounded-lg border border-cyan-300 py-1.5 text-xs font-semibold text-cyan-600 transition hover:bg-cyan-50"
+            >
+              {t('common.viewMore')}
+            </button>
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                onAdd(activity);
+              }}
+              className="flex-1 rounded-lg bg-cyan-500 py-1.5 text-xs font-bold text-white transition hover:bg-cyan-600"
+            >
+              {t('common.add')}
+            </button>
+          </div>
+        )}
       </div>
     </article>
   );

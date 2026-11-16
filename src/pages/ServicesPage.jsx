@@ -104,7 +104,7 @@ const ServicesPage = ({
         <meta property="og:image" content="https://blucotravel.com/og-services.svg" />
       </Helmet>
 
-      <div className="max-w-7xl mx-auto px-2 space-y-0">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 px-5">
         {isLoading && visibleSections.length === 0 && (
           <StatusBlock message={t('webServices.loading')} />
         )}
@@ -113,23 +113,25 @@ const ServicesPage = ({
           <MaintenanceBlock onRetry={hasError ? onRetry : undefined} />
         )}
 
-        {visibleSections.map((section) => {
-          const key = `section-${section.id}`;
+        <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
+          {visibleSections.map((section) => {
+            const key = `section-${section.id}`;
 
-          return (
-            <WebServiceSection
-              key={section.id}
-              section={section}
-              lang={lang}
-              isOpen={Boolean(openSections[key])}
-              onToggle={() => toggleSection(key)}
-              openSections={openSections}
-              toggleSection={toggleSection}
-              onSelect={onSelect}
-              onAdd={onAdd}
-            />
-          );
-        })}
+            return (
+              <WebServiceSection
+                key={section.id}
+                section={section}
+                lang={lang}
+                isOpen={Boolean(openSections[key])}
+                onToggle={() => toggleSection(key)}
+                openSections={openSections}
+                toggleSection={toggleSection}
+                onSelect={onSelect}
+                onAdd={onAdd}
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );

@@ -30,7 +30,7 @@ const WebServiceSection = ({
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className={`relative block h-40 w-full cursor-pointer overflow-hidden text-left shadow-md transition-all duration-300 hover:shadow-xl ${
+        className={`relative block h-60 w-full cursor-pointer overflow-hidden text-left shadow-md transition-all duration-300 hover:shadow-xl ${
           isOpen ? 'rounded-b-none rounded-t-2xl' : 'rounded-2xl'
         }`}
         style={{ backgroundColor: accent }}

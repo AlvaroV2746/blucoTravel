@@ -5,7 +5,7 @@ import WebServiceCard from '../components/webServices/WebServiceCard';
 import ActivityDetailView from '../components/ActivityDetailView';
 import { useMunicipalities } from '../hooks/usePublicInventory';
 import { toMunicipalitySlug } from '../utils/municipalities';
-import { isLodgingItem, pickLocalizedText, toWebServiceActivity } from '../utils/webServices';
+import { pickLocalizedText, toWebServiceActivity } from '../utils/webServices';
 
 const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
   const { t, i18n } = useTranslation();
@@ -24,9 +24,9 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
   const name = municipality ? pickLocalizedText(municipality, 'name', lang) : '';
   const description = municipality ? pickLocalizedText(municipality, 'description', lang) : '';
   const sectionTitle = section ? pickLocalizedText(section, 'title', lang) : '';
-  const items = (section?.subSections ?? []).flatMap((subSection) => subSection.items ?? []);
-  const activities = items.filter((item) => !isLodgingItem(item));
-  const lodgings = items.filter(isLodgingItem);
+  const subSections = (section?.subSections ?? []).filter(
+    (subSection) => (subSection.items ?? []).length > 0,
+  );
 
   if (!municipality) {
     if (isLoading) return null;
@@ -36,28 +36,6 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
       </div>
     );
   }
-
-  const renderGroup = (title, list, emptyText) => (
-    <section className="space-y-4">
-      <h2 className="text-2xl font-bold text-blue-900 md:text-3xl">{title}</h2>
-      {list.length === 0 ? (
-        <p className="text-sm text-gray-500">{emptyText}</p>
-      ) : (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((item) => (
-            <WebServiceCard
-              key={item.id}
-              item={item}
-              activity={toWebServiceActivity(item, lang, sectionTitle)}
-              lang={lang}
-              onSelect={onSelect}
-              onAdd={onAdd}
-            />
-          ))}
-        </div>
-      )}
-    </section>
-  );
 
   return (
     <>
@@ -69,7 +47,7 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
       </Helmet>
 
       <article className="space-y-10">
-        <header className="relative overflow-hidden rounded-2xl bg-blue-900">
+        <header className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-blue-900">
           {municipality.imageUrl && (
             <img
               src={municipality.imageUrl}
@@ -77,8 +55,7 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
               className="absolute inset-0 h-full w-full object-cover"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-950/60 to-blue-950/30" />
-          <div className="relative space-y-4 px-6 py-16 text-white md:px-12 md:py-24">
+          <div className="relative flex min-h-[60vh] flex-col justify-end space-y-4 px-6 py-16 text-white [text-shadow:0_2px_10px_rgb(0_0_0/0.8)] md:px-12 md:py-24">
             <h1 className="text-3xl font-extrabold md:text-5xl">{name}</h1>
             {description && (
               <p className="max-w-3xl whitespace-pre-line leading-relaxed text-white/90">
@@ -92,17 +69,31 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
           {t('municipality.servicesIn', { name })}
         </h2>
 
-        {renderGroup(
-          t('municipality.activities'),
-          activities,
-          t('municipality.emptyActivities'),
+        {subSections.length === 0 && (
+          <p className="text-sm text-gray-500">{t('municipality.noServices')}</p>
         )}
 
-        {renderGroup(
-          t('municipality.lodging'),
-          lodgings,
-          t('municipality.emptyLodging'),
-        )}
+        {subSections.map((subSection) => (
+          <section key={subSection.id} className="space-y-4">
+            <h2 className="text-2xl font-bold text-blue-900 md:text-3xl">
+              {pickLocalizedText(subSection, 'title', lang)}
+            </h2>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {subSection.items.map((item) => (
+                <WebServiceCard
+                  key={item.id}
+                  item={item}
+                  activity={toWebServiceActivity(item, lang, sectionTitle)}
+                  lang={lang}
+                  onSelect={onSelect}
+                  onAdd={onAdd}
+                  showActions={false}
+                  showDescription
+                />
+              ))}
+            </div>
+          </section>
+        ))}
       </article>
 
       {selectedActivity && (
