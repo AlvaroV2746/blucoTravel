@@ -126,6 +126,7 @@
     "added": "AGREGADO",
     "goBack": "VOLVER",
     "makeQuote": "COTIZAR MI VIAJE",
+    "emailQuoteSubject": "Cotización {{code}}",
     "accommodation": "Alojamiento",
     "activities": "Actividades",
     "whatsappMessage": "Hola, me gustaría cotizar estas actividades:\n-{{activityNames}}\n\nDías: {{days}}\nPersonas: {{people}}\n{{guideText}}",
@@ -138,6 +139,9 @@
   },
   "cart": {
     "title": "Mi itinerario",
+    "quoteIntro": "Cotizemos tu viaje por...",
+    "viaWhatsapp": "WhatsApp",
+    "viaEmail": "Correo",
     "empty": "Aún no hay actividades seleccionadas.",
     "days": "¿Cuántos días quieres disfrutar de tu viaje?",
     "people": "¿Cuántas personas van a viajar?",

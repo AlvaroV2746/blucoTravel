@@ -156,7 +156,7 @@ const BlucoApp = () => {
     setCart(newCart);
   };
 
-  const handleQuote = async (days, people, needsGuide, clientName) => {
+  const handleQuote = async (days, people, needsGuide, clientName, channel = 'whatsapp') => {
     if (isQuoting) return;
 
     const dayCount = Math.max(1, Number(days) || 1);
@@ -168,7 +168,7 @@ const BlucoApp = () => {
     }
 
     // Se abre la pestaña antes de la petición para evitar el bloqueo de popups.
-    const whatsappWindow = window.open('', '_blank');
+    const whatsappWindow = channel === 'email' ? null : window.open('', '_blank');
     setIsQuoting(true);
 
     try {
@@ -191,6 +191,14 @@ const BlucoApp = () => {
         name: clientName,
         code: payload.data.code
       });
+      if (channel === 'email') {
+        const subject = t('common.emailQuoteSubject', { code: payload.data.code });
+        window.location.href = `mailto:info@blucotravel.com?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(message)}`;
+        return;
+      }
+
       const url = `https://wa.me/573000726521?text=${encodeURIComponent(message)}`;
 
       if (whatsappWindow) {

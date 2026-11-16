@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import ContactForm from '../components/ContactForm';
 
@@ -25,64 +24,28 @@ const ContactPage = () => {
           {t('contact.title')}
         </h2>
         <p className="text-lg text-gray-500 mb-12">{t('contact.lead')}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
-            <div className="bg-green-500 rounded-t-2xl p-4">
-              <FontAwesomeIcon icon={faWhatsapp} className="text-3xl text-white" />
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium text-gray-900 mb-1">{t('contact.whatsapp')}</h3>
-              <p className="text-gray-600 text-sm">{t('contact.whatsappDesc')}</p>
-              <a
-                href="https://wa.me/573000726521"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full text-gray-600 mt-3 rounded py-2 text-center text-sm font-medium transition-colors hover:text-cyan-400"
-              >
-                Chatea en WhatsApp
-              </a>
-            </div>
-          </div>
 
-          <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
-            <div className="bg-gradient-to-tr from-yellow-400 via-pink-400 to-purple-400 rounded-t-2xl p-4">
-              <FontAwesomeIcon icon={faInstagram} className="text-3xl text-white" />
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium text-gray-900 mb-1">{t('contact.instagram')}</h3>
-              <p className="text-gray-600 text-sm">{t('contact.instagramDesc')}</p>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full mt-3 rounded bg-white/20 text-gray-800 py-2 text-center text-sm font-medium transition-colors hover:bg-white/30 hover:text-cyan-400"
-              >
-                Síguenos en Instagram
-              </a>
-            </div>
-          </div>
+        <ContactForm />
 
-          <div className="group bg-white rounded-2xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:scale-101 transition-all duration-300 cursor-pointer">
-            <div className="bg-red-500 rounded-t-2xl p-4">
-              <FontAwesomeIcon icon={faEnvelope} className="text-3xl text-white" />
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium text-gray-900 mb-1">{t('contact.email')}</h3>
-              <p className="text-gray-600 text-sm">{t('contact.emailDesc')}</p>
-              <a
-                href="mailto:info@blucotravel.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full mt-3 rounded bg-white/20 text-gray-800 py-2 text-center text-sm font-medium transition-colors hover:text-cyan-400 hover:bg-white/30"
-              >
-                Enviar correo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12">
-          <ContactForm />
+        <div className="mt-12 flex items-center justify-center gap-8">
+          <a
+            href="https://wa.me/573000726521"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('contact.whatsapp')}
+            title={t('contact.whatsapp')}
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-md transition hover:-translate-y-1 hover:shadow-lg"
+          >
+            <FontAwesomeIcon icon={faWhatsapp} className="text-3xl" />
+          </a>
+          <a
+            href="mailto:info@blucotravel.com"
+            aria-label={t('contact.email')}
+            title={t('contact.email')}
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-red-500 text-white shadow-md transition hover:-translate-y-1 hover:shadow-lg"
+          >
+            <FontAwesomeIcon icon={faEnvelope} className="text-3xl" />
+          </a>
         </div>
       </div>
     </>

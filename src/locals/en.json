@@ -126,6 +126,7 @@
     "added": "ADDED",
     "goBack": "GO BACK",
     "makeQuote": "MAKE MY QUOTE",
+    "emailQuoteSubject": "Quotation {{code}}",
     "accommodation": "Accommodation",
     "activities": "Activities",
     "whatsappMessage": "Hello, I would like to quote these activities:\n-{{activityNames}}\n\nDays: {{days}}\nPeople: {{people}}\n{{guideText}}",
@@ -138,6 +139,9 @@
   },
   "cart": {
     "title": "My Itinerary",
+    "quoteIntro": "Let's quote your trip via...",
+    "viaWhatsapp": "WhatsApp",
+    "viaEmail": "Email",
     "empty": "No activities selected yet.",
     "days": "How many days you want to enjoy your trip?.",
     "people": "How many people is going to travel?.",

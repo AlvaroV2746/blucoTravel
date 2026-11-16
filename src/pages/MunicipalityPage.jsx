@@ -48,22 +48,25 @@ const MunicipalityPage = ({ services, onSelect, onAdd, selectedActivity }) => {
 
       <article className="space-y-10">
         <header className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-blue-900">
-          {municipality.imageUrl && (
-            <img
-              src={municipality.imageUrl}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          )}
-          <div className="relative flex min-h-[60vh] flex-col justify-end space-y-4 px-6 py-16 text-white [text-shadow:0_2px_10px_rgb(0_0_0/0.8)] md:px-12 md:py-24">
-            <h1 className="text-3xl font-extrabold md:text-5xl">{name}</h1>
-            {description && (
-              <p className="max-w-3xl whitespace-pre-line leading-relaxed text-white/90">
-                {description}
-              </p>
+          <div className="relative aspect-video w-full">
+            {municipality.imageUrl && (
+              <img
+                src={municipality.imageUrl}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+              />
             )}
+            <div className="absolute inset-0 flex items-end px-6 pb-10 text-white [text-shadow:0_2px_10px_rgb(0_0_0/0.8)] md:px-12 md:pb-16">
+              <h1 className="text-3xl font-extrabold md:text-5xl">{name}</h1>
+            </div>
           </div>
         </header>
+
+        {description && (
+          <p className="mx-auto max-w-3xl whitespace-pre-line text-center leading-relaxed text-blue-950">
+            {description}
+          </p>
+        )}
 
         <h2 className="text-2xl font-bold text-blue-900 md:text-3xl">
           {t('municipality.servicesIn', { name })}
