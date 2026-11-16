@@ -7,7 +7,8 @@
     "services": "Servicios",
     "about": "Sobre nosotros",
     "contact": "Contáctanos",
-    "products": "Productos locales"
+    "products": "Productos locales",
+    "destinations": "Destinos"
   },
   "hero": {
     "title": "Explora lugares increíbles",
@@ -91,7 +92,17 @@
       "message": "Se abrirá tu aplicación de correo para completar el envío.",
       "another": "Enviar otro mensaje"
     }
-  },  "webServices": {
+  },
+  "municipality": {
+    "activities": "Actividades",
+    "lodging": "Hospedajes",
+    "emptyActivities": "Próximamente agregaremos actividades para este destino.",
+    "emptyLodging": "Próximamente agregaremos hospedajes para este destino.",
+    "notFound": "No encontramos este destino.",
+    "noServices": "No hay servicios disponibles en este destino por el momento.",
+    "servicesIn": "Servicios que encontrarás en {{name}}"
+  },
+  "webServices": {
     "loading": "Cargando servicios...",
     "retry": "Reintentar",
     "emptySection": "Próximamente agregaremos servicios en esta sección.",
@@ -267,6 +278,9 @@
     },
     "products": {
       "title": "Productos Locales | BLUCO"
+    },
+    "destinations": {
+      "title": "Destinos | BLUCO"
     }
   },
   "search": {

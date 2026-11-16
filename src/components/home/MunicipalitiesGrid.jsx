@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { IMAGES } from '../../data/images';
-import { getRoute } from '../../utils/routes';
-import { MUNICIPALITIES_DATA } from '../../utils/municipalities';
+import { useMunicipalities } from '../../hooks/usePublicInventory';
+import { toMunicipalitySlug } from '../../utils/municipalities';
 
 const LOGO = IMAGES['bluco-travel-Logo.webp'];
 
@@ -12,7 +12,7 @@ const MunicipalityRow = ({ item, index, isOpen, onToggle, lang }) => {
   const isEven = index % 2 === 0; // Par: Tarjeta a la izquierda, Panel a la derecha (Desktop)
 
   const curiosity = lang === 'en' ? (item.curiosityEn || item.curiosity) : item.curiosity;
-  const servicesUrl = `${getRoute(lang, 'services')}?municipio=${encodeURIComponent(item.name)}`;
+  const municipalityUrl = `/${toMunicipalitySlug(item.nameEn || item.name)}`;
 
   return (
     <>
@@ -88,7 +88,9 @@ const MunicipalityRow = ({ item, index, isOpen, onToggle, lang }) => {
               </div>
 
               <Link
-                to={servicesUrl}
+                to={municipalityUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 onTouchEnd={(e) => e.stopPropagation()}
                 className="relative z-40 mt-3 block w-full text-center rounded-xl bg-cyan-500 px-4 py-2.5 text-sm font-bold text-white shadow transition active:bg-cyan-700 hover:bg-cyan-600"
@@ -177,7 +179,9 @@ const MunicipalityRow = ({ item, index, isOpen, onToggle, lang }) => {
                   <p className="mt-3 text-sm leading-relaxed text-gray-700">{curiosity}</p>
                 </div>
                 <Link
-                  to={servicesUrl}
+                  to={municipalityUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-block text-center rounded-lg bg-cyan-500 px-4 py-2 text-sm font-bold text-white transition hover:bg-cyan-600"
                 >
                   {t('home.destinations.viewMore')}
@@ -213,7 +217,9 @@ const MunicipalityRow = ({ item, index, isOpen, onToggle, lang }) => {
                   <p className="mt-3 text-sm leading-relaxed text-gray-700">{curiosity}</p>
                 </div>
                 <Link
-                  to={servicesUrl}
+                  to={municipalityUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-block text-center rounded-lg bg-cyan-500 px-4 py-2 text-sm font-bold text-white transition hover:bg-cyan-600"
                 >
                   {t('home.destinations.viewMore')}
@@ -275,9 +281,10 @@ const MunicipalityRow = ({ item, index, isOpen, onToggle, lang }) => {
 const MunicipalitiesGrid = () => {
   const { i18n } = useTranslation();
   const [openId, setOpenId] = useState(null);
+  const { data: municipalities } = useMunicipalities();
   const lang = i18n.language?.startsWith('en') ? 'en' : 'es';
 
-  const dataToRender = MUNICIPALITIES_DATA;
+  const dataToRender = municipalities;
 
   if (!dataToRender || dataToRender.length === 0) return null;
 

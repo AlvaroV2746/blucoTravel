@@ -27,6 +27,8 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const SearchResultsPage = lazy(() => import('./pages/SearchResultsPage'));
 const LegalPage = lazy(() => import('./pages/LegalPage'));
+const DestinationsPage = lazy(() => import('./pages/DestinationsPage'));
+const MunicipalityPage = lazy(() => import('./pages/MunicipalityPage'));
 // const LocalProductsPage = lazy(() => import('./pages/LocalProductsPage'));
 
 const travelAgencySchema = {
@@ -211,6 +213,7 @@ const BlucoApp = () => {
   const enPath = toLocalizedPath(location.pathname, 'en');
 
   const navLabels = {
+    destinations: t('navbar.destinations'),
     services: t('navbar.services'),
     about: t('navbar.about'),
     contact: t('navbar.contact'),
@@ -300,6 +303,7 @@ const BlucoApp = () => {
                     services={webServices}
                   />
                 } />
+                <Route path="/destinations" element={<DestinationsPage />} />
                 <Route path="/nosotros" element={<AboutPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contacto" element={<ContactPage />} />
@@ -310,6 +314,17 @@ const BlucoApp = () => {
                 <Route path="/privacidad" element={<LegalPage kind="privacy" />} />
                 <Route path="/terms" element={<LegalPage kind="terms" />} />
                 <Route path="/privacy" element={<LegalPage kind="privacy" />} />
+                <Route
+                  path="/:slug"
+                  element={
+                    <MunicipalityPage
+                      services={webServices}
+                      onSelect={handleSelect}
+                      onAdd={addToCart}
+                      selectedActivity={displayActivity}
+                    />
+                  }
+                />
               </Routes>
             </Suspense>
           </div>

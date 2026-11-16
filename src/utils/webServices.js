@@ -32,6 +32,8 @@ export function toWebServiceActivity(item, lang, sectionTitle = '') {
   };
 }
 
+export const isLodgingItem = (item) => (item.code ?? '').toUpperCase().startsWith('HOS-');
+
 export function findWebServiceActivity(sections, id, lang) {
   for (const section of sections) {
     for (const subSection of section.subSections ?? []) {

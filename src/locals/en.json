@@ -7,7 +7,8 @@
     "services": "Services",
     "about": "About Us",
     "contact": "Contact Us",
-    "products": "Local Products"
+    "products": "Local Products",
+    "destinations": "Destinations"
   },
   "hero": {
     "title": "Explore Amazing Places",
@@ -91,7 +92,17 @@
       "message": "Your email client will open to complete the sending.",
       "another": "Send another message"
     }
-  },  "webServices": {
+  },
+  "municipality": {
+    "activities": "Activities",
+    "lodging": "Lodging",
+    "emptyActivities": "We'll add activities for this destination soon.",
+    "emptyLodging": "We'll add lodging for this destination soon.",
+    "notFound": "We couldn't find this destination.",
+    "noServices": "There are no services available for this destination at the moment.",
+    "servicesIn": "Services you'll find in {{name}}"
+  },
+  "webServices": {
     "loading": "Loading services...",
     "retry": "Try again",
     "emptySection": "We'll add services to this section soon.",
@@ -267,6 +278,9 @@
     },
     "products": {
       "title": "Local Products | BLUCO"
+    },
+    "destinations": {
+      "title": "Destinations | BLUCO"
     }
   },
   "search": {
