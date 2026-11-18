@@ -7,13 +7,21 @@ import { getRoute } from '../utils/routes';
 import useDebouncedValue from '../hooks/useDebouncedValue';
 import { searchCatalog, CATEGORY_KEYS, identifierOf, resolveCatalogItem } from '../data/searchCatalog';
 
-const SearchBar = ({ className = '', onCloseMenu }) => {
+const SearchBar = ({ className = '', onCloseMenu, collapsible = false }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [expanded, setExpanded] = useState(false);
   const containerRef = useRef(null);
+  const inputRef = useRef(null);
+  const isExpanded = !collapsible || expanded;
+
+  const expand = () => {
+    setExpanded(true);
+    requestAnimationFrame(() => inputRef.current?.focus());
+  };
   
   // Aumentamos a 400ms para evitar ejecuciones innecesarias mientras se escribe rÃ¡pido
   const debouncedQuery = useDebouncedValue(query, 400);
@@ -39,11 +47,12 @@ const SearchBar = ({ className = '', onCloseMenu }) => {
     const onPointerDown = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         setOpen(false);
+        if (collapsible && !query.trim()) setExpanded(false);
       }
     };
     document.addEventListener('mousedown', onPointerDown);
     return () => document.removeEventListener('mousedown', onPointerDown);
-  }, []);
+  }, [collapsible, query]);
 
   const goToDetail = (item) => {
     setOpen(false);
@@ -83,13 +92,29 @@ const SearchBar = ({ className = '', onCloseMenu }) => {
   };
 
   return (
-    <div ref={containerRef} className={`relative ${className}`}>
+    <div
+      ref={containerRef}
+      className={`relative transition-all duration-300 ${
+        collapsible ? (isExpanded ? 'w-72' : 'w-10') : ''
+      } ${className}`}
+    >
+      {!isExpanded ? (
+        <button
+          type="button"
+          onClick={expand}
+          aria-label={t('search.searchLabel')}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-blue-950/40 text-cyan-300 transition-colors hover:border-cyan-400 hover:text-white cursor-pointer"
+        >
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-sm" />
+        </button>
+      ) : (
       <div className="relative">
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
           className="absolute left-4 top-1/2 -translate-y-1/2 text-cyan-300/70 text-sm pointer-events-none"
         />
         <input
+          ref={inputRef}
           type="search"
           value={query}
           onChange={(e) => {
@@ -105,6 +130,7 @@ const SearchBar = ({ className = '', onCloseMenu }) => {
           className="w-full rounded-full bg-blue-950/40 border border-cyan-400/30 text-white placeholder-cyan-200/60 pl-10 pr-4 py-2 text-sm outline-none focus:border-cyan-400 focus:bg-blue-950/70 transition-colors"
         />
       </div>
+      )}
 
       {open && debouncedQuery.trim() && (
         <ul

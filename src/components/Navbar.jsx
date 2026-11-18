@@ -1,6 +1,8 @@
 ﻿import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { getRoute } from '../utils/routes';
 import { IMAGES } from '../data/images';
 import SearchBar from './SearchBar';
@@ -65,21 +67,26 @@ const Navbar = () => {
             />
           </div>
 
-          <nav className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex flex-1 justify-end mx-[5px]">
+            <SearchBar onCloseMenu={closeMenu} collapsible />
+          </div>
+
+          <nav className="hidden md:flex items-center gap-4 ml-auto mr-10">
             {mobileLinks.map((item) => (
               <button
                 key={item.path}
                 onClick={() => handleNavClick(item.path)}
-                className="px-4 py-2 text-sm font-medium text-white relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full transition-colors duration-300 cursor-pointer hover:text-cyan-300"
+                className={
+                  item.key === 'services'
+                    ? 'flex items-center gap-2 rounded-full border border-cyan-400/60 bg-cyan-500/15 px-4 py-2 text-sm font-semibold text-cyan-200 transition-colors duration-300 cursor-pointer hover:bg-cyan-500/30 hover:text-white'
+                    : "px-4 py-2 text-sm font-medium text-white relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full transition-colors duration-300 cursor-pointer hover:text-cyan-300"
+                }
               >
+                {item.key === 'services' && <FontAwesomeIcon icon={faPlane} className="text-xs" />}
                 {item.label}
               </button>
             ))}
           </nav>
-
-          <div className="hidden lg:block flex-1 max-w-md">
-            <SearchBar onCloseMenu={closeMenu} />
-          </div>
 
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-2">
