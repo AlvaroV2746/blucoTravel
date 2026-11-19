@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import ContactForm from '../components/ContactForm';
 
@@ -45,6 +45,26 @@ const ContactPage = () => {
             className="flex h-16 w-16 items-center justify-center rounded-full bg-red-500 text-white shadow-md transition hover:-translate-y-1 hover:shadow-lg"
           >
             <FontAwesomeIcon icon={faEnvelope} className="text-3xl" />
+          </a>
+          <a
+            href="https://www.instagram.com/blucotravelco/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Instagram"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white shadow-md transition hover:-translate-y-1 hover:shadow-lg"
+          >
+            <FontAwesomeIcon icon={faInstagram} className="text-3xl" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@blucotravelco"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            title="TikTok"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-black text-white shadow-md transition hover:-translate-y-1 hover:shadow-lg"
+          >
+            <FontAwesomeIcon icon={faTiktok} className="text-3xl" />
           </a>
         </div>
       </div>

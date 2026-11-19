@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { IMAGES } from '../data/images';
@@ -45,6 +45,24 @@ const Footer = () => {
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-500/40 bg-white/5 text-cyan-400 transition-colors duration-200 hover:bg-cyan-500 hover:text-white"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/blucotravelco/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-500/40 bg-white/5 text-cyan-400 transition-colors duration-200 hover:bg-cyan-500 hover:text-white"
+              >
+                <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@blucotravelco"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TikTok"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-500/40 bg-white/5 text-cyan-400 transition-colors duration-200 hover:bg-cyan-500 hover:text-white"
+              >
+                <FontAwesomeIcon icon={faTiktok} className="h-5 w-5" />
               </a>
             </div>
           </div>
