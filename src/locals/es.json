@@ -140,6 +140,7 @@
   "cart": {
     "title": "Mi itinerario",
     "quoteIntro": "Cotizemos tu viaje por...",
+    "quoteSent": "Tu número de cotización es: {{code}}",
     "viaWhatsapp": "WhatsApp",
     "viaEmail": "Correo",
     "empty": "Aún no hay actividades seleccionadas.",

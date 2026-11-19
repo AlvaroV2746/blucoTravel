@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faShoppingCart, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faShoppingCart, faEnvelope, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { translateActivityText } from '../utils/webServices';
 
-const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote, isQuoting = false }) => {
+const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote, isQuoting = false, quoteCode = '' }) => {
   const { t } = useTranslation();
   const itemName = (item) => translateActivityText(t, item.name, item.isDynamic);
   const safeCart = cart ? cart : [];
@@ -43,6 +43,10 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote, isQuoting = false
     setQuoteError('');
     try {
       await onQuote(days, people, needsGuide, clientName.trim(), channel);
+      setDays(1);
+      setPeople(1);
+      setNeedsGuide(false);
+      setClientName('');
     } catch (error) {
       setQuoteError(error.message || t('common.quoteError'));
     }
@@ -78,7 +82,14 @@ const CartSidebar = ({ cart, setIsCartOpen, onRemove, onQuote, isQuoting = false
 
         {/* Lista de productos */}
         <div className="flex-1 p-6 overflow-y-auto">
-          {safeCart.length === 0 ? (
+          {safeCart.length === 0 && quoteCode ? (
+            <div className="rounded-xl border border-green-300 bg-green-50 p-6 text-center">
+              <FontAwesomeIcon icon={faCircleCheck} className="mb-3 h-10 w-10 text-green-500" />
+              <p className="text-base font-semibold text-green-800">
+                {t('cart.quoteSent', { code: quoteCode })}
+              </p>
+            </div>
+          ) : safeCart.length === 0 ? (
             <div className="p-8 text-center">
               <FontAwesomeIcon icon={faShoppingCart} className="w-12 h-12 mx-auto mb-4 text-gray-300" />
               <h3 className="text-lg font-medium text-gray-600 mb-2">{t('cart.empty')}</h3>

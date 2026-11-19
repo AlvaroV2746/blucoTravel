@@ -94,6 +94,7 @@ const BlucoApp = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [cart, setCart] = useState([]);
+  const [lastQuoteCode, setLastQuoteCode] = useState('');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [openSections, setOpenSections] = useState({});
@@ -146,6 +147,7 @@ const BlucoApp = () => {
   const addToCart = (activity) => {
     if (!cart.find(item => item.id === activity.id && item.type === activity.type)) {
       setCart([...cart, activity]);
+      setLastQuoteCode('');
     }
     setIsCartOpen(true);
   };
@@ -187,6 +189,8 @@ const BlucoApp = () => {
       if (!response.ok) throw new Error(t('common.quoteError'));
 
       const payload = await response.json();
+      setLastQuoteCode(payload.data.code);
+      setCart([]);
       const message = t('common.whatsappQuoteMessage', {
         name: clientName,
         code: payload.data.code
@@ -356,7 +360,7 @@ const BlucoApp = () => {
       </button>
 
       {isCartOpen && (
-        <CartSidebar cart={cart} setIsCartOpen={setIsCartOpen} onRemove={removeFromCart} onQuote={handleQuote} isQuoting={isQuoting} />
+        <CartSidebar cart={cart} setIsCartOpen={setIsCartOpen} onRemove={removeFromCart} onQuote={handleQuote} isQuoting={isQuoting} quoteCode={lastQuoteCode} />
       )}
     </div>
   );

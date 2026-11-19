@@ -140,6 +140,7 @@
   "cart": {
     "title": "My Itinerary",
     "quoteIntro": "Let's quote your trip via...",
+    "quoteSent": "Your quotation number is: {{code}}",
     "viaWhatsapp": "WhatsApp",
     "viaEmail": "Email",
     "empty": "No activities selected yet.",
